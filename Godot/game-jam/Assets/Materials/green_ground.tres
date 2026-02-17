@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://t06kdka05xsa"]
+
+[ext_resource type="Texture2D" uid="uid://clhpsbc8nmmpc" path="res://Assets/Prototyping_grid/Green/texture_04.png" id="1_gt0w2"]
+
+[resource]
+render_priority = 1
+albedo_texture = ExtResource("1_gt0w2")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv2_triplanar = true
+stencil_flags = 1

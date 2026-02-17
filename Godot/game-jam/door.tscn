@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ddpa3ir16yux5"]
+
+[ext_resource type="PackedScene" uid="uid://b7vciha7sbaaf" path="res://Assets/Door/door.glb" id="1_ba8gm"]
+
+[sub_resource type="Animation" id="Animation_v6xrn"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door asset v2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.7453293, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0phs7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door asset v2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.7453293, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_50cdl"]
+_data = {
+&"Open": SubResource("Animation_v6xrn"),
+&"RESET": SubResource("Animation_0phs7")
+}
+
+[node name="door" unique_id=2034242463 instance=ExtResource("1_ba8gm")]
+
+[node name="Door asset v2" parent="." index="0" unique_id=632325501]
+transform = Transform3D(-0.1736482, 0, -0.9848077, 0, 1, 0, 0.9848077, 0, -0.1736482, 0.429, 0, 0)
+
+[node name="Body1" parent="Door asset v2" index="0" unique_id=1072451157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Body2" parent="Door asset v2" index="1" unique_id=1186161880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Body3" parent="Door asset v2" index="2" unique_id=1928876239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Body4" parent="Door asset v2" index="3" unique_id=416715557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Body5" parent="Door asset v2" index="4" unique_id=1841617079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Body6" parent="Door asset v2" index="5" unique_id=798639623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Body7" parent="Door asset v2" index="6" unique_id=1789746274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Handle" parent="Door asset v2" index="7" unique_id=1708417274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Handle (1)" parent="Door asset v2" index="8" unique_id=2141628629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="Penne" parent="Door asset v2" index="9" unique_id=1176082853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=2012476169]
+libraries/ = SubResource("AnimationLibrary_50cdl")
