@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://fsnjse6ai71m" path="res://player.gd" id="1_4flbx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
+radius = 0.3
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tlwt5"]
+radius = 0.3
 
 [sub_resource type="Image" id="Image_4flbx"]
 data = {
@@ -19,7 +21,7 @@ data = {
 image = SubResource("Image_4flbx")
 
 [node name="Player" type="CharacterBody3D" unique_id=1219742712]
-collision_layer = 32769
+collision_layer = 32770
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1637230855]
@@ -34,6 +36,7 @@ mesh = SubResource("CapsuleMesh_tlwt5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=14331344]
+near = 0.001
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=949953529]
 target_position = Vector3(0, 0, -4)
