@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://dke3ih6lugud3"]
-
-[resource]
-resource_name = "Brass"
-cull_mode = 2
-albedo_color = Color(0.9063355, 0.7600266, 0.25992236, 1)
-metallic = 0.8671875
-roughness = 0.21875
