@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://lrfk5umw78p1"]
+
+[ext_resource type="Script" uid="uid://bmxx47jq0v6p8" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://djscv30isuxyc" path="res://pixil-frame-0.png" id="2_kpjcp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+radius = 0.2
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xhfnw"]
+radius = 0.3
+height = 1.5
+
+[node name="Player" type="CharacterBody3D" unique_id=228346879]
+collision_layer = 32769
+collision_mask = 32769
+script = ExtResource("1_xhfnw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1345620307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_0rwas")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1101213248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_xhfnw")
+
+[node name="Head" type="Node3D" parent="." unique_id=1283003921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1746144345]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=326652335]
+target_position = Vector3(0, 0, -4)
+collision_mask = 5
+
+[node name="UI" type="Control" parent="." unique_id=1080720288]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Center" type="Control" parent="UI" unique_id=1757148456]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="Sprite2D" parent="UI/Center" unique_id=1146939093]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_kpjcp")

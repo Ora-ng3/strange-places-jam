@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct62bsuel5hyc"
-path="res://.godot/imported/portal3d-icon.svg-a34538e0e6bdf86bd50ffe0190100a72.ctex"
+uid="uid://dxubnc7ngutdh"
+path="res://.godot/imported/wood09_normal_opengl.jpg-145163a058eb05140dfb6e677505128f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/portals/materials/portal3d-icon.svg"
-dest_files=["res://.godot/imported/portal3d-icon.svg-a34538e0e6bdf86bd50ffe0190100a72.ctex"]
+source_file="res://textures/wood09_normal_opengl.jpg"
+dest_files=["res://.godot/imported/wood09_normal_opengl.jpg-145163a058eb05140dfb6e677505128f.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
