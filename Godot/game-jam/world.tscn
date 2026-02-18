@@ -1,12 +1,10 @@
-[gd_scene format=4 uid="uid://ds0h4nvuf56ay"]
+[gd_scene format=3 uid="uid://ds0h4nvuf56ay"]
 
 [ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://player.tscn" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://cw1r4c1d7beyv" path="res://addons/portals/scripts/portal_3d.gd" id="2_036b0"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://doorway.tscn" id="2_fj7yv"]
-[ext_resource type="Material" uid="uid://dcfkcyddxkglf" path="res://addons/portals/materials/editor-preview-portal-material.tres" id="3_dwbse"]
-[ext_resource type="Material" uid="uid://ce3gv6hcvasnf" path="res://Assets/Materials/pillar.tres" id="4_aqk2v"]
-[ext_resource type="Script" uid="uid://bxcel82b180o3" path="res://addons/portals/scripts/portal_boxmesh.gd" id="4_pkg7o"]
 [ext_resource type="Material" uid="uid://t06kdka05xsa" path="res://Assets/Materials/green_ground.tres" id="5_036b0"]
+[ext_resource type="Texture2D" uid="uid://bldsstvidy5g8" path="res://Assets/Prototyping_grid/Purple/texture_04.png" id="5_dwbse"]
+[ext_resource type="Material" uid="uid://dwmyjhewpwfoi" path="res://Assets/Materials/orange_ground.tres" id="8_gbfbk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,147 +19,73 @@ sky = SubResource("Sky_fj7yv")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gbfbk"]
-load_path = "res://.godot/imported/texture_04.png-81d156d9eb7fea5d03c1c3abe242053e.s3tc.ctex"
+[sub_resource type="BoxMesh" id="BoxMesh_036b0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
-albedo_texture = SubResource("CompressedTexture2D_gbfbk")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkg7o"]
+render_priority = 1
+albedo_texture = ExtResource("5_dwbse")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv2_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_036b0"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_dwbse"]
-_surfaces = [{
-"aabb": AABB(-1, -1.25, -1, 2, 2.5, 1),
-"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAIA/AACAPw=="),
-"format": 34359742487,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAQABAABAAUAAQADAAUABQADAAcAAwACAAcABwACAAYAAgAAAAYABgAAAAQABAAFAAYABgAFAAcAAAABAAIAAgABAAMA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AACAvwAAoD8AAAAAAACAPwAAoD8AAAAAAACAvwAAoL8AAAAAAACAPwAAoL8AAAAAAACAvwAAoD8AAIC/AACAPwAAoD8AAIC/AACAvwAAoL8AAIC/AACAPwAAoL8AAIC//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgA==")
-}]
-script = ExtResource("4_pkg7o")
-size = Vector3(2, 2.5, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pkg7o"]
-size = Vector3(2, 2.5, 1)
+stencil_flags = 1
 
 [node name="World" type="Node3D" unique_id=444744762]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=337629844]
 environment = SubResource("Environment_tlwt5")
 
-[node name="Ground" type="CSGBox3D" parent="." unique_id=879015878]
-transform = Transform3D(0.9999789, 0.0064925794, 0, -0.0064925794, 0.9999789, 0, 0, 0, 1, -24.83271, 0.13591386, 0.02660942)
-use_collision = true
-size = Vector3(50.31494, 0.001, 100)
-material = SubResource("StandardMaterial3D_tlwt5")
-metadata/_edit_lock_ = true
-
 [node name="Player" parent="." unique_id=1219742712 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6346974, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7464314, 0.46173143, 11.304029)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1647989642]
 transform = Transform3D(0.9714374, -0.16437724, 0.17114174, -7.267841e-09, 0.7212164, 0.69270986, -0.23729596, -0.6729243, 0.70061654, 0, 13.573767, 0)
 shadow_enabled = true
 
-[node name="Ground2" type="CSGBox3D" parent="." unique_id=679314745]
-transform = Transform3D(0.9999157, 0.012984885, 0, -0.012984885, 0.9999157, 0, 0, 0, 1, 94.196, 0, -1)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1788482088]
+transform = Transform3D(0.99978775, 0.013859574, -0.015244789, -0.017516373, 0.9613524, -0.27476326, 0.010847499, 0.274972, 0.96139115, 12.861263, 0.5326483, 17)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1155682822]
+transform = Transform3D(-0.21781458, -0.5373254, -0.81476283, 0.22839911, 0.7835623, -0.57780856, 0.94888926, -0.31194606, -0.047946945, -4.350069, 2.7425385, 9.70673)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=709382422]
+transform = Transform3D(-0.106335565, 0.60431117, -0.78962, 0.46058637, 0.7337238, 0.49950793, 0.8812223, -0.31057286, -0.35635906, -8.229315, 0.40392923, 2.4403534)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=931931472]
+transform = Transform3D(-0.87393016, 0.40655288, -0.26638395, 0.30329326, 0.8844007, 0.35474694, 0.37981427, 0.2292313, -0.8962108, -8.796524, 0.5250106, 2.1627293)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="Ground1" type="CSGBox3D" parent="." unique_id=891014635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.049561, 0, 2.5566444)
 use_collision = true
-size = Vector3(50.31494, 0.001, 100)
+size = Vector3(33.6792, 1, 33.19995)
 material = ExtResource("5_036b0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1788482088]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2747345, 0.6869261, 0)
-mesh = SubResource("BoxMesh_036b0")
+[node name="Ground2" type="CSGBox3D" parent="." unique_id=1948267610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.653885, 0, 2.5566444)
+use_collision = true
+size = Vector3(33.6792, 1, 33.19995)
+material = ExtResource("8_gbfbk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=584990]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.622199, 0.6869261, 4.6798)
-mesh = SubResource("BoxMesh_036b0")
-surface_material_override/0 = ExtResource("4_aqk2v")
-
-[node name="Portal3D" type="Node3D" parent="." unique_id=1202257803 node_paths=PackedStringArray("exit_portal") groups=["portals"]]
-process_priority = 100
-process_physics_priority = 100
-transform = Transform3D(0.6911221, 0, -0.722738, 0, 1, 0, 0.722738, 0, 0.6911221, -5.640663, 1.2304103, 4.8940873)
-script = ExtResource("2_036b0")
-_portal_mesh_path = NodePath("Portal3D_Mesh")
-_teleport_area_path = NodePath("TeleportArea")
-_teleport_collider_path = NodePath("TeleportArea/Collider")
-portal_size = Vector2(2, 2.5)
-exit_portal = NodePath("../Portal3D2")
-portal_frame_width = 0.0
-viewport_size_mode = 0
-view_direction = 0
-portal_render_layer = 524288
-is_teleport = true
-teleport_direction = 2
-rigidbody_boost = 0.0
-teleport_tolerance = 1.0
-teleport_interactions = 3
-teleport_collision_mask = 32768
-start_deactivated = false
-metadata/_custom_type_script = "uid://cw1r4c1d7beyv"
-metadata/_edit_group_ = true
-
-[node name="Portal3D_Mesh" type="MeshInstance3D" parent="Portal3D" unique_id=1338330363]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, 0, 0, 0)
-layers = 524288
-material_override = ExtResource("3_dwbse")
-cast_shadow = 0
-mesh = SubResource("ArrayMesh_dwbse")
-
-[node name="TeleportArea" type="Area3D" parent="Portal3D" unique_id=880910448]
-
-[node name="Collider" type="CollisionShape3D" parent="Portal3D/TeleportArea" unique_id=1716943147]
-shape = SubResource("BoxShape3D_pkg7o")
-
-[node name="Portal3D2" type="Node3D" parent="." unique_id=1653402916 node_paths=PackedStringArray("exit_portal") groups=["portals"]]
-process_priority = 100
-process_physics_priority = 100
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1402397, 1.1935599, -2.2892942)
-script = ExtResource("2_036b0")
-_portal_mesh_path = NodePath("Portal3D_Mesh")
-_teleport_area_path = NodePath("TeleportArea")
-_teleport_collider_path = NodePath("TeleportArea/Collider")
-portal_size = Vector2(2, 2.5)
-exit_portal = NodePath("../Portal3D")
-portal_frame_width = 0.0
-viewport_size_mode = 0
-view_direction = 0
-portal_render_layer = 524288
-is_teleport = true
-teleport_direction = 2
-rigidbody_boost = 0.0
-teleport_tolerance = 1.0
-teleport_interactions = 3
-teleport_collision_mask = 32768
-start_deactivated = false
-metadata/_custom_type_script = "uid://cw1r4c1d7beyv"
-metadata/_edit_group_ = true
-
-[node name="Portal3D_Mesh" type="MeshInstance3D" parent="Portal3D2" unique_id=119179284]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, 0, 0, 0)
-layers = 524288
-material_override = ExtResource("3_dwbse")
-cast_shadow = 0
-mesh = SubResource("ArrayMesh_dwbse")
-
-[node name="TeleportArea" type="Area3D" parent="Portal3D2" unique_id=56820623]
-
-[node name="Collider" type="CollisionShape3D" parent="Portal3D2/TeleportArea" unique_id=1006255145]
-shape = SubResource("BoxShape3D_pkg7o")
+[node name="Ground3" type="CSGBox3D" parent="." unique_id=82516018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.242332, 0, 35.80486)
+use_collision = true
+size = Vector3(63.11206, 1, 33.19995)
+material = SubResource("StandardMaterial3D_pkg7o")
 
 [node name="Doorway" parent="." unique_id=1687868200 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("2_fj7yv")]
-transform = Transform3D(-0.32730037, 0, 0.9449204, 0, 1, 0, -0.9449204, 0, -0.32730037, -18.989891, 0.084297925, 3.6553671)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.705715, 0.50000024, 16.749138)
 ExitFront = NodePath("../Doorway2")
-ExitBack = NodePath("../Doorway2")
+ExitBack = NodePath("../Doorway3")
 
-[node name="Doorway2" parent="." unique_id=1067588339 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("2_fj7yv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.92202, 0.08814028, -0.29618448)
+[node name="Doorway2" parent="." unique_id=792301490 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("2_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.770716, 0.50000024, 18.045746)
 ExitFront = NodePath("../Doorway")
-ExitBack = NodePath("../Doorway")
+ExitBack = NodePath("../Doorway3")
+
+[node name="Doorway3" parent="." unique_id=1195331022 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.455, 0, 0, 0, 0.455, 0, 0, 0, 0.455, 7.8355503, 0.50000024, 23.337791)
+ExitFront = NodePath("../Doorway")
+ExitBack = NodePath("../Doorway2")

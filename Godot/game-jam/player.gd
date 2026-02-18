@@ -2,9 +2,9 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4
+const JUMP_VELOCITY = 5
 const LOOK_SENSITIVITY = 0.003
-const GRAVITY = 9.8 * Vector3.DOWN
+const GRAVITY = 17 * Vector3.DOWN
 const RUN_FACTOR = 2
 
 @onready var head: Node3D = $Head
@@ -14,6 +14,7 @@ const RUN_FACTOR = 2
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$MeshInstance3D.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Change mouse capture mode with escape

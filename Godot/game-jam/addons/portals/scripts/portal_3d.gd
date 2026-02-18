@@ -2,12 +2,6 @@
 @icon("uid://ct62bsuel5hyc")
 class_name Portal3D extends Node3D
 
-# -------- OWN MODIFICATION ------------
-#@export var 
-
-# --------------------------------------
-
-
 ## Seamless 3D portal
 ##
 ## To get started, create two Portal3D instances and set their [member exit_portal] to each other.
