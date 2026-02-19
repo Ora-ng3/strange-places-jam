@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://01owtogq5ua0" path="res://Assets/Train/train_2.jpg" id="2_3bh8j"]
 [ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://player.tscn" id="2_kfycv"]
 [ext_resource type="Texture2D" uid="uid://c7otoo3csxxdu" path="res://Assets/Train/train_3.jpg" id="3_3ccrb"]
-[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://doorway.tscn" id="4_l5j6f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lomod"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -114,9 +113,6 @@ mesh = SubResource("ArrayMesh_u0pun")
 [node name="Object_152" type="MeshInstance3D" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Point012_107/T_MRTIsland_DoorAutoR10_106/T_MRTIsland_DoorAutoR10_T_MRTIsland_DoorAutoR02_01_0_102" parent_id_path=PackedInt32Array(1023461925, 1987192261) index="1" unique_id=489290228]
 transform = Transform3D(-4.371139e-08, 1, 3.3717475e-07, -1, -4.3711275e-08, -3.3717484e-07, -3.3717484e-07, -3.371748e-07, 1, 75.27902, 76.41986, 2.5749207e-05)
 mesh = SubResource("ArrayMesh_roepx")
-
-[node name="Doorway" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/T_MRTIsland_BodyEXT_330/T_MRTIsland_BodyINT_187/T_MRTIsland_BodyINT_T_MRTIsland_BodyINT_01_0_178" parent_id_path=PackedInt32Array(1023461925, 467643992) index="1" unique_id=1687868200 instance=ExtResource("4_l5j6f")]
-transform = Transform3D(40.352, 0, 0, 0, -1.763842e-06, -40.352, 0, 40.352, -1.763842e-06, 0.68, 104.228, 39.203)
 
 [node name="Player" parent="." unique_id=1219742712 instance=ExtResource("2_kfycv")]
 

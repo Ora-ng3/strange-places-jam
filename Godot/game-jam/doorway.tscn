@@ -133,7 +133,7 @@ size = Vector3(0.85, 1.9, 1)
 radius = 1.5
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gmewq"]
-radius = 3.5058594
+radius = 2.480957
 
 [node name="Doorway" type="StaticBody3D" unique_id=1687868200 groups=["doors"]]
 collision_layer = 5
@@ -243,15 +243,15 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Zone" unique_id=1253147073]
 shape = SubResource("CylinderShape3D_pa4mq")
 
-[node name="GreaterZone" type="Area3D" parent="." unique_id=1831569401]
+[node name="GreaterZone" type="Area3D" parent="." unique_id=2062676698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0578171, 0)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GreaterZone" unique_id=1821424715]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GreaterZone" unique_id=783014471]
 shape = SubResource("CylinderShape3D_gmewq")
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_exited" from="Zone" to="." method="_on_zone_exited"]
-[connection signal="body_exited" from="GreaterZone" to="." method="_on_zone_exited"]
 
 [editable path="door"]
