@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameJam"
-run/main_scene="res://proto.tscn"
+run/main_scene="uid://de7jlh53fbjyy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ global="*uid://csct3f87r5402"
 
 [display]
 
+window/size/always_on_top=true
 window/stretch/aspect="expand"
 
 [editor_plugins]

@@ -36,7 +36,7 @@ stencil_flags = 1
 environment = SubResource("Environment_tlwt5")
 
 [node name="Player" parent="." unique_id=1219742712 instance=ExtResource("1_ekw8u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.78, 0.5, 18.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.714429, 0.5, 16.359022)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1647989642]
 transform = Transform3D(0.9714374, -0.16437724, 0.17114174, -7.267841e-09, 0.7212164, 0.69270986, -0.23729596, -0.6729243, 0.70061654, 0, 13.573767, 0)
@@ -85,11 +85,11 @@ ExitFront = NodePath("../Doorway2")
 ExitBack = NodePath("../Doorway3")
 
 [node name="Doorway2" parent="." unique_id=515158965 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("5_ff4ei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.497686, 0.50000095, 19.642519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.425372, 0.50000095, 19.642519)
 ExitFront = NodePath("../Doorway")
 ExitBack = NodePath("../Doorway3")
 
 [node name="Doorway3" parent="." unique_id=556053160 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("5_ff4ei")]
-transform = Transform3D(2.68, 0, 0, 0, 2.68, 0, 0, 0, 2.68, 5.2126675, 0.5000005, 21.936445)
+transform = Transform3D(2.68, 0, 0, 0, 2.68, 0, 0, 0, 2.68, -3.9938478, 0.5000005, 21.936445)
 ExitFront = NodePath("../Doorway")
 ExitBack = NodePath("../Doorway2")

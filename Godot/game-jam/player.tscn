@@ -20,6 +20,11 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_onrkg"]
 image = SubResource("Image_4flbx")
 
+[sub_resource type="LabelSettings" id="LabelSettings_4flbx"]
+font_size = 43
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody3D" unique_id=1219742712]
 collision_layer = 32770
 script = ExtResource("1_4flbx")
@@ -44,6 +49,8 @@ near = 0.001
 visible = false
 target_position = Vector3(0, 0, -4)
 collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="UI" type="Control" parent="." unique_id=2127488616]
 layout_mode = 3
@@ -73,3 +80,26 @@ mouse_filter = 2
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = SubResource("ImageTexture_onrkg")
+
+[node name="Permanent" type="Label" parent="UI" unique_id=1175144780]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 100.0
+label_settings = SubResource("LabelSettings_4flbx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Popup" type="Label" parent="UI" unique_id=521748186]
+visible = false
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 100.0
+label_settings = SubResource("LabelSettings_4flbx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="UI/Popup" unique_id=1669785153]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="UI/Popup/Timer" to="." method="_on_popup_timer_timeout"]

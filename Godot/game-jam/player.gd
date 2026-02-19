@@ -11,10 +11,12 @@ const RUN_FACTOR = 2
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var raycast: RayCast3D = $Head/RayCast3D
 
+var is_in_portal: int = 0 # used by doorwayss
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	$MeshInstance3D.hide()
+	#$MeshInstance3D.hide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Change mouse capture mode with escape
@@ -29,14 +31,18 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	movement(delta)
 	if raycast.is_colliding():
+		var col: Node = raycast.get_collider().get_parent() # collides with child bounding box area of objects
+		if col.has_method("get_message"):
+			$UI/Permanent.text = col.get_message()
+			if not $UI/Popup.visible: $UI/Permanent.show()
 		$UI/Center/Crosshair.rotation = PI/4
-		var col: = raycast.get_collider()
 		if Input.is_action_just_released("Interact"):
 			if col.is_in_group("doors"):
-				col.open(global_position)
-				pass
+				popup(col.trigger(global_position))
+				
 	else:
 		$UI/Center/Crosshair.rotation = 0
+		$UI/Permanent.hide()
 
 func movement(delta: float) -> void:
 	# Gravity
@@ -71,3 +77,13 @@ func toggle_mouse_mode() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func popup(message: String):
+	if message:
+		$UI/Permanent.hide()
+		$UI/Popup.text = message
+		$UI/Popup.show()
+		$UI/Popup/Timer.start()
+
+func _on_popup_timer_timeout() -> void:
+	$UI/Popup.hide()
