@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://qsfbgs5a1kx0"]
+[gd_scene format=3 uid="uid://22hfrpgo3iq0"]
 
 [ext_resource type="Material" uid="uid://bdfnb54hwbt0x" path="res://Assets/Materials/white_ground.tres" id="1_qrgdj"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_i1mwf"]
