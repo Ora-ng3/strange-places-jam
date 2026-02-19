@@ -1,5 +1,6 @@
 extends StaticBody3D
 
+const ZONE_RADIUS = 2 # radius of FrontZone and BackZone
 
 @export var ExitFront: Node3D = null
 @export var ExitBack: Node3D = null
@@ -21,28 +22,53 @@ var closed: bool = true
 func _ready() -> void:
 	global.id_to_node[DoorID] = self
 
-# when the player opens the door
-func open(player_pos: Vector3) -> void:
-	if closed:
-		if ExitFront == null:
-			ExitFront = global.id_to_node[global.map[DoorID][0]]
-		if ExitBack == null:
-			ExitBack = global.id_to_node[global.map[DoorID][1]]
-		linked_door = null # reset linked door
-			
-		if transform.basis.z.dot(player_pos - global_position) > 0:
-			$AnimationPlayer.play("OpenFront")
-			if ExitBack != null:
-				linked_door = ExitBack
-				linked_door.get_node("AnimationPlayer").play("OpenFront")
+
+func only_on_one_zone(): # just an XOR between both areas
+		var front = $FrontZone.has_overlapping_bodies()
+		var back = $BackZone.has_overlapping_bodies()
+		return (front or back) and not (front and back)
+		
+# when the player clicks on the door
+func trigger(player_pos: Vector3) -> String:
+	#open(transform.basis.z.dot(player_pos - global_position) > 0)
+	if closed and not $AnimationPlayer.is_playing():
+		if only_on_one_zone(): # the player is only on one zone
+			open($FrontZone.has_overlapping_bodies())
 		else:
-			$AnimationPlayer.play("OpenBack")
-			if ExitFront != null:
-				linked_door = ExitFront
-				linked_door.get_node("AnimationPlayer").play("OpenBack")
-		if linked_door != null:
-			start(PortalExit, linked_door.get_node("PortalEnter"))
-			linked_door.open_linked(self)
+			return "Can't open from here"
+	else:
+		if not closed:
+		#if $AnimationPlayer.is_playing():
+			#return "Wait a bit"
+		#else:
+			close()
+	return ""
+
+func open(from_front: bool) -> void:
+	if ExitFront == null:
+		ExitFront = global.id_to_node[global.map[DoorID][0]]
+	if ExitBack == null:
+		ExitBack = global.id_to_node[global.map[DoorID][1]]
+	linked_door = null # reset linked door
+		
+	if from_front:
+		$AnimationPlayer.play("OpenFront")
+		if ExitBack != null:
+			linked_door = ExitBack
+			linked_door.get_node("AnimationPlayer").play("OpenFront")
+	else:
+		$AnimationPlayer.play("OpenBack")
+		if ExitFront != null:
+			linked_door = ExitFront
+			linked_door.get_node("AnimationPlayer").play("OpenBack")
+	if linked_door != null:
+		start(PortalExit, linked_door.get_node("PortalEnter"))
+		linked_door.open_linked(self)
+
+func close():
+	stop(PortalEnter)
+	linked_door.stop(linked_door.PortalExit)
+
 
 func start(portal: Portal3D, linked: Portal3D):
 	# common code for both open and open_linked
@@ -64,25 +90,46 @@ func open_linked(door: Node3D) -> void:
 	start(PortalEnter, linked_door.PortalExit)
 
 func close_animation():
-	if FrontPivot.rotation:
-		$AnimationPlayer.play("CloseFront")
-	elif BackPivot.rotation:
-		$AnimationPlayer.play("CloseBack")
+	if $AnimationPlayer.is_playing():
+		var anim = $AnimationPlayer.current_animation
+		var frame = $AnimationPlayer.current_animation_position
+		$AnimationPlayer.play_section_backwards(anim, 0, frame)
 	else:
-		print("problem: called close on a door that was not open")
-		
+		if FrontPivot.rotation:
+			$AnimationPlayer.play("CloseFront")
+		elif BackPivot.rotation:
+			$AnimationPlayer.play("CloseBack")
+		else:
+			print("problem: called close on a door that was not open")
+
+
+func get_message() -> String:
+	
+	if not $AnimationPlayer.is_playing():
+		if closed:
+			if only_on_one_zone():
+				return "Click to open"
+		else:
+				return "Click to close"
+	return ""
 
 func _on_zone_exited(body: Node3D) -> void:
-	if not closed and global_position.distance_squared_to(body.global_position) < 9:
+	if not closed and not body.is_in_portal > 0:
 			# used to be just_entered and $GreaterZone.has_overlapping_bodies() which was when the player
 			# left the door zone just after having entered a new place,
 			# and the the player is in the greaterzone so didn't come back through the doorr
-			stop(PortalEnter)
-			linked_door.stop(linked_door.PortalExit)
-			#just_entered = false
-
+			close()
+			
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name.begins_with("Close"):
+	if closed:
 		portal_to_disable.deactivate()
 		portal_to_disable.hide()
+
+
+func _on_portal_zone_body_entered(body: Node3D) -> void:
+	body.is_in_portal += 1
+
+
+func _on_portal_zone_body_exited(body: Node3D) -> void:
+	body.is_in_portal -= 1

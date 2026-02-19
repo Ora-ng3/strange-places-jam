@@ -39,4 +39,3 @@ func _on_timer_timeout() -> void:
 	dir = round(randf()) * 2 - 1
 	$Timer.start()
 	
-	print(turning)

@@ -51,7 +51,7 @@ font_size = 117
 
 [node name="train_v1" parent="." unique_id=266253641 instance=ExtResource("3_cx5lv")]
 
-[node name="Skeleton3D" parent="train_v1/Armature" parent_id_path=PackedInt32Array(266253641, 953747449) index="0" unique_id=24218821]
+[node name="Skeleton3D" parent="train_v1/Armature" parent_id_path=PackedInt32Array(266253641, 2027249443) index="0" unique_id=725056228]
 bones/4/position = Vector3(1.4152623, 1.6902007, 15.190673)
 bones/8/position = Vector3(1.4152623, 1.6902007, 6.854503)
 bones/14/position = Vector3(-1.3973578, 1.6902007, 15.190673)
@@ -61,37 +61,37 @@ bones/22/rotation = Quaternion(0.99767506, -4.085928e-05, 0.000105821484, -0.068
 bones/23/rotation = Quaternion(0.8414108, 0.5379201, -0.027801974, 0.043553818)
 bones/26/rotation = Quaternion(0.63534594, 0, 0, 0.77222764)
 
-[node name="Lateral door 2 left front" parent="train_v1/Armature/Skeleton3D" index="3" unique_id=1420339441]
+[node name="Lateral door 2 left front" parent="train_v1/Armature/Skeleton3D" index="3" unique_id=1796947942]
 transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, 1.4152623, 1.6902007, 15.190673)
 
-[node name="Lateral door 4 left front" parent="train_v1/Armature/Skeleton3D" index="7" unique_id=485950841]
+[node name="Lateral door 4 left front" parent="train_v1/Armature/Skeleton3D" index="7" unique_id=250717858]
 transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, 1.4152623, 1.6902007, 6.854503)
 
-[node name="Lateral door 2 right front" parent="train_v1/Armature/Skeleton3D" index="13" unique_id=1254410532]
+[node name="Lateral door 2 right front" parent="train_v1/Armature/Skeleton3D" index="13" unique_id=780204842]
 transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, -1.3973578, 1.6902007, 15.190673)
 
-[node name="Lateral door 4 right front" parent="train_v1/Armature/Skeleton3D" index="17" unique_id=220896798]
+[node name="Lateral door 4 right front" parent="train_v1/Armature/Skeleton3D" index="17" unique_id=959025968]
 transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, -1.3973578, 1.6902007, 6.854503)
 
-[node name="Lever_2" parent="train_v1/Armature/Skeleton3D" index="20" unique_id=491473789]
+[node name="Lever_2" parent="train_v1/Armature/Skeleton3D" index="20" unique_id=1535186833]
 transform = Transform3D(0.41979527, 0.9076187, 1.2278979e-06, 0.26196185, -0.121162266, -0.9574714, -0.8689928, 0.40193015, -0.28863394, 0.00451073, 0.865523, 22.233341)
 
-[node name="Internal exit door" parent="train_v1/Armature/Skeleton3D" index="21" unique_id=273318907]
+[node name="Internal exit door" parent="train_v1/Armature/Skeleton3D" index="21" unique_id=643000898]
 transform = Transform3D(0.99999994, 6.995901e-05, 6.307548e-05, -8.518654e-05, 0.38589555, 0.9225447, 4.0199648e-05, -0.9225428, 0.38589633, 0.0044374466, 0.4612865, 23.199728)
 
-[node name="External exit door" parent="train_v1/Armature/Skeleton3D" index="22" unique_id=1362530294]
+[node name="External exit door" parent="train_v1/Armature/Skeleton3D" index="22" unique_id=765368705]
 transform = Transform3D(1, -0.000156684, 0.00013357912, 8.885137e-05, -0.25686073, -0.9664484, 0.00018573824, 0.9664484, -0.25686073, 0.0047334507, 0.94654274, 21.373934)
 
-[node name="Step door_2" parent="train_v1/Armature/Skeleton3D" index="25" unique_id=313714622]
+[node name="Step door_2" parent="train_v1/Armature/Skeleton3D" index="25" unique_id=1028196203]
 transform = Transform3D(1, 0, 0, 0, 0.19267106, -0.9812634, 0, 0.9812634, 0.19267106, 0.010552645, 0.90822357, 20.967813)
 
-[node name="Frame" parent="train_v1" index="8" unique_id=324367595]
+[node name="Frame" parent="train_v1" index="8" unique_id=205619905]
 visible = false
 
-[node name="FrontPivot" parent="train_v1" index="9" unique_id=594424212]
+[node name="FrontPivot" parent="train_v1" index="9" unique_id=1563604033]
 visible = false
 
-[node name="Frame_001" parent="train_v1" index="10" unique_id=1516885972]
+[node name="Frame_001" parent="train_v1" index="10" unique_id=1121891902]
 visible = false
 
 [node name="pCube284_concrete_0 " parent="train_v1/Train station/pCube284" parent_id_path=PackedInt32Array(266253641, 46596696) index="0" unique_id=263685925]

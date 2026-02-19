@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://de7jlh53fbjyy"]
+[gd_scene format=3 uid="uid://cofoksff20hc6"]
 
 [ext_resource type="PackedScene" uid="uid://bgrf6msho8n34" path="res://Places/key_room.tscn" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://bw8nh37q7xtnt" path="res://Places/boring_room.tscn" id="3_036b0"]
@@ -22,3 +22,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.740437, 0, 18.132692)
 
 [node name="TrainRoom" parent="." unique_id=360970201 instance=ExtResource("4_036b0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 24)
+
+[editable path="KeyRoom"]
