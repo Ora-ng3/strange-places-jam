@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bch5og2ox56a4"]
 
 [ext_resource type="Material" uid="uid://bdfnb54hwbt0x" path="res://Assets/Materials/white_ground.tres" id="1_qoqpg"]
-[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://doorway.tscn" id="2_x8kar"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_x8kar"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vyjb4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,7 +16,7 @@ sky = SubResource("Sky_1ufdh")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="LeverRoom" type="Node3D" unique_id=1182730611]
+[node name="ScaleRoom" type="Node3D" unique_id=1182730611]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2107784598]
 environment = SubResource("Environment_utmue")
@@ -25,23 +25,31 @@ environment = SubResource("Environment_utmue")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, -0.1, -0.033)
 material_override = ExtResource("1_qoqpg")
 use_collision = true
-size = Vector3(9, 0.2, 9.305)
+size = Vector3(30, 0.2, 30)
 
 [node name="Walls" type="CSGBox3D" parent="." unique_id=1085675773]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.339888, 0)
 material_override = ExtResource("1_qoqpg")
 use_collision = true
-size = Vector3(10, 4, 10)
+size = Vector3(30, 25, 30)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Walls" unique_id=311125516]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7984072, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11326313, 0)
 operation = 2
-size = Vector3(9, 10.393, 9)
+size = Vector3(29, 26, 29)
 
-[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("2_x8kar")]
-DoorID = 2
+[node name="DoorwayMid" parent="." unique_id=1687868200 instance=ExtResource("2_x8kar")]
+DoorID = 8
+
+[node name="DoorwaySmall" parent="." unique_id=393718689 instance=ExtResource("2_x8kar")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 6.0125713, 0, 0)
+DoorID = 9
+
+[node name="DoorwayLarge" parent="." unique_id=1173822146 instance=ExtResource("2_x8kar")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -8.368508, 0, 0)
+DoorID = 10
 
 [node name="Label3D" type="Label3D" parent="." unique_id=867951822]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3238702, -1.6230922)
-text = "SKULL ROOM"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2085385, -10.684284)
+text = "SCALE ROOM"
 font_size = 117

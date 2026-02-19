@@ -9,12 +9,13 @@ const RUN_FACTOR = 2
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
-@onready var raycast: RayCast3D = $Head/RayCast3D
+@onready var raycast: RayCast3D = $Head/Camera3D/RayCast3D
 
 var is_in_portal: int = 0 # used by doorwayss
 
 
 func _ready() -> void:
+	print("player loaded !")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	#$MeshInstance3D.hide()
 
@@ -37,8 +38,8 @@ func _physics_process(delta: float) -> void:
 			if not $UI/Popup.visible: $UI/Permanent.show()
 		$UI/Center/Crosshair.rotation = PI/4
 		if Input.is_action_just_released("Interact"):
-			if col.is_in_group("doors"):
-				popup(col.trigger(global_position))
+			if col.is_in_group("doors") or col.is_in_group("levers"):
+				popup(col.trigger())
 				
 	else:
 		$UI/Center/Crosshair.rotation = 0
@@ -58,9 +59,9 @@ func movement(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		if Input.is_action_pressed("Run"):
-			velocity.x *= RUN_FACTOR
-			velocity.z *= RUN_FACTOR
+		#if Input.is_action_pressed("Run"):
+			#velocity.x *= RUN_FACTOR
+			#velocity.z *= RUN_FACTOR
 	else:
 		velocity.x = 0
 		velocity.z = 0

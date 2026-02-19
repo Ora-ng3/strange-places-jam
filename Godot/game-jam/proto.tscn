@@ -4,8 +4,8 @@
 [ext_resource type="Material" uid="uid://t06kdka05xsa" path="res://Assets/Materials/green_ground.tres" id="2_lrm5r"]
 [ext_resource type="Material" uid="uid://dwmyjhewpwfoi" path="res://Assets/Materials/orange_ground.tres" id="3_w2jnn"]
 [ext_resource type="Texture2D" uid="uid://bldsstvidy5g8" path="res://Assets/Prototyping_grid/Purple/texture_04.png" id="4_etn2g"]
-[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://doorway.tscn" id="5_ff4ei"]
-[ext_resource type="PackedScene" uid="uid://vitkfb5qtj73" path="res://goat.scn" id="6_lrm5r"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="5_ff4ei"]
+[ext_resource type="PackedScene" uid="uid://vitkfb5qtj73" path="res://Objects/goat.scn" id="6_lrm5r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -79,17 +79,14 @@ material = SubResource("StandardMaterial3D_pkg7o")
 [node name="goat" parent="." unique_id=1743382303 instance=ExtResource("6_lrm5r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.709214, 1, 22.295078)
 
-[node name="Doorway" parent="." unique_id=1687868200 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("5_ff4ei")]
+[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("5_ff4ei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8538604, 0.5, 17.850912)
-ExitFront = NodePath("../Doorway2")
-ExitBack = NodePath("../Doorway3")
 
-[node name="Doorway2" parent="." unique_id=515158965 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("5_ff4ei")]
+[node name="Doorway2" parent="." unique_id=1591932389 node_paths=PackedStringArray("ExitFront") instance=ExtResource("5_ff4ei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.425372, 0.50000095, 19.642519)
 ExitFront = NodePath("../Doorway")
-ExitBack = NodePath("../Doorway3")
 
-[node name="Doorway3" parent="." unique_id=556053160 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("5_ff4ei")]
+[node name="Doorway3" parent="." unique_id=1418391932 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("5_ff4ei")]
 transform = Transform3D(2.68, 0, 0, 0, 2.68, 0, 0, 0, 2.68, -3.9938478, 0.5000005, 21.936445)
 ExitFront = NodePath("../Doorway")
 ExitBack = NodePath("../Doorway2")

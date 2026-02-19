@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://player.tscn" id="2_guv5e"]
 [ext_resource type="Material" uid="uid://dwmyjhewpwfoi" path="res://Assets/Materials/orange_ground.tres" id="2_kc0p5"]
 [ext_resource type="Material" uid="uid://bdfnb54hwbt0x" path="res://Assets/Materials/white_ground.tres" id="3_7vfe2"]
-[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://doorway.tscn" id="4_mdodf"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="4_mdodf"]
 
 [sub_resource type="Environment" id="Environment_mdodf"]
 background_mode = 1
