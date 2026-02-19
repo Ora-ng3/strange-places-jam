@@ -94,4 +94,7 @@ visible = false
 [node name="Frame_001" parent="train_v1" index="10" unique_id=1516885972]
 visible = false
 
+[node name="pCube284_concrete_0 " parent="train_v1/Train station/pCube284" parent_id_path=PackedInt32Array(266253641, 46596696) index="0" unique_id=263685925]
+visible = false
+
 [editable path="train_v1"]
