@@ -24,10 +24,10 @@ func _ready() -> void:
 # when the player opens the door
 func open(player_pos: Vector3) -> void:
 	if closed:
-		#if ExitFront == null:
-			#ExitFront = global.id_to_node[global.map[DoorID][0]]
-		#if ExitBack == null:
-			#ExitBack = global.id_to_node[global.map[DoorID][1]]
+		if ExitFront == null:
+			ExitFront = global.id_to_node[global.map[DoorID][0]]
+		if ExitBack == null:
+			ExitBack = global.id_to_node[global.map[DoorID][1]]
 		linked_door = null # reset linked door
 			
 		if transform.basis.z.dot(player_pos - global_position) > 0:
