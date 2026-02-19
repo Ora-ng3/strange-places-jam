@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bdfnb54hwbt0x" path="res://Assets/Materials/white_ground.tres" id="1_6eq8n"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://doorway.tscn" id="2_0edka"]
+[ext_resource type="PackedScene" uid="uid://cfpnckt6chm2d" path="res://Assets/Train clean/train_v1.blend" id="3_cx5lv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vyjb4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,13 +23,13 @@ glow_enabled = true
 environment = SubResource("Environment_utmue")
 
 [node name="Ground" type="CSGBox3D" parent="." unique_id=453633055]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, -0.1, -0.033)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.23498, -0.1, -0.033)
 material_override = ExtResource("1_6eq8n")
 use_collision = true
 size = Vector3(9, 0.2, 9.305)
 
 [node name="Walls" type="CSGBox3D" parent="." unique_id=1085675773]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.239979, 1.5, 0)
 material_override = ExtResource("1_6eq8n")
 use_collision = true
 size = Vector3(10, 4, 10)
@@ -39,10 +40,58 @@ operation = 2
 size = Vector3(9, 10.393, 9)
 
 [node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("2_0edka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86, 0)
 DoorID = 2
 
 [node name="Label3D" type="Label3D" parent="." unique_id=867951822]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3238702, -1.6230922)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9228585, 1.3238702, 2.1476223)
 text = "TRAIN ROOM
 "
 font_size = 117
+
+[node name="train_v1" parent="." unique_id=266253641 instance=ExtResource("3_cx5lv")]
+
+[node name="Skeleton3D" parent="train_v1/Armature" parent_id_path=PackedInt32Array(266253641, 953747449) index="0" unique_id=24218821]
+bones/4/position = Vector3(1.4152623, 1.6902007, 15.190673)
+bones/8/position = Vector3(1.4152623, 1.6902007, 6.854503)
+bones/14/position = Vector3(-1.3973578, 1.6902007, 15.190673)
+bones/18/position = Vector3(-1.3973578, 1.6902007, 6.854503)
+bones/21/rotation = Quaternion(0.792736, -2.1391937e-05, 0.00010070104, 0.60956514)
+bones/22/rotation = Quaternion(0.99767506, -4.085928e-05, 0.000105821484, -0.06814998)
+bones/23/rotation = Quaternion(0.8414108, 0.5379201, -0.027801974, 0.043553818)
+bones/26/rotation = Quaternion(0.63534594, 0, 0, 0.77222764)
+
+[node name="Lateral door 2 left front" parent="train_v1/Armature/Skeleton3D" index="3" unique_id=1420339441]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, 1.4152623, 1.6902007, 15.190673)
+
+[node name="Lateral door 4 left front" parent="train_v1/Armature/Skeleton3D" index="7" unique_id=485950841]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, 1.4152623, 1.6902007, 6.854503)
+
+[node name="Lateral door 2 right front" parent="train_v1/Armature/Skeleton3D" index="13" unique_id=1254410532]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, -1.3973578, 1.6902007, 15.190673)
+
+[node name="Lateral door 4 right front" parent="train_v1/Armature/Skeleton3D" index="17" unique_id=220896798]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, -1.3973578, 1.6902007, 6.854503)
+
+[node name="Lever_2" parent="train_v1/Armature/Skeleton3D" index="20" unique_id=491473789]
+transform = Transform3D(0.41979527, 0.9076187, 1.2278979e-06, 0.26196185, -0.121162266, -0.9574714, -0.8689928, 0.40193015, -0.28863394, 0.00451073, 0.865523, 22.233341)
+
+[node name="Internal exit door" parent="train_v1/Armature/Skeleton3D" index="21" unique_id=273318907]
+transform = Transform3D(0.99999994, 6.995901e-05, 6.307548e-05, -8.518654e-05, 0.38589555, 0.9225447, 4.0199648e-05, -0.9225428, 0.38589633, 0.0044374466, 0.4612865, 23.199728)
+
+[node name="External exit door" parent="train_v1/Armature/Skeleton3D" index="22" unique_id=1362530294]
+transform = Transform3D(1, -0.000156684, 0.00013357912, 8.885137e-05, -0.25686073, -0.9664484, 0.00018573824, 0.9664484, -0.25686073, 0.0047334507, 0.94654274, 21.373934)
+
+[node name="Step door_2" parent="train_v1/Armature/Skeleton3D" index="25" unique_id=313714622]
+transform = Transform3D(1, 0, 0, 0, 0.19267106, -0.9812634, 0, 0.9812634, 0.19267106, 0.010552645, 0.90822357, 20.967813)
+
+[node name="Frame" parent="train_v1" index="8" unique_id=324367595]
+visible = false
+
+[node name="FrontPivot" parent="train_v1" index="9" unique_id=594424212]
+visible = false
+
+[node name="Frame_001" parent="train_v1" index="10" unique_id=1516885972]
+visible = false
+
+[editable path="train_v1"]
