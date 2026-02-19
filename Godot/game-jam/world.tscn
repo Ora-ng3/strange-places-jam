@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://de7jlh53fbjyy"]
 
 [ext_resource type="PackedScene" uid="uid://bgrf6msho8n34" path="res://Places/key_room.tscn" id="1_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://qsfbgs5a1kx0" path="res://Places/lever_room.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://qsfbgs5a1kx0" path="res://Places/lever2_room.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bw8nh37q7xtnt" path="res://Places/boring_room.tscn" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://player.tscn" id="4_aqk2v"]
 
