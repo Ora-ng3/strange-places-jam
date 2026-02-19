@@ -2,6 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://ckhuuwhx7aqi7" path="res://Assets/3D/hill.res" id="1_ucxbq"]
 [ext_resource type="Shape3D" uid="uid://bejj21ahsqmq2" path="res://Assets/3D/hill_collision.tres" id="2_1bg63"]
+[ext_resource type="Texture2D" uid="uid://bfraqaj8mc0wv" path="res://Assets/3D/Proto/hill_Ground037_1K-JPG_Color.jpg" id="2_6ajjw"]
 [ext_resource type="PackedScene" uid="uid://vitkfb5qtj73" path="res://Objects/goat.scn" id="3_5rjoj"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="4_6a6gm"]
 
@@ -18,6 +19,9 @@ sky = SubResource("Sky_5rjoj")
 tonemap_mode = 2
 ssr_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot8hr"]
+albedo_texture = ExtResource("2_6ajjw")
+
 [sub_resource type="PrismMesh" id="PrismMesh_6a6gm"]
 
 [node name="GoatRoom" type="Node3D" unique_id=139430265]
@@ -31,6 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6746259, -11.089945, -0.074
 [node name="Plane" type="MeshInstance3D" parent="hill" unique_id=2110886879]
 transform = Transform3D(20, 0, 0, 0, 7.5, 0, 0, 0, 20, 0, 0, -5.5870237)
 mesh = ExtResource("1_ucxbq")
+surface_material_override/0 = SubResource("StandardMaterial3D_ot8hr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="hill/Plane" unique_id=1774241258]
 

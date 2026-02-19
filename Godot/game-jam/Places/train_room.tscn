@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://skt156eqh8dp"]
 
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_0edka"]
-[ext_resource type="PackedScene" uid="uid://cfpnckt6chm2d" path="res://Assets/Train clean/train_v1.blend" id="3_cx5lv"]
+[ext_resource type="PackedScene" uid="uid://bcxi0324qfja6" path="res://Assets/Train clean/train_v1.blend" id="3_cx5lv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vyjb4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,16 +33,16 @@ font_size = 117
 
 [node name="train_v1" parent="." unique_id=266253641 instance=ExtResource("3_cx5lv")]
 
-[node name="Frame" parent="train_v1" index="8" unique_id=205619905]
+[node name="Frame" parent="train_v1" index="8" unique_id=2062880154]
 visible = false
 
-[node name="FrontPivot" parent="train_v1" index="9" unique_id=1563604033]
+[node name="FrontPivot" parent="train_v1" index="9" unique_id=76929288]
 visible = false
 
-[node name="Frame_001" parent="train_v1" index="10" unique_id=1121891902]
+[node name="Frame_001" parent="train_v1" index="10" unique_id=1682313155]
 visible = false
 
-[node name="pCube284_concrete_0 " parent="train_v1/Train station/pCube284" parent_id_path=PackedInt32Array(266253641, 46596696) index="0" unique_id=263685925]
+[node name="pCube284_concrete_0 " parent="train_v1/Train station/pCube284" parent_id_path=PackedInt32Array(266253641, 1331308798) index="0" unique_id=547314592]
 visible = false
 
 [editable path="train_v1"]
