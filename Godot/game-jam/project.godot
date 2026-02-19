@@ -21,7 +21,6 @@ global="*uid://csct3f87r5402"
 
 [display]
 
-window/size/always_on_top=true
 window/stretch/aspect="expand"
 
 [editor_plugins]

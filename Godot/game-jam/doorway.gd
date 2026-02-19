@@ -24,10 +24,10 @@ func _ready() -> void:
 # when the player opens the door
 func open(player_pos: Vector3) -> void:
 	if closed:
-		if ExitFront == null:
-			ExitFront = global.id_to_node[global.map[DoorID][0]]
-		if ExitBack == null:
-			ExitBack = global.id_to_node[global.map[DoorID][1]]
+		#if ExitFront == null:
+			#ExitFront = global.id_to_node[global.map[DoorID][0]]
+		#if ExitBack == null:
+			#ExitBack = global.id_to_node[global.map[DoorID][1]]
 		linked_door = null # reset linked door
 			
 		if transform.basis.z.dot(player_pos - global_position) > 0:
@@ -48,7 +48,7 @@ func start(portal: Portal3D, linked: Portal3D):
 	# common code for both open and open_linked
 	closed = false
 	CollisionShape.disabled = true
-	portal.exit_portal = linked # set target portall
+	portal.exit_portal = linked #CollisionShape.disabled = true set target portall
 	portal.activate()
 	portal.show()
 
