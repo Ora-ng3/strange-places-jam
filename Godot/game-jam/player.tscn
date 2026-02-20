@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1fo2g8yx01c0"]
 
 [ext_resource type="Script" uid="uid://fsnjse6ai71m" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://do7864px52odr" path="res://ui.gd" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
 radius = 0.3
@@ -45,11 +46,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=14331344]
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=949953529]
-target_position = Vector3(0, 0, -4)
+target_position = Vector3(0, 0, -2.25)
 collision_mask = 4
 collide_with_areas = true
 
 [node name="UI" type="Control" parent="." unique_id=2127488616]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,6 +59,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("2_onrkg")
 
 [node name="Center" type="Control" parent="UI" unique_id=1194335884]
 layout_mode = 1
@@ -92,7 +95,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="UI/Popup" unique_id=1669785153]
-wait_time = 0.4
+wait_time = 0.7
 one_shot = true
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1232409115]
+remote_path = NodePath("../Head/Camera3D/RayCast3D")
+update_position = false
+update_rotation = false
 
 [connection signal="timeout" from="UI/Popup/Timer" to="." method="_on_popup_timer_timeout"]

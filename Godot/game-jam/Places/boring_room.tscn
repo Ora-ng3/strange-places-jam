@@ -29,7 +29,7 @@ use_collision = true
 size = Vector3(9, 0.2, 9.305)
 
 [node name="Walls" type="CSGBox3D" parent="." unique_id=1085675773]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.5, 0)
 material_override = ExtResource("1_iwueb")
 use_collision = true
 size = Vector3(10, 4, 10)
@@ -39,13 +39,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7984072, 0)
 operation = 2
 size = Vector3(9, 10.393, 9)
 
-[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("1_vctga")]
-
-[node name="Label3D" type="Label3D" parent="." unique_id=1160522306]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.070416, -3.6362615)
+[node name="Label3D" type="Label3D" parent="Walls" unique_id=1160522306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570416, -3.6362615)
 text = "BORING ROOM"
 font_size = 124
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1494425457]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 1.8403938, 4.4884725)
+[node name="Sprite3D" type="Sprite3D" parent="Walls" unique_id=1494425457]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 0.34039378, 4.4884725)
 texture = ExtResource("3_guv5e")
+
+[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("1_vctga")]

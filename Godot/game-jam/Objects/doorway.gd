@@ -12,7 +12,7 @@ const ZONE_RADIUS = 2 # radius of FrontZone and BackZone
 @onready var FrontPivot: = $door/FrontPivot
 @onready var BackPivot: = $door/FrontPivot/BackPivot
 
-var portal_to_disable: Portal3D = null
+var current_portal: Portal3D = null
 
 var linked_door: StaticBody3D = null
 
@@ -29,9 +29,14 @@ func only_on_one_zone(): # just an XOR between both areas
 		return (front or back) and not (front and back)
 		
 # when the player clicks on the door
-func trigger() -> String:
+func trigger(player: CharacterBody3D) -> String:
 	#open(transform.basis.z.dot(player_pos - global_position) > 0)
 	if closed and not $AnimationPlayer.is_playing():
+		if abs(scale.x - player.scale.x) > 0.01:
+			if player.scale.x > scale.x:
+				return "There's no way you'll fit in there"
+			if player.scale.x < scale.x:
+				return "Hmmm... Perhaps a bit too heavy for you right now"
 		if only_on_one_zone(): # the player is only on one zone
 			open($FrontZone.has_overlapping_bodies())
 		else:
@@ -66,23 +71,25 @@ func open(from_front: bool) -> void:
 		linked_door.open_linked(self)
 
 func close():
-	stop(PortalEnter)
-	linked_door.stop(linked_door.PortalExit)
+	stop(current_portal)
+	linked_door.stop(linked_door.current_portal)
 
 
 func start(portal: Portal3D, linked: Portal3D):
 	# common code for both open and open_linked
+	current_portal = portal
 	closed = false
 	CollisionShape.disabled = true
 	portal.exit_portal = linked #CollisionShape.disabled = true set target portall
 	portal.activate()
 	portal.show()
+	print("showed portal ", DoorID, ".", portal.name)
 
 func stop(portal: Portal3D):
-	portal_to_disable = portal
 	close_animation()
 	closed = true
 	CollisionShape.disabled = false
+	print("closed")
 
 func open_linked(door: Node3D) -> void:
 	linked_door = door
@@ -103,9 +110,8 @@ func close_animation():
 			print("problem: called close on a door that was not open")
 
 
-func get_message() -> String:
-	
-	if not $AnimationPlayer.is_playing():
+func get_message(player: CharacterBody3D) -> String:
+	if not $AnimationPlayer.is_playing() and abs(scale.x - player.scale.x) < 0.01:
 		if closed:
 			if only_on_one_zone():
 				return "Click to open"
@@ -118,13 +124,15 @@ func _on_zone_exited(body: Node3D) -> void:
 			# used to be just_entered and $GreaterZone.has_overlapping_bodies() which was when the player
 			# left the door zone just after having entered a new place,
 			# and the the player is in the greaterzone so didn't come back through the doorr
-			close()
+		close()
 			
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if closed:
-		portal_to_disable.deactivate()
-		portal_to_disable.hide()
+		
+		current_portal.deactivate()
+		current_portal.hide()
+		print("hid portal ", DoorID, ".", current_portal.name)
 
 
 func _on_portal_zone_body_entered(body: Node3D) -> void:

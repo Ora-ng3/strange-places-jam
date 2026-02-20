@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5c64wt3mqgxv"
-path="res://.godot/imported/hill.blend-74089323677f2de1e3bbaaf7a902658b.scn"
+uid="uid://bwigg6slwh23p"
+path="res://.godot/imported/skull_room.blend-f2535949bc0e38119dc406eb8d71d60b.scn"
 
 [deps]
 
-source_file="res://Assets/3D/Proto/hill.blend"
-dest_files=["res://.godot/imported/hill.blend-74089323677f2de1e3bbaaf7a902658b.scn"]
+source_file="res://Assets/3D/Proto/skull_room.blend"
+dest_files=["res://.godot/imported/skull_room.blend-f2535949bc0e38119dc406eb8d71d60b.scn"]
 
 [params]
 
@@ -37,26 +37,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"Material.001": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://Assets/3D/Proto/hills.tres",
-"use_external/path": "uid://dcwxn8u8n8ml"
-}
-},
-"meshes": {
-"hill_Plane": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 20.0,
-"save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Assets/3D/hill.res",
-"save_to_file/path": "uid://ckhuuwhx7aqi7"
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
