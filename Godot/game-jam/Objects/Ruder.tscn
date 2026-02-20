@@ -1,38 +1,7 @@
 [gd_scene format=3 uid="uid://mcn11plraa1r"]
 
+[ext_resource type="Script" uid="uid://dmjnxgocbdjy0" path="res://Objects/ruder.gd" id="1_ctuxl"]
 [ext_resource type="PackedScene" uid="uid://c22lpoyo62qwo" path="res://Assets/3D/Proto/skull_room/rudder.blend" id="2_ptp7a"]
-
-[sub_resource type="GDScript" id="GDScript_r7uek"]
-script/source = "extends Node3D
-
-@export var connected_platform: Node
-
-@onready var wheel = $rudder/Wheel
-
-const ANIM_TIME = 1
-var running: bool = false
-
-func _ready():
-	$Timer.wait_time = ANIM_TIME
-
-func trigger() -> String:
-	print(running)
-	if not running:
-		running = true
-		$Timer.start()
-		var tween1 = get_tree().create_tween()
-		var tween2 = get_tree().create_tween()
-		tween1.tween_property(wheel, \"rotation\",
-							wheel.rotation + Vector3(-PI/3, 0, 0), ANIM_TIME)
-		tween2.tween_property(connected_platform, \"rotation\",
-							connected_platform.rotation + Vector3(0, PI/3, 0), ANIM_TIME)
-
-	return \"\"
-
-
-func _on_timer_timeout() -> void:
-	running = false
-"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ptp7a"]
 size = Vector3(0.25756836, 1.1294556, 0.39453125)
@@ -45,7 +14,7 @@ radius = 0.5131836
 size = Vector3(0.46484375, 1.5653076, 1)
 
 [node name="Rudder" type="StaticBody3D" unique_id=1972468577 groups=["interactables"]]
-script = SubResource("GDScript_r7uek")
+script = ExtResource("1_ctuxl")
 
 [node name="rudder" parent="." unique_id=1254038070 instance=ExtResource("2_ptp7a")]
 
