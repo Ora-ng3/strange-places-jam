@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://cofoksff20hc6"]
+[gd_scene format=3 uid="uid://ct32xqjn76s3b"]
 
 [ext_resource type="PackedScene" uid="uid://bgrf6msho8n34" path="res://Places/key_room.tscn" id="1_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://22hfrpgo3iq0" path="res://Places/lever_room.tscn" id="2_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bw8nh37q7xtnt" path="res://Places/boring_room.tscn" id="3_036b0"]
-[ext_resource type="PackedScene" uid="uid://skt156eqh8dp" path="res://Places/train_room.tscn" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://player.tscn" id="4_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://cuhfle883vjq3" path="res://Places/skull_room.tscn" id="5_ioo17"]
+[ext_resource type="PackedScene" uid="uid://bw1usevd2knty" path="res://Places/train_room.tscn" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://cy71la1g6xhs4" path="res://Places/goat_room.tscn" id="9_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://bch5og2ox56a4" path="res://Places/scale_room.tscn" id="10_wse8f"]
 
@@ -16,7 +16,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1219742712 instance=ExtResource("4_aqk2v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6100445, 1.7612758, 3.3365974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.610046, 1.7612758, 3.3365974)
 
 [node name="BoringRoom" parent="." unique_id=1182730611 instance=ExtResource("3_036b0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014343739, 0, -0.11362362)
@@ -27,9 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.809262, 0, -9.130529)
 [node name="LeverRoom" parent="." unique_id=121021113 instance=ExtResource("2_aqk2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.250338, 0, 4.804893)
 
-[node name="TrainRoom" parent="." unique_id=250517207 instance=ExtResource("4_036b0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.558018, 0.40857315, -1.7800832)
-
 [node name="GoatRoom" parent="." unique_id=139430265 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.272896, 1.0832214, -41.738)
 
@@ -38,3 +35,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.3516, -10.955692, -54.9576
 
 [node name="SkullRoom" parent="." unique_id=1182165883 instance=ExtResource("5_ioo17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.29315, -43.36918, 8.475837)
+
+[node name="TrainRoom" parent="." unique_id=1903640646 instance=ExtResource("8_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.638466, -9.536743e-07, 0.5943098)

@@ -4,7 +4,14 @@ extends Node3D
 
 var is_cabin_door_open: bool = false
 var is_exit_door_open: bool = false
+var is_lateral_door_open: bool = false
 
+func get_red_button_message() -> String:
+	if is_lateral_door_open:
+		return "Close lateral doors"
+	else:
+		return "Open lateral doors"
+		
 func get_cabin_door_message() -> String:
 	if is_cabin_door_open:
 		return "Close doors"
@@ -24,6 +31,16 @@ func trigger_cabin_doors() -> String:
 	else:
 		anim_player.play("cabin_door_opening")
 		is_cabin_door_open = true
+		
+	return ""
+	
+func trigger_red_button() -> String:
+	if is_lateral_door_open:
+		anim_player.play_backwards("lateral_doors_opening")
+		is_lateral_door_open = false
+	else:
+		anim_player.play("lateral_doors_opening")
+		is_lateral_door_open = true
 		
 	return ""
 	
