@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://c0p4k636mt12s"]
+
+[ext_resource type="Material" uid="uid://t06kdka05xsa" path="res://Assets/Materials/green_ground.tres" id="1_6em4c"]
+[ext_resource type="Script" uid="uid://d4cxnf245m1k" path="res://room_1.gd" id="1_vk7w7"]
+[ext_resource type="PackedScene" uid="uid://cm120tgcyl4jo" path="res://Assets/Door/frame.tscn" id="4_6em4c"]
+[ext_resource type="Material" uid="uid://ce3gv6hcvasnf" path="res://Assets/Materials/pillar.tres" id="4_vk7w7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fj7yv"]
+sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
+
+[sub_resource type="Environment" id="Environment_tlwt5"]
+background_mode = 2
+sky = SubResource("Sky_fj7yv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6em4c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vk7w7"]
+material = SubResource("StandardMaterial3D_6em4c")
+
+[node name="Room1" type="Node3D" unique_id=444744762]
+script = ExtResource("1_vk7w7")
+include_inactive = null
+verbose = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1396532839]
+layers = 3
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MeshInstance3D" unique_id=337629844]
+environment = SubResource("Environment_tlwt5")
+
+[node name="ground2" type="CSGBox3D" parent="MeshInstance3D" unique_id=879015878]
+transform = Transform3D(0.9999789, 0.0064925794, 0, -0.0064925794, 0.9999789, 0, 0, 0, 1, 0.009293556, -0.025378227, 0.02660942)
+layers = 3
+use_collision = true
+size = Vector3(100, 0.001, 100)
+material = ExtResource("1_6em4c")
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="MeshInstance3D" unique_id=1647989642]
+transform = Transform3D(0.9714374, -0.16437726, 0.17114173, -7.267841e-09, 0.7212164, 0.69270986, -0.23729596, -0.6729243, 0.70061654, 0, 13.573767, 0)
+shadow_enabled = true
+
+[node name="cyl" type="CSGCylinder3D" parent="MeshInstance3D" unique_id=21591587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9262466, 1, -4.4077024)
+layers = 2
+use_collision = true
+material = ExtResource("4_vk7w7")
+
+[node name="cyl2" type="CSGCylinder3D" parent="MeshInstance3D" unique_id=1781422431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9262466, 1, 2.769064)
+layers = 2
+use_collision = true
+material = ExtResource("4_vk7w7")
+
+[node name="cyl3" type="CSGCylinder3D" parent="MeshInstance3D" unique_id=837048942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1447678, 1, 2.769064)
+layers = 2
+use_collision = true
+material = ExtResource("4_vk7w7")
+
+[node name="cyl4" type="CSGCylinder3D" parent="MeshInstance3D" unique_id=21271950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1447678, 1, -6.517826)
+layers = 2
+use_collision = true
+material = ExtResource("4_vk7w7")
+
+[node name="cyl5" type="CSGCylinder3D" parent="MeshInstance3D" unique_id=851450801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5409384, 1, -6.517826)
+layers = 2
+use_collision = true
+material = ExtResource("4_vk7w7")
+
+[node name="Cube" parent="." unique_id=1713097246 instance=ExtResource("4_6em4c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3321166, -0.07177302, -0.32527184)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1176417603]
+mesh = SubResource("BoxMesh_vk7w7")

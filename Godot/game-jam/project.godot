@@ -30,9 +30,7 @@ enabled=PackedStringArray("res://addons/portals/plugin.cfg")
 
 [global_group]
 
-doors=""
-levers=""
-doors_non_portal=""
+interactables=""
 
 [input]
 

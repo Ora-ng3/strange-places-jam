@@ -141,7 +141,7 @@ data = PackedVector3Array(-1.9061445, 1, 0.47184336, -1.847759, -3.3455255e-08, 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xcnrf"]
 size = Vector3(0.84936523, 1.9662476, 0.75878906)
 
-[node name="Doorway" type="StaticBody3D" unique_id=1687868200 groups=["doors"]]
+[node name="Doorway" type="StaticBody3D" unique_id=1687868200 groups=["interactables"]]
 script = ExtResource("1_aa16f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1151596235]
@@ -288,7 +288,7 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0392919, 0)
 shape = SubResource("BoxShape3D_pa4mq")
 
-[node name="BoundingBox2" type="Area3D" parent="." unique_id=531471463 groups=["doors"]]
+[node name="BoundingBox2" type="Area3D" parent="." unique_id=531471463 groups=["interactables"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0578171, 0)
 visible = false
 collision_layer = 4

@@ -48,4 +48,4 @@ font_size = 124
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 0.34039378, 4.4884725)
 texture = ExtResource("3_guv5e")
 
-[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("1_vctga")]
+[node name="Doorway" parent="." unique_id=1687868200 groups=["interactables"] instance=ExtResource("1_vctga")]

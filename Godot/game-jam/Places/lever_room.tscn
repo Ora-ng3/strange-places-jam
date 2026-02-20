@@ -101,9 +101,6 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="BoundingBox2" parent="Doorway" index="11" unique_id=531471463]
-transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 0.6548207, 0.0578171, -0.33806086)
-
 [node name="Label3D" type="Label3D" parent="." unique_id=867951822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3238702, -1.6230922)
 text = "LEVER ROOM"

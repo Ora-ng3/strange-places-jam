@@ -65,10 +65,11 @@ bones/8/position = Vector3(1.4152623, 1.6902007, 6.854503)
 bones/14/position = Vector3(-1.3973578, 1.6902007, 15.190673)
 bones/17/position = Vector3(-1.3973578, 1.6902007, 5.3279586)
 bones/18/position = Vector3(-1.3973578, 1.6902007, 6.854503)
-bones/21/position = Vector3(0.0047334507, 0.9465428, 21.373934)
-bones/21/rotation = Quaternion(-0.07934871, 7.2795316e-05, 7.279532e-05, 0.9968469)
-bones/22/rotation = Quaternion(0.9914152, -3.8381073e-05, 0.000112300746, -0.13075145)
-bones/23/rotation = Quaternion(0.9986642, 3.3303528e-05, 3.331131e-05, 0.05167092)
+bones/21/position = Vector3(0.0047334507, 0.92139924, 21.331053)
+bones/21/rotation = Quaternion(0.89290386, -3.9880022e-05, 9.4909956e-05, 0.45024753)
+bones/22/rotation = Quaternion(0.99767506, -4.0859402e-05, 0.00010582215, -0.06815004)
+bones/23/rotation = Quaternion(0.8414108, 0.5379201, -0.027801987, 0.04355381)
+bones/26/rotation = Quaternion(0.63534594, 0, 0, 0.77222764)
 
 [node name="Lateral door 2 left front" parent="train_v1/Armature/Skeleton3D" index="3" unique_id=1887692031]
 transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, 1.4152623, 1.6902007, 15.190673)
@@ -89,13 +90,13 @@ transform = Transform3D(1, 0, -2.058345e-06, -2.058345e-06, 0, -1, 0, 1, 0, -1.3
 transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, -1.3973578, 1.6902007, 6.854503)
 
 [node name="Lever_2" parent="train_v1/Armature/Skeleton3D" index="20" unique_id=666621388]
-transform = Transform3D(0.99999994, -1.0595613e-10, 1.5221303e-08, 1.0459189e-10, 1.0000001, -1.6912818e-06, -1.5483238e-08, 1.2740493e-06, 1.0000304, 0.00451073, 1.7700003, 20.966963)
+transform = Transform3D(0.41979527, 0.9076187, 1.196815e-06, 0.5634263, -0.260597, -0.78401333, -0.71156377, 0.32911593, -0.62079275, 0.00451073, 0.5297388, 22.100304)
 
 [node name="Internal exit door" parent="train_v1/Armature/Skeleton3D" index="21" unique_id=2119606377]
-transform = Transform3D(0.99999994, 6.995906e-05, 6.307682e-05, 6.3075626e-05, -0.99466026, 0.1032055, 6.996002e-05, -0.10320528, -0.9946623, 0.0044374466, 2.8119323, 21.075071)
+transform = Transform3D(0.99999994, 6.995879e-05, 6.307679e-05, -9.400341e-05, 0.6983698, 0.7157387, 6.021277e-06, -0.7157373, 0.69837123, 0.0044374466, -0.20182073, 22.850058)
 
-[node name="External exit door" parent="train_v1/Armature/Skeleton3D" index="22" unique_id=738288033 node_paths=PackedStringArray("train_room") groups=["doors_non_portal"]]
-transform = Transform3D(1, -0.00015668402, 0.00013357915, 0.00013357916, 0.98740757, 0.15819706, -0.00015668401, -0.15819703, 0.98740757, 0.0047334507, 0.9465428, 21.373934)
+[node name="External exit door" parent="train_v1/Armature/Skeleton3D" index="22" unique_id=738288033 node_paths=PackedStringArray("train_room")]
+transform = Transform3D(1, -0.00015668398, 0.00013357915, 1.4247882e-05, -0.5945544, -0.8040554, 0.00020540266, 0.8040554, -0.5945544, 0.0047334507, 0.92139924, 21.331053)
 script = ExtResource("4_0dd6t")
 train_room = NodePath("../../../..")
 
@@ -103,7 +104,7 @@ train_room = NodePath("../../../..")
 collision_layer = 5
 collision_mask = 5
 
-[node name="Entrance door left object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left" parent_id_path=PackedInt32Array(422431553, 738256191) index="0" unique_id=1209789776 node_paths=PackedStringArray("train_room") groups=["doors_non_portal"]]
+[node name="Entrance door left object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left" parent_id_path=PackedInt32Array(422431553, 738256191) index="0" unique_id=1209789776 node_paths=PackedStringArray("train_room")]
 script = ExtResource("4_xnd4i")
 train_room = NodePath("../../../../../..")
 
@@ -111,13 +112,16 @@ train_room = NodePath("../../../../../..")
 collision_layer = 5
 collision_mask = 5
 
-[node name="Entrance door right object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right" parent_id_path=PackedInt32Array(422431553, 530783271) index="0" unique_id=1949782177 node_paths=PackedStringArray("train_room") groups=["doors_non_portal"]]
+[node name="Entrance door right object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right" parent_id_path=PackedInt32Array(422431553, 530783271) index="0" unique_id=1949782177 node_paths=PackedStringArray("train_room")]
 script = ExtResource("5_0dd6t")
 train_room = NodePath("../../../../../..")
 
 [node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right/Entrance door right object " index="0" unique_id=1168099954]
 collision_layer = 5
 collision_mask = 5
+
+[node name="Step door_2" parent="train_v1/Armature/Skeleton3D" index="25" unique_id=1730732780]
+transform = Transform3D(1, 0, 0, 0, 0.19267106, -0.9812634, 0, 0.9812634, 0.19267106, 0.010552645, 0.90822357, 20.967813)
 
 [node name="Frame" parent="train_v1" index="10" unique_id=369772711]
 visible = false

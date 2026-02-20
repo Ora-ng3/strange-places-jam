@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cofoksff20hc6"]
+
+[ext_resource type="PackedScene" uid="uid://bgrf6msho8n34" path="res://Places/key_room.tscn" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://22hfrpgo3iq0" path="res://Places/lever_room.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://bw8nh37q7xtnt" path="res://Places/boring_room.tscn" id="3_036b0"]
+[ext_resource type="PackedScene" uid="uid://skt156eqh8dp" path="res://Places/train_room.tscn" id="4_036b0"]
+[ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://player.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://cuhfle883vjq3" path="res://Places/skull_room.tscn" id="5_ioo17"]
+[ext_resource type="PackedScene" uid="uid://igrhmvjoryo6" path="res://Places/skull_giant.tscn" id="6_wse8f"]
+[ext_resource type="PackedScene" uid="uid://desk0nrirx5wr" path="res://Places/skull_dwarf.tscn" id="7_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://cy71la1g6xhs4" path="res://Places/goat_room.tscn" id="9_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://bch5og2ox56a4" path="res://Places/scale_room.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://b6pbx2qpl4kup" path="res://Places/dwarf_room.tscn" id="11_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://duawr50opnqh2" path="res://Places/giant_room.tscn" id="12_2o6r5"]
+
+[node name="World" type="Node3D" unique_id=1946059943]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=948438799]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1219742712 instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6100445, 1.7612758, 3.3365974)
+
+[node name="BoringRoom" parent="." unique_id=1182730611 instance=ExtResource("3_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014343739, 0, -0.11362362)
+
+[node name="KeyRoom" parent="." unique_id=626065019 instance=ExtResource("1_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.809262, 0, -9.130529)
+
+[node name="SkullRoom" parent="." unique_id=102085723 instance=ExtResource("5_ioo17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.843437, 0, 8.481791)
+
+[node name="SkullGiant" parent="." unique_id=810252632 instance=ExtResource("6_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.466774, 0, 55.115677)
+
+[node name="SkullDwarf" parent="." unique_id=1079289357 instance=ExtResource("7_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.956856, 0, -2.8048534)
+
+[node name="TrainRoom" parent="." unique_id=250517207 instance=ExtResource("4_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.558018, 0.40857315, -1.7800832)
+
+[node name="GoatRoom" parent="." unique_id=139430265 instance=ExtResource("9_k3n1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.272896, 1.0832214, -41.738)
+
+[node name="ScaleRoom" parent="." unique_id=1396523233 instance=ExtResource("10_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.3516, -10.955692, -54.957638)
+
+[node name="DwarfRoom" parent="." unique_id=1601466661 instance=ExtResource("11_k3n1d")]
+transform = Transform3D(0.99985754, 0.0073600826, -0.015190534, -0.0074818055, 0.9999403, -0.007971784, 0.015130952, 0.008084303, 0.99985284, 102.0967, -6.304018, -80.2549)
+
+[node name="GiantRoom" parent="." unique_id=982538311 instance=ExtResource("12_2o6r5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.67915, -5.598461, -17.609402)
+
+[node name="LeverRoom" parent="." unique_id=121021113 instance=ExtResource("2_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.250338, 0, 4.804893)

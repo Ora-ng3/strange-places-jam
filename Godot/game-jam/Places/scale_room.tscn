@@ -38,18 +38,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11326313, 0)
 operation = 2
 size = Vector3(29, 26, 29)
 
-[node name="DoorwayMid" parent="." unique_id=1687868200 instance=ExtResource("2_x8kar")]
+[node name="DoorwayMid" parent="." unique_id=1687868200 groups=["interactables"] instance=ExtResource("2_x8kar")]
 DoorID = 8
 
-[node name="DoorwaySmall" parent="." unique_id=393718689 instance=ExtResource("2_x8kar")]
+[node name="DoorwaySmall" parent="." unique_id=393718689 groups=["interactables"] instance=ExtResource("2_x8kar")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 6.0125713, 0, 0)
 DoorID = 9
 
-[node name="DoorwayLarge" parent="." unique_id=1173822146 instance=ExtResource("2_x8kar")]
+[node name="DoorwayLarge" parent="." unique_id=1173822146 groups=["interactables"] instance=ExtResource("2_x8kar")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -8.368508, 0, 0)
 DoorID = 10
 
-[node name="BoundingBox2" parent="DoorwayLarge" index="11" unique_id=531471463]
+[node name="BoundingBox2" parent="DoorwayLarge" index="11" unique_id=531471463 groups=["interactables"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0578171, 1.4901161e-09)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=867951822]

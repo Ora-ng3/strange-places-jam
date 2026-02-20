@@ -8,7 +8,7 @@ var up: bool = false
 func _ready():
 	pass
 
-func trigger() -> String:
+func trigger(_player: CharacterBody3D) -> String:
 	up = not up
 	if up:
 		$AnimationPlayer.play("up")

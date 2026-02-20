@@ -34,10 +34,8 @@ func _physics_process(delta: float) -> void:
 			if not $UI/Popup.visible: $UI/Permanent.show()
 		$UI/Center/Crosshair.rotation = PI/4
 		if Input.is_action_just_released("Interact"):
-			if col.is_in_group("doors"):
+			if col.is_in_group("interactables"):
 				popup(col.trigger(self))
-			if col.is_in_group("levers") or col.is_in_group("doors_non_portal"):
-				popup(col.trigger())
 				
 	else:
 		$UI/Center/Crosshair.rotation = 0
@@ -57,9 +55,9 @@ func movement(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED * get_scale_factor()
 		velocity.z = direction.z * SPEED * get_scale_factor()
-		#if Input.is_action_pressed("Run"):
-			#velocity.x *= RUN_FACTOR
-			#velocity.z *= RUN_FACTOR
+		if Input.is_action_pressed("Run"):
+			velocity.x *= RUN_FACTOR
+			velocity.z *= RUN_FACTOR
 	else:
 		velocity.x = 0
 		velocity.z = 0

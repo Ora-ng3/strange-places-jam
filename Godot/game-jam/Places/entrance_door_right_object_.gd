@@ -5,5 +5,5 @@ extends MeshInstance3D
 func get_message(_player: CharacterBody3D) -> String:
 	return train_room.get_cabin_door_message()
 
-func trigger() -> String:
+func trigger(_player: CharacterBody3D) -> String:
 	return train_room.trigger_cabin_doors()

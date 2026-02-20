@@ -2,6 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bdfnb54hwbt0x" path="res://Assets/Materials/white_ground.tres" id="1_oaf7f"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_jrqe7"]
+[ext_resource type="PackedScene" uid="uid://c8v0bhlxsd6f2" path="res://Objects/key_pile.tscn" id="3_oaf7f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vyjb4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -38,10 +39,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7984072, 0)
 operation = 2
 size = Vector3(9, 10.393, 9)
 
-[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("2_jrqe7")]
+[node name="Doorway" parent="." unique_id=1687868200 groups=["interactables"] instance=ExtResource("2_jrqe7")]
 DoorID = 1
 
 [node name="Label3D" type="Label3D" parent="." unique_id=559967021]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7339907, -2.8019059)
 text = "KEY ROOM"
 font_size = 128
+
+[node name="KeyPile" parent="." unique_id=584039214 instance=ExtResource("3_oaf7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8176153, 0, -2.5682168)

@@ -1,0 +1,187 @@
+[gd_scene format=4 uid="uid://bx4xsc2b7rj37"]
+
+[ext_resource type="Script" uid="uid://tefk4epxmgbw" path="res://doorway.gd" id="1_aa16f"]
+[ext_resource type="Script" uid="uid://cw1r4c1d7beyv" path="res://addons/portals/scripts/portal_3d.gd" id="2_pa4mq"]
+[ext_resource type="Material" uid="uid://dcfkcyddxkglf" path="res://addons/portals/materials/editor-preview-portal-material.tres" id="3_gmewq"]
+[ext_resource type="PackedScene" uid="uid://bb2vh3ebis7sq" path="res://Assets/3D/Proto/door.blend" id="3_t1e1v"]
+[ext_resource type="Script" uid="uid://bxcel82b180o3" path="res://addons/portals/scripts/portal_boxmesh.gd" id="4_q2sxb"]
+
+[sub_resource type="Animation" id="Animation_t1e1v"]
+resource_name = "OpenBack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/FrontPivot/BackPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.0943952, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aa16f"]
+resource_name = "OpenFront"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/FrontPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.0943952, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5yk8g"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/FrontPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door/FrontPivot/BackPivot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pa4mq"]
+_data = {
+&"OpenBack": SubResource("Animation_t1e1v"),
+&"OpenFront": SubResource("Animation_aa16f"),
+&"RESET": SubResource("Animation_5yk8g")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmewq"]
+size = Vector3(0.6873779, 1.3374023, 0.7435303)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pa4mq"]
+_surfaces = [{
+"aabb": AABB(-0.45, -0.95, -1, 0.9, 1.9, 1),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAgD8AAIA/AACAPw=="),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAQABAABAAUAAQADAAUABQADAAcAAwACAAcABwACAAYAAgAAAAYABgAAAAQABAAFAAYABgAFAAcAAAABAAIAAgABAAMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("ZmbmvjMzcz8AAAAAZmbmPjMzcz8AAAAAZmbmvjMzc78AAAAAZmbmPjMzc78AAAAAZmbmvjMzcz8AAIC/ZmbmPjMzcz8AAIC/ZmbmvjMzc78AAIC/ZmbmPjMzc78AAIC//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgA==")
+}]
+script = ExtResource("4_q2sxb")
+size = Vector3(0.9, 1.9, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pa4mq"]
+size = Vector3(0.9423828, 1.9494629, 0.09887695)
+
+[node name="Doorway" type="StaticBody3D" unique_id=1687868200 groups=["doors"]]
+collision_layer = 5
+script = ExtResource("1_aa16f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1151596235]
+libraries/ = SubResource("AnimationLibrary_pa4mq")
+
+[node name="door" parent="." unique_id=466212255 instance=ExtResource("3_t1e1v")]
+
+[node name="Node3D" type="Node3D" parent="door" unique_id=344351620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47253478, 0, 0)
+
+[node name="BackPivot" parent="door/FrontPivot" parent_id_path=PackedInt32Array(466212255, 1109154371) index="0" unique_id=590655796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.040000007)
+
+[node name="AreaFront" type="Area3D" parent="." unique_id=2120215060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaFront" unique_id=1184033758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 0.698684, -0.27716064)
+shape = SubResource("BoxShape3D_gmewq")
+
+[node name="AreaBack" type="Area3D" parent="." unique_id=2041110885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.66111964)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaBack" unique_id=527446278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.698684, -0.27716064)
+shape = SubResource("BoxShape3D_gmewq")
+
+[node name="Portal3D" type="Node3D" parent="." unique_id=1204675438 node_paths=PackedStringArray("exit_portal") groups=["portals"]]
+process_priority = 100
+process_physics_priority = 100
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97702706, 0)
+visible = false
+script = ExtResource("2_pa4mq")
+_portal_mesh_path = NodePath("Portal3D_Mesh")
+portal_size = Vector2(0.85, 1.855)
+exit_portal = NodePath("../temp")
+portal_frame_width = 0.0
+viewport_size_mode = 0
+view_direction = 0
+portal_render_layer = 524288
+is_teleport = false
+start_deactivated = true
+metadata/_custom_type_script = "uid://cw1r4c1d7beyv"
+metadata/_edit_group_ = true
+
+[node name="Portal3D_Mesh" type="MeshInstance3D" parent="Portal3D" unique_id=1802943379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, 0, 0, 0)
+layers = 524288
+material_override = ExtResource("3_gmewq")
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_pa4mq")
+
+[node name="temp" type="Node3D" parent="." unique_id=1307612283 node_paths=PackedStringArray("exit_portal") groups=["portals"]]
+process_priority = 100
+process_physics_priority = 100
+visible = false
+script = ExtResource("2_pa4mq")
+_portal_mesh_path = NodePath("Portal3D_Mesh")
+portal_size = Vector2(0.85, 1.855)
+exit_portal = NodePath("../Portal3D")
+portal_frame_width = 0.0
+viewport_size_mode = 0
+view_direction = 0
+portal_render_layer = 524288
+is_teleport = false
+start_deactivated = true
+metadata/_custom_type_script = "uid://cw1r4c1d7beyv"
+metadata/_edit_group_ = true
+
+[node name="Portal3D_Mesh" type="MeshInstance3D" parent="temp" unique_id=1353284583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.05, 0, 0, 0)
+layers = 524288
+material_override = ExtResource("3_gmewq")
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_pa4mq")
+
+[node name="CollisionShapeMain" type="CollisionShape3D" parent="." unique_id=1986480937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00048828125, 0.97595215, -0.0008544922)
+shape = SubResource("BoxShape3D_pa4mq")
+debug_color = Color(0.7922757, 0.2889072, 0.79082555, 0.41960785)
+
+[connection signal="body_entered" from="AreaFront" to="." method="_on_area_front_entered"]
+[connection signal="body_exited" from="AreaFront" to="." method="_on_area_exited"]
+[connection signal="body_entered" from="AreaBack" to="." method="_on_area_back_entered"]
+[connection signal="body_exited" from="AreaBack" to="." method="_on_area_exited"]
+
+[editable path="door"]

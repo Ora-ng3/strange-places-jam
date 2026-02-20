@@ -36,7 +36,7 @@ size = Vector3(0.25683594, 0.70895386, 0.2136383)
 [sub_resource type="BoxShape3D" id="BoxShape3D_prxvc"]
 size = Vector3(0.44433594, 0.10494995, 0.7110748)
 
-[node name="Lever" type="StaticBody3D" unique_id=32675529 groups=["levers"]]
+[node name="Lever" type="StaticBody3D" unique_id=32675529 groups=["interactables"]]
 script = ExtResource("2_7uavd")
 
 [node name="Lever1" parent="." unique_id=883359068 instance=ExtResource("1_1btnt")]
@@ -58,7 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006713867, 0.00036621094,
 shape = SubResource("BoxShape3D_d3qoi")
 disabled = true
 
-[node name="BoundingBox" type="Area3D" parent="." unique_id=322939429 groups=["levers"]]
+[node name="BoundingBox" type="Area3D" parent="." unique_id=322939429]
 editor_description = "This is the box that is detected by the player's raycast when interacting"
 collision_layer = 4
 collision_mask = 0

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dwmyjhewpwfoi"]
+
+[ext_resource type="Texture2D" uid="uid://cr6khbqhtxiwe" path="res://Assets/Prototyping_grid/Orange/texture_04.png" id="1_dvljm"]
+
+[resource]
+render_priority = 1
+albedo_texture = ExtResource("1_dvljm")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv2_triplanar = true
+stencil_flags = 1

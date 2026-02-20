@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://ds0h4nvuf56ay"]
+
+[ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://player.tscn" id="1_ekw8u"]
+[ext_resource type="Material" uid="uid://t06kdka05xsa" path="res://Assets/Materials/green_ground.tres" id="2_lrm5r"]
+[ext_resource type="Material" uid="uid://dwmyjhewpwfoi" path="res://Assets/Materials/orange_ground.tres" id="3_w2jnn"]
+[ext_resource type="Texture2D" uid="uid://bldsstvidy5g8" path="res://Assets/Prototyping_grid/Purple/texture_04.png" id="4_etn2g"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="5_ff4ei"]
+[ext_resource type="PackedScene" uid="uid://vitkfb5qtj73" path="res://Objects/goat.scn" id="6_lrm5r"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fj7yv"]
+sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
+
+[sub_resource type="Environment" id="Environment_tlwt5"]
+background_mode = 2
+sky = SubResource("Sky_fj7yv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_036b0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkg7o"]
+render_priority = 1
+albedo_texture = ExtResource("4_etn2g")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv2_triplanar = true
+stencil_flags = 1
+
+[node name="World" type="Node3D" unique_id=444744762]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=337629844]
+environment = SubResource("Environment_tlwt5")
+
+[node name="Player" parent="." unique_id=1219742712 instance=ExtResource("1_ekw8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.714429, 0.5, 16.359022)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1647989642]
+transform = Transform3D(0.9714374, -0.16437724, 0.17114174, -7.267841e-09, 0.7212164, 0.69270986, -0.23729596, -0.6729243, 0.70061654, 0, 13.573767, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1788482088]
+transform = Transform3D(0.99978775, 0.013859574, -0.015244789, -0.017516373, 0.9613524, -0.27476326, 0.010847499, 0.274972, 0.96139115, 12.861263, 0.5326483, 17)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1155682822]
+transform = Transform3D(-0.21781458, -0.5373254, -0.81476283, 0.22839911, 0.7835623, -0.57780856, 0.94888926, -0.31194606, -0.047946945, -4.350069, 2.7425385, 9.70673)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=709382422]
+transform = Transform3D(-0.106335565, 0.60431117, -0.78962, 0.46058637, 0.7337238, 0.49950793, 0.8812223, -0.31057286, -0.35635906, -8.229315, 0.40392923, 2.4403534)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=931931472]
+transform = Transform3D(-0.87393016, 0.40655288, -0.26638395, 0.30329326, 0.8844007, 0.35474694, 0.37981427, 0.2292313, -0.8962108, -8.796524, 0.5250106, 2.1627293)
+mesh = SubResource("BoxMesh_036b0")
+
+[node name="Ground1" type="CSGBox3D" parent="." unique_id=891014635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.049561, 0, 2.5566444)
+use_collision = true
+size = Vector3(33.6792, 1, 33.19995)
+material = ExtResource("2_lrm5r")
+
+[node name="Ground2" type="CSGBox3D" parent="." unique_id=1948267610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.653885, 0, 2.5566444)
+use_collision = true
+size = Vector3(33.6792, 1, 33.19995)
+material = ExtResource("3_w2jnn")
+
+[node name="Ground3" type="CSGBox3D" parent="." unique_id=82516018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.242332, 0, 35.80486)
+use_collision = true
+size = Vector3(63.11206, 1, 33.19995)
+material = SubResource("StandardMaterial3D_pkg7o")
+
+[node name="goat" parent="." unique_id=1743382303 instance=ExtResource("6_lrm5r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.709214, 1, 22.295078)
+
+[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("5_ff4ei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8538604, 0.5, 17.850912)
+
+[node name="Doorway2" parent="." unique_id=1591932389 node_paths=PackedStringArray("ExitFront") instance=ExtResource("5_ff4ei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.425372, 0.50000095, 19.642519)
+ExitFront = NodePath("../Doorway")
+
+[node name="Doorway3" parent="." unique_id=1418391932 node_paths=PackedStringArray("ExitFront", "ExitBack") instance=ExtResource("5_ff4ei")]
+transform = Transform3D(2.68, 0, 0, 0, 2.68, 0, 0, 0, 2.68, -3.9938478, 0.5000005, 21.936445)
+ExitFront = NodePath("../Doorway")
+ExitBack = NodePath("../Doorway2")

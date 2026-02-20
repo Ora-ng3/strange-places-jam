@@ -21,6 +21,7 @@ var closed: bool = true
 
 func _ready() -> void:
 	global.id_to_node[DoorID] = self
+	print(self.get_parent().name)
 
 
 func only_on_one_zone(): # just an XOR between both areas
@@ -129,7 +130,6 @@ func _on_zone_exited(body: Node3D) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if closed:
-		
 		current_portal.deactivate()
 		current_portal.hide()
 		print("hid portal ", DoorID, ".", current_portal.name)
