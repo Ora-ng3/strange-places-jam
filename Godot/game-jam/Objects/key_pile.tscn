@@ -1,19 +1,11 @@
 [gd_scene format=3 uid="uid://c8v0bhlxsd6f2"]
 
-[ext_resource type="Script" uid="uid://ckyccy0xkoh5g" path="res://Objects/key_pile.gd" id="1_pmvfl"]
+[ext_resource type="Script" path="res://Objects/key_pile.gd" id="1_pmvfl"]
+[ext_resource type="PackedScene" uid="uid://bf0rqlnjk65pt" path="res://Assets/3D/Objects/key_pile.glb" id="2_rafia"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_k1lso"]
 height = 1.0
 radius = 1.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_pmvfl"]
-top_radius = 1.0
-bottom_radius = 1.0
-height = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1lso"]
-albedo_color = Color(0.5253717, 0.49992287, 0.195256, 1)
-metallic = 1.0
 
 [node name="KeyPile" type="StaticBody3D" unique_id=584039214 groups=["interactables"]]
 script = ExtResource("1_pmvfl")
@@ -21,11 +13,6 @@ script = ExtResource("1_pmvfl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=986669466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_k1lso")
-
-[node name="temp" type="MeshInstance3D" parent="." unique_id=1272683592]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("CylinderMesh_pmvfl")
-surface_material_override/0 = SubResource("StandardMaterial3D_k1lso")
 
 [node name="BoundingBox" type="Area3D" parent="." unique_id=1708006540]
 collision_layer = 4
@@ -35,3 +22,5 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox" unique_id=1973692968]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_k1lso")
+
+[node name="keys_pile" parent="." unique_id=852639395 instance=ExtResource("2_rafia")]
