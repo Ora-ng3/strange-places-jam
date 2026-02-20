@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 			if not $UI/Popup.visible: $UI/Permanent.show()
 		$UI/Center/Crosshair.rotation = PI/4
 		if Input.is_action_just_released("Interact"):
-			if col.is_in_group("doors") or col.is_in_group("levers"):
+			if col.is_in_group("doors") or col.is_in_group("levers") or col.is_in_group("doors_non_portal"):
 				popup(col.trigger())
 				
 	else:

@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://skt156eqh8dp"]
 
+[ext_resource type="Script" uid="uid://dqovlmx6mu0fr" path="res://Places/train_room.gd" id="1_uwnyh"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_0edka"]
-[ext_resource type="PackedScene" uid="uid://bcxi0324qfja6" path="res://Assets/Train clean/train_v1.blend" id="3_cx5lv"]
+[ext_resource type="PackedScene" uid="uid://bcxi0324qfja6" path="res://Assets/Train clean/Train_v1.blend" id="3_cx5lv"]
+[ext_resource type="Script" uid="uid://cdopqytvoaoxm" path="res://Places/external_exit_door.gd" id="4_0dd6t"]
+[ext_resource type="Script" uid="uid://c4wii6yrsiwrq" path="res://Places/entrance_door_left_object_.gd" id="4_xnd4i"]
+[ext_resource type="Script" uid="uid://cgghlavr7drjn" path="res://Places/entrance_door_right_object_.gd" id="5_0dd6t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vyjb4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,13 +20,36 @@ sky = SubResource("Sky_1ufdh")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="TrainRoom" type="Node3D" unique_id=1182730611]
+[sub_resource type="BoxShape3D" id="BoxShape3D_le86j"]
+size = Vector3(0.4, 3, 18.541393)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cx5lv"]
+size = Vector3(0.4, 3, 22.150425)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1y4kc"]
+size = Vector3(0.4, 3, 8.091952)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uwnyh"]
+size = Vector3(0.4, 3, 9.002489)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnd4i"]
+size = Vector3(0.4, 3, 6.826104)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dd6t"]
+size = Vector3(0.14628907, 3, 5.609219)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0tuv"]
+size = Vector3(1.774, 3, 0.137)
+
+[node name="TrainRoom" type="Node3D" unique_id=1182730611 node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_uwnyh")
+anim_player = NodePath("train_v1/AnimationPlayer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2107784598]
 environment = SubResource("Environment_utmue")
 
 [node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("2_0edka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86, -0.92772555)
 DoorID = 6
 
 [node name="Label3D" type="Label3D" parent="." unique_id=867951822]
@@ -31,18 +58,112 @@ text = "TRAIN ROOM
 "
 font_size = 117
 
-[node name="train_v1" parent="." unique_id=266253641 instance=ExtResource("3_cx5lv")]
+[node name="train_v1" parent="." unique_id=422431553 instance=ExtResource("3_cx5lv")]
 
-[node name="Frame" parent="train_v1" index="8" unique_id=2062880154]
+[node name="Skeleton3D" parent="train_v1/Armature" parent_id_path=PackedInt32Array(422431553, 758065320) index="0" unique_id=848383961]
+bones/4/position = Vector3(1.4152623, 1.6902007, 15.190673)
+bones/7/position = Vector3(1.4152623, 1.6902007, 5.3279586)
+bones/8/position = Vector3(1.4152623, 1.6902007, 6.854503)
+bones/14/position = Vector3(-1.3973578, 1.6902007, 15.190673)
+bones/17/position = Vector3(-1.3973578, 1.6902007, 5.3279586)
+bones/18/position = Vector3(-1.3973578, 1.6902007, 6.854503)
+bones/21/position = Vector3(0.0047334507, 0.9465428, 21.373934)
+bones/21/rotation = Quaternion(-0.07934871, 7.2795316e-05, 7.279532e-05, 0.9968469)
+bones/22/rotation = Quaternion(0.9914152, -3.8381073e-05, 0.000112300746, -0.13075145)
+bones/23/rotation = Quaternion(0.9986642, 3.3303528e-05, 3.331131e-05, 0.05167092)
+
+[node name="Lateral door 2 left front" parent="train_v1/Armature/Skeleton3D" index="3" unique_id=1855164112]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, 1.4152623, 1.6902007, 15.190673)
+
+[node name="Lateral door 4 left back" parent="train_v1/Armature/Skeleton3D" index="6" unique_id=1272182114]
+transform = Transform3D(1, 0, -1.819926e-06, -1.819926e-06, 0, -1, 0, 1, 0, 1.4152623, 1.6902007, 5.3279586)
+
+[node name="Lateral door 4 left front" parent="train_v1/Armature/Skeleton3D" index="7" unique_id=1681341968]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, 1.4152623, 1.6902007, 6.854503)
+
+[node name="Lateral door 2 right front" parent="train_v1/Armature/Skeleton3D" index="13" unique_id=199120613]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, -1.3973578, 1.6902007, 15.190673)
+
+[node name="Lateral door 4 right back" parent="train_v1/Armature/Skeleton3D" index="16" unique_id=76568721]
+transform = Transform3D(1, 0, -2.058345e-06, -2.058345e-06, 0, -1, 0, 1, 0, -1.3973578, 1.6902007, 5.3279586)
+
+[node name="Lateral door 4 right front" parent="train_v1/Armature/Skeleton3D" index="17" unique_id=1909039046]
+transform = Transform3D(-1.4305115e-06, 0, -1, 1, 0, -1.4305115e-06, 0, -0.99999994, 0, -1.3973578, 1.6902007, 6.854503)
+
+[node name="Lever_2" parent="train_v1/Armature/Skeleton3D" index="20" unique_id=1615812310]
+transform = Transform3D(0.99999994, -1.0595613e-10, 1.5221303e-08, 1.0459189e-10, 1.0000001, -1.6912818e-06, -1.5483238e-08, 1.2740493e-06, 1.0000304, 0.00451073, 1.7700003, 20.966963)
+
+[node name="Internal exit door" parent="train_v1/Armature/Skeleton3D" index="21" unique_id=634216808]
+transform = Transform3D(0.99999994, 6.995906e-05, 6.307682e-05, 6.3075626e-05, -0.99466026, 0.1032055, 6.996002e-05, -0.10320528, -0.9946623, 0.0044374466, 2.8119323, 21.075071)
+
+[node name="External exit door" parent="train_v1/Armature/Skeleton3D" index="22" unique_id=118999131 node_paths=PackedStringArray("train_room") groups=["doors_non_portal"]]
+transform = Transform3D(1, -0.00015668402, 0.00013357915, 0.00013357916, 0.98740757, 0.15819706, -0.00015668401, -0.15819703, 0.98740757, 0.0047334507, 0.9465428, 21.373934)
+script = ExtResource("4_0dd6t")
+train_room = NodePath("../../../..")
+
+[node name="Collision exit open " parent="train_v1/Armature/Skeleton3D/External exit door" index="0" unique_id=2803233]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Entrance door left object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left" parent_id_path=PackedInt32Array(422431553, 1558052206) index="0" unique_id=1128700434 node_paths=PackedStringArray("train_room") groups=["doors_non_portal"]]
+script = ExtResource("4_xnd4i")
+train_room = NodePath("../../../../../..")
+
+[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left/Entrance door left object " index="0" unique_id=2018240749]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Entrance door right object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right" parent_id_path=PackedInt32Array(422431553, 289239984) index="0" unique_id=136324404 node_paths=PackedStringArray("train_room") groups=["doors_non_portal"]]
+script = ExtResource("5_0dd6t")
+train_room = NodePath("../../../../../..")
+
+[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right/Entrance door right object " index="0" unique_id=684082018]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Frame" parent="train_v1" index="10" unique_id=538029204]
 visible = false
 
-[node name="FrontPivot" parent="train_v1" index="9" unique_id=76929288]
+[node name="FrontPivot" parent="train_v1" index="11" unique_id=162719448]
 visible = false
 
-[node name="Frame_001" parent="train_v1" index="10" unique_id=1682313155]
+[node name="Frame_001" parent="train_v1" index="12" unique_id=1644775495]
 visible = false
 
-[node name="pCube284_concrete_0 " parent="train_v1/Train station/pCube284" parent_id_path=PackedInt32Array(266253641, 1331308798) index="0" unique_id=547314592]
-visible = false
+[node name="pCube310_concrete_0 " parent="train_v1/Train station/group1/pCube310" parent_id_path=PackedInt32Array(422431553, 1222910915) index="0" unique_id=364239242]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.20654297, 0.13103485, 0.02166748)
+
+[node name="Edge collisions" type="Node3D" parent="." unique_id=1759187045]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Edge collisions" unique_id=1629564686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.416206, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Edge collisions/StaticBody3D" unique_id=1122577450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8231978, 1.3302441, 6.653601)
+shape = SubResource("BoxShape3D_le86j")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Edge collisions/StaticBody3D" unique_id=645497555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91247606, 1.3302441, 9.077521)
+shape = SubResource("BoxShape3D_cx5lv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Edge collisions/StaticBody3D" unique_id=955624405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8231978, 1.3302441, -8.156389)
+shape = SubResource("BoxShape3D_1y4kc")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Edge collisions/StaticBody3D" unique_id=366247844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6775784, 1.3302441, -7.789313)
+shape = SubResource("BoxShape3D_uwnyh")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Edge collisions/StaticBody3D" unique_id=1212296908]
+transform = Transform3D(0.14594492, 0, 0.98929286, 0, 1, 0, -0.98929286, 0, 0.14594492, 0.42940128, 1.3302441, -3.736737)
+shape = SubResource("BoxShape3D_xnd4i")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Edge collisions/StaticBody3D" unique_id=160740077]
+transform = Transform3D(0.14594492, 0, 0.98929286, 0, 1, 0, -0.98929286, 0, 0.14594492, -0.15401268, 1.3302441, -2.2284582)
+shape = SubResource("BoxShape3D_0dd6t")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Edge collisions/StaticBody3D" unique_id=1391847767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6044543, 992.487, -1.7981892)
+shape = SubResource("BoxShape3D_h0tuv")
 
 [editable path="train_v1"]

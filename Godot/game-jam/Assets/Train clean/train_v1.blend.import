@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bcxi0324qfja6"
-path="res://.godot/imported/train_v1.blend-1aa1b376bcf5f2c56e5a75db835035a1.scn"
+path="res://.godot/imported/Train_v1.blend-26764c94ad645978995ea7f9368a0c42.scn"
 
 [deps]
 
-source_file="res://Assets/Train clean/train_v1.blend"
-dest_files=["res://.godot/imported/train_v1.blend-1aa1b376bcf5f2c56e5a75db835035a1.scn"]
+source_file="res://Assets/Train clean/Train_v1.blend"
+dest_files=["res://.godot/imported/Train_v1.blend-26764c94ad645978995ea7f9368a0c42.scn"]
 
 [params]
 
