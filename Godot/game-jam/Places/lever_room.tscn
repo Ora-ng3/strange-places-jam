@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://4745kqry6bja" path="res://Places/lever_room.gd" id="1_3chbl"]
 [ext_resource type="Material" uid="uid://bdfnb54hwbt0x" path="res://Assets/Materials/white_ground.tres" id="1_qrgdj"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_i1mwf"]
-[ext_resource type="Material" uid="uid://cv0goasu1xn2h" path="res://Assets/3D/Proto/lever_folder/purple.tres" id="4_e34x2"]
+[ext_resource type="Material" uid="uid://cv0goasu1xn2h" path="res://Assets/lever_folder/purple.tres" id="4_e34x2"]
 [ext_resource type="PackedScene" uid="uid://dkr2s2a2l8yf6" path="res://Objects/lever.tscn" id="5_0oyv2"]
-[ext_resource type="Material" uid="uid://cymvdcyswljl6" path="res://Assets/3D/Proto/lever_folder/red.tres" id="5_3chbl"]
+[ext_resource type="Material" uid="uid://cymvdcyswljl6" path="res://Assets/lever_folder/red.tres" id="5_3chbl"]
 [ext_resource type="Texture2D" uid="uid://kife4drj5x7o" path="res://Assets/lever_arrows.png" id="5_ysxry"]
-[ext_resource type="Material" uid="uid://deobwjvebduar" path="res://Assets/3D/Proto/lever_folder/yellow.tres" id="6_vjpwp"]
-[ext_resource type="Material" uid="uid://cayuubxqk3okq" path="res://Assets/3D/Proto/lever_folder/blue.tres" id="7_567yu"]
-[ext_resource type="Material" uid="uid://c5vo1jg843xro" path="res://Assets/3D/Proto/lever_folder/green.tres" id="8_htrj3"]
+[ext_resource type="Material" uid="uid://deobwjvebduar" path="res://Assets/lever_folder/yellow.tres" id="6_vjpwp"]
+[ext_resource type="Material" uid="uid://cayuubxqk3okq" path="res://Assets/lever_folder/blue.tres" id="7_567yu"]
+[ext_resource type="Material" uid="uid://c5vo1jg843xro" path="res://Assets/lever_folder/green.tres" id="8_htrj3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vyjb4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

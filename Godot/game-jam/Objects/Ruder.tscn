@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mcn11plraa1r"]
 
 [ext_resource type="Script" uid="uid://dmjnxgocbdjy0" path="res://Objects/ruder.gd" id="1_ctuxl"]
-[ext_resource type="PackedScene" uid="uid://c22lpoyo62qwo" path="res://Assets/3D/Proto/skull_room/rudder.blend" id="2_ptp7a"]
+[ext_resource type="PackedScene" uid="uid://c22lpoyo62qwo" path="res://Assets/Rudder/rudder.blend" id="2_ptp7a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ptp7a"]
 size = Vector3(0.25756836, 1.1294556, 0.39453125)
@@ -18,7 +18,7 @@ script = ExtResource("1_ctuxl")
 
 [node name="rudder" parent="." unique_id=1254038070 instance=ExtResource("2_ptp7a")]
 
-[node name="Wheel" parent="rudder" index="1" unique_id=1941942771]
+[node name="Wheel" parent="rudder" index="1" unique_id=1861909925]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.20024975, 1.0952396, 0.00015565965)
 
 [node name="BoundingBox" type="Area3D" parent="." unique_id=147172842]

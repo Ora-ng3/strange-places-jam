@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1eqwc57gpv3j"]
+
+[ext_resource type="Texture2D" uid="uid://dp70cnk3rubth" path="res://Assets/Textures/Goat/goat_mesh_beceite_ibex_horn1_dif.png" id="1_o0a3x"]
+
+[resource]
+resource_name = "goat antles"
+albedo_texture = ExtResource("1_o0a3x")

@@ -2,7 +2,6 @@
 
 [ext_resource type="ArrayMesh" uid="uid://ckhuuwhx7aqi7" path="res://Assets/3D/hill.res" id="1_ucxbq"]
 [ext_resource type="Shape3D" uid="uid://bejj21ahsqmq2" path="res://Assets/3D/hill_collision.tres" id="2_1bg63"]
-[ext_resource type="Material" uid="uid://dcwxn8u8n8ml" path="res://Assets/3D/Proto/hills.tres" id="2_6ajjw"]
 [ext_resource type="PackedScene" uid="uid://vitkfb5qtj73" path="res://Objects/goat.scn" id="3_5rjoj"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="4_6a6gm"]
 
@@ -30,7 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6746259, -11.089945, -0.074
 [node name="Plane" type="MeshInstance3D" parent="hill" unique_id=2110886879]
 transform = Transform3D(20, 0, 0, 0, 7.5, 0, 0, 0, 20, 0, 0, -5.5870237)
 mesh = ExtResource("1_ucxbq")
-surface_material_override/0 = ExtResource("2_6ajjw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="hill/Plane" unique_id=1774241258]
 

@@ -11,7 +11,6 @@ func _ready():
 	$Timer.wait_time = ANIM_TIME
 
 func trigger(_player: CharacterBody3D) -> String:
-	print(running)
 	if not running:
 		running = true
 		$Timer.start()

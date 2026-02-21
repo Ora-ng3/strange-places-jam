@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca1jlwni1aqxu"]
 
 [ext_resource type="Script" uid="uid://wnvqsgkvi85v" path="res://Objects/magnet.gd" id="1_dwa0j"]
-[ext_resource type="PackedScene" uid="uid://drf30rplqwg0q" path="res://Assets/3D/Objects/magnet.glb" id="1_tqm6t"]
+[ext_resource type="PackedScene" uid="uid://drf30rplqwg0q" path="res://Assets/magnet/magnet.glb" id="1_tqm6t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwa0j"]
 size = Vector3(1.4716797, 1.1306152, 1.3427734)

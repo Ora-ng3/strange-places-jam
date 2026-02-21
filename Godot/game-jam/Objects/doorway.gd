@@ -21,7 +21,6 @@ var closed: bool = true
 
 func _ready() -> void:
 	global.id_to_node[DoorID] = self
-	print(self.get_parent().name)
 
 
 func only_on_one_zone(): # just an XOR between both areas
@@ -84,13 +83,11 @@ func start(portal: Portal3D, linked: Portal3D):
 	portal.exit_portal = linked #CollisionShape.disabled = true set target portall
 	portal.activate()
 	portal.show()
-	print("showed portal ", DoorID, ".", portal.name)
 
 func stop(portal: Portal3D):
 	close_animation()
 	closed = true
 	CollisionShape.disabled = false
-	print("closed")
 
 func open_linked(door: Node3D) -> void:
 	linked_door = door
@@ -101,7 +98,9 @@ func close_animation():
 	if $AnimationPlayer.is_playing():
 		var anim = $AnimationPlayer.current_animation
 		var frame = $AnimationPlayer.current_animation_position
+		$AnimationPlayer.speed_scale = 2
 		$AnimationPlayer.play_section_backwards(anim, 0, frame)
+		$AnimationPlayer.speed_scale = 1
 	else:
 		if FrontPivot.rotation:
 			$AnimationPlayer.play("CloseFront")
@@ -132,7 +131,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if closed:
 		current_portal.deactivate()
 		current_portal.hide()
-		print("hid portal ", DoorID, ".", current_portal.name)
 
 
 func _on_portal_zone_body_entered(body: Node3D) -> void:

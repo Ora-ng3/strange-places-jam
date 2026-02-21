@@ -21,7 +21,6 @@ func block_door():
 	
 func open_door():
 	unlocked = true
-	print("gth")
 	var frame = -1
 	if $AnimationPlayer.is_playing()	:
 		frame = $AnimationPlayer.current_animation_position

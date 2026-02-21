@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dcwxn8u8n8ml"]
+
+[ext_resource type="Texture2D" uid="uid://bfraqaj8mc0wv" path="res://Assets/goat_room/hill_Ground037_1K-JPG_Color.jpg" id="1_s5mdf"]
+[ext_resource type="Texture2D" uid="uid://dyugm76u0q2hf" path="res://Assets/goat_room/hill_Ground037_1K-JPG_NormalGL.jpg" id="2_1hnke"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_s5mdf")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("2_1hnke")
+uv1_scale = Vector3(8.5, 8.5, 1)
+uv1_offset = Vector3(0, -7.5, 0)

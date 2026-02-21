@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkr2s2a2l8yf6"]
 
-[ext_resource type="PackedScene" uid="uid://catflkt3fxgbw" path="res://Assets/3D/Proto/lever_folder/Lever1.blend" id="1_1btnt"]
+[ext_resource type="PackedScene" uid="uid://catflkt3fxgbw" path="res://Assets/lever_folder/lever.blend" id="1_1btnt"]
 [ext_resource type="Script" uid="uid://cypqb4wrsuago" path="res://Objects/lever.gd" id="2_7uavd"]
 
 [sub_resource type="Animation" id="Animation_e72jl"]
@@ -28,27 +28,15 @@ _data = {
 size = Vector3(0.46154785, 0.91625977, 0.7641239)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e72jl"]
-size = Vector3(0.45336914, 0.9022217, 0.09967041)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yrgnr"]
-size = Vector3(0.25683594, 0.70895386, 0.2136383)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_prxvc"]
-size = Vector3(0.44433594, 0.10494995, 0.7110748)
+size = Vector3(0.45336914, 0.9022217, 0.76712036)
 
 [node name="Lever" type="StaticBody3D" unique_id=32675529 groups=["interactables"]]
 script = ExtResource("2_7uavd")
 
-[node name="Lever1" parent="." unique_id=883359068 instance=ExtResource("1_1btnt")]
-metadata/_edit_group_ = true
+[node name="Lever1" parent="." unique_id=81169421 instance=ExtResource("1_1btnt")]
 
-[node name="Empty" parent="Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(883359068, 1312691985) index="0" unique_id=1975165783]
+[node name="Empty" parent="Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(81169421, 2028651364) index="0" unique_id=2133111746]
 transform = Transform3D(1, 0, 0, 0, 0.34202012, -0.93969256, 0, 0.93969256, 0.34202012, 0, -10.006768, 0)
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Lever1/Sketchfab_model/Empty" index="3" unique_id=737813846]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12136161, -9.822584)
-remote_path = NodePath("../../../../BoundingBox2")
-update_scale = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=555908643]
 libraries/ = SubResource("AnimationLibrary_yrgnr")
@@ -65,22 +53,7 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox" unique_id=506149425]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015258789, -0.00088500977)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015258789, -0.33461)
 shape = SubResource("BoxShape3D_e72jl")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="BoundingBox" unique_id=722777636]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0033721924, -0.13967133)
-shape = SubResource("BoxShape3D_yrgnr")
-
-[node name="BoundingBox2" type="Area3D" parent="." unique_id=687493067]
-editor_description = "This is the box that is detected by the player's raycast when interacting"
-transform = Transform3D(1, 0, 0, 0, 0.9396837, 0.34201723, 0, -0.34201723, 0.9396837, 0, -0.06490956, 0.014701039)
-collision_layer = 4
-collision_mask = 0
-monitoring = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox2" unique_id=227910251]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, -4.5474735e-13, 0, 4.5474735e-13, 0.9999999, 0, -0.0037384033, -0.3929062)
-shape = SubResource("BoxShape3D_prxvc")
 
 [editable path="Lever1"]

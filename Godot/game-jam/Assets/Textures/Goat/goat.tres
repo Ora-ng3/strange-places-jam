@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://qh4vhye53gyj"]
+
+[ext_resource type="Texture2D" uid="uid://dnjtgb18ugaqn" path="res://Assets/Textures/Goat/goat_mesh_alpine_goat_brown_dif.png" id="1_ydlil"]
+[ext_resource type="Texture2D" path="res://Assets/Objects/goat_mesh_temp.png" id="2_wl8bc"]
+[ext_resource type="Texture2D" path="res://Assets/Objects/goat_mesh_temp2.png" id="3_flgqp"]
+
+[resource]
+resource_name = "goat"
+albedo_texture = ExtResource("1_ydlil")
+metallic = 1.0
+metallic_texture = ExtResource("2_wl8bc")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_wl8bc")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_flgqp")
