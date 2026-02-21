@@ -101,6 +101,9 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
+[node name="BoundingBox2" parent="Doorway" index="11" unique_id=531471463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0578171, 0)
+
 [node name="Label3D" type="Label3D" parent="." unique_id=867951822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3238702, -1.6230922)
 text = "LEVER ROOM"
@@ -127,77 +130,62 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6633507, 1.3634776, 4.44837
 correct_value = 1
 metadata/_edit_group_ = true
 
-[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(32675529, 883359068, 1975165783) index="2" unique_id=905433291]
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(32675529, 81169421, 498186400) index="2" unique_id=1989574303]
 material_override = ExtResource("4_e34x2")
-
-[node name="BoundingBox2" parent="Levers/Lever" index="4" unique_id=687493067]
-transform = Transform3D(1, 0, 0, 0, 0.9396837, 0.34201723, 0, -0.34201723, 0.9396837, 0, -0.06490958, 0.01470089)
 
 [node name="Lever2" parent="Levers" unique_id=1013461826 instance=ExtResource("5_0oyv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111089945, 1.3634776, 4.448375)
 metadata/_edit_group_ = true
 
-[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever2/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1013461826, 883359068, 1975165783) index="1" unique_id=536189266]
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever2/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1013461826, 81169421, 498186400) index="1" unique_id=1837586245]
 material_override = ExtResource("5_3chbl")
 
-[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever2/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1013461826, 883359068, 1975165783) index="2" unique_id=905433291]
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever2/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1013461826, 81169421, 498186400) index="2" unique_id=1989574303]
 material_override = ExtResource("5_3chbl")
 
-[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever2/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(1013461826, 883359068, 1312691985) index="2" unique_id=2028718837]
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever2/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(1013461826, 81169421, 2028931203) index="2" unique_id=435902250]
 material_override = ExtResource("5_3chbl")
-
-[node name="BoundingBox2" parent="Levers/Lever2" index="4" unique_id=687493067]
-transform = Transform3D(1, 0, 0, 0, 0.9396837, 0.34201723, 0, -0.34201723, 0.9396837, 0, -0.06490958, 0.01470089)
 
 [node name="Lever3" parent="Levers" unique_id=484463527 instance=ExtResource("5_0oyv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6321024, 1.3634776, 4.448375)
 correct_value = 1
 metadata/_edit_group_ = true
 
-[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever3/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(484463527, 883359068, 1975165783) index="1" unique_id=536189266]
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever3/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(484463527, 81169421, 498186400) index="1" unique_id=1837586245]
 material_override = ExtResource("6_vjpwp")
 
-[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever3/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(484463527, 883359068, 1975165783) index="2" unique_id=905433291]
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever3/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(484463527, 81169421, 498186400) index="2" unique_id=1989574303]
 material_override = ExtResource("6_vjpwp")
 
-[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever3/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(484463527, 883359068, 1312691985) index="2" unique_id=2028718837]
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever3/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(484463527, 81169421, 2028931203) index="2" unique_id=435902250]
 material_override = ExtResource("6_vjpwp")
-
-[node name="BoundingBox2" parent="Levers/Lever3" index="4" unique_id=687493067]
-transform = Transform3D(1, 0, 0, 0, 0.9396837, 0.34201723, 0, -0.34201723, 0.9396837, 0, -0.06490958, 0.01470089)
 
 [node name="Lever4" parent="Levers" unique_id=684099502 instance=ExtResource("5_0oyv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8438221, 2.310605, 4.448375)
 metadata/_edit_group_ = true
 
-[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever4/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(684099502, 883359068, 1975165783) index="1" unique_id=536189266]
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever4/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(684099502, 81169421, 498186400) index="1" unique_id=1837586245]
 material_override = ExtResource("7_567yu")
 
-[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever4/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(684099502, 883359068, 1975165783) index="2" unique_id=905433291]
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever4/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(684099502, 81169421, 498186400) index="2" unique_id=1989574303]
 material_override = ExtResource("7_567yu")
 
-[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever4/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(684099502, 883359068, 1312691985) index="2" unique_id=2028718837]
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever4/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(684099502, 81169421, 2028931203) index="2" unique_id=435902250]
 material_override = ExtResource("7_567yu")
-
-[node name="BoundingBox2" parent="Levers/Lever4" index="4" unique_id=687493067]
-transform = Transform3D(1, 0, 0, 0, 0.9396837, 0.34201723, 0, -0.34201723, 0.9396837, 0, -0.0649097, 0.01470089)
 
 [node name="Lever5" parent="Levers" unique_id=1248424921 instance=ExtResource("5_0oyv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8102554, 2.310605, 4.448375)
 correct_value = 1
 metadata/_edit_group_ = true
 
-[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever5/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1248424921, 883359068, 1975165783) index="1" unique_id=536189266]
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever5/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1248424921, 81169421, 498186400) index="1" unique_id=1837586245]
 material_override = ExtResource("8_htrj3")
 
-[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever5/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1248424921, 883359068, 1975165783) index="2" unique_id=905433291]
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever5/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1248424921, 81169421, 498186400) index="2" unique_id=1989574303]
 material_override = ExtResource("8_htrj3")
 
-[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever5/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(1248424921, 883359068, 1312691985) index="2" unique_id=2028718837]
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever5/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(1248424921, 81169421, 2028931203) index="2" unique_id=435902250]
 material_override = ExtResource("8_htrj3")
-
-[node name="BoundingBox2" parent="Levers/Lever5" index="4" unique_id=687493067]
-transform = Transform3D(1, 0, 0, 0, 0.9396837, 0.34201723, 0, -0.34201723, 0.9396837, 0, -0.0649097, 0.01470089)
 
 [node name="Jail" type="Node3D" parent="." unique_id=1098830011]
 

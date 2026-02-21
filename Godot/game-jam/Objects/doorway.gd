@@ -71,8 +71,8 @@ func open(from_front: bool) -> void:
 		linked_door.open_linked(self)
 
 func close():
-	stop(current_portal)
-	linked_door.stop(linked_door.current_portal)
+	stop()
+	linked_door.stop()
 
 
 func start(portal: Portal3D, linked: Portal3D):
@@ -84,7 +84,7 @@ func start(portal: Portal3D, linked: Portal3D):
 	portal.activate()
 	portal.show()
 
-func stop(portal: Portal3D):
+func stop():
 	close_animation()
 	closed = true
 	CollisionShape.disabled = false
@@ -127,7 +127,7 @@ func _on_zone_exited(body: Node3D) -> void:
 		close()
 			
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	if closed:
 		current_portal.deactivate()
 		current_portal.hide()

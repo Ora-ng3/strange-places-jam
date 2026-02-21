@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cy71la1g6xhs4"]
 
-[ext_resource type="ArrayMesh" uid="uid://ckhuuwhx7aqi7" path="res://Assets/3D/hill.res" id="1_ucxbq"]
-[ext_resource type="Shape3D" uid="uid://bejj21ahsqmq2" path="res://Assets/3D/hill_collision.tres" id="2_1bg63"]
+[ext_resource type="ArrayMesh" uid="uid://ckhuuwhx7aqi7" path="res://Assets/goat_room/hill.res" id="1_ucxbq"]
+[ext_resource type="Shape3D" uid="uid://bejj21ahsqmq2" path="res://Assets/goat_room/hill_collision.tres" id="2_1bg63"]
 [ext_resource type="PackedScene" uid="uid://vitkfb5qtj73" path="res://Objects/goat.scn" id="3_5rjoj"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="4_6a6gm"]
 
@@ -18,6 +18,10 @@ sky = SubResource("Sky_5rjoj")
 tonemap_mode = 2
 ssr_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucxbq"]
+resource_name = "Material.002"
+cull_mode = 2
+
 [node name="GoatRoom" type="Node3D" unique_id=139430265]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1489572252]
@@ -28,6 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6746259, -11.089945, -0.074
 
 [node name="Plane" type="MeshInstance3D" parent="hill" unique_id=2110886879]
 transform = Transform3D(20, 0, 0, 0, 7.5, 0, 0, 0, 20, 0, 0, -5.5870237)
+material_override = SubResource("StandardMaterial3D_ucxbq")
 mesh = ExtResource("1_ucxbq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="hill/Plane" unique_id=1774241258]

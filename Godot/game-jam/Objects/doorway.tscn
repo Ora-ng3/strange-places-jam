@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://tefk4epxmgbw" path="res://Objects/doorway.gd" id="1_aa16f"]
 [ext_resource type="Script" uid="uid://cw1r4c1d7beyv" path="res://addons/portals/scripts/portal_3d.gd" id="2_pa4mq"]
 [ext_resource type="Material" uid="uid://dcfkcyddxkglf" path="res://addons/portals/materials/editor-preview-portal-material.tres" id="3_gmewq"]
-[ext_resource type="PackedScene" uid="uid://bb2vh3ebis7sq" path="res://Assets/3D/Proto/door.blend" id="3_t1e1v"]
+[ext_resource type="PackedScene" uid="uid://bb2vh3ebis7sq" path="res://Assets/door.blend" id="3_t1e1v"]
 [ext_resource type="Script" uid="uid://bxcel82b180o3" path="res://addons/portals/scripts/portal_boxmesh.gd" id="4_q2sxb"]
 
 [sub_resource type="Animation" id="Animation_pa4mq"]
@@ -290,7 +290,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0392919, 0)
 shape = SubResource("BoxShape3D_pa4mq")
 
 [node name="BoundingBox2" type="Area3D" parent="." unique_id=531471463 groups=["interactables"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0578171, 0)
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 0.6548207, 0.0578171, 0.33806086)
 visible = false
 collision_layer = 4
 collision_mask = 0

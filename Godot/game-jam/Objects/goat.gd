@@ -10,7 +10,7 @@ var preferred_dir = 1 # the turning preference of the goat
 var turning: bool = false
 
 func _ready() -> void:
-	$AnimationPlayer.play("beceite_ibex_canter_fwd_01")
+	$AnimationPlayer.play("global/goat_anim")
 	preferred_dir = round(randf()) * 2 - 1
 
 
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		
 	
 		
-	var direction := (transform.basis * Vector3.FORWARD) * randf()
+	direction = (transform.basis * Vector3.FORWARD) * randf()
 
 	velocity.x = direction.x * SPEED
 	velocity.z = direction.z * SPEED
