@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 4.5
 const JUMP_VELOCITY = 4.5
 
 var direction: Vector3
@@ -10,7 +10,7 @@ var preferred_dir = 1 # the turning preference of the goat
 var turning: bool = false
 
 func _ready() -> void:
-	$AnimationPlayer.play("global/goat_anim")
+	$AnimationPlayer.play("goat_anim")
 	preferred_dir = round(randf()) * 2 - 1
 
 
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if get_slide_collision_count():
+	if $RayCast3D.is_colliding():
 		rotation.y += 5 * delta * preferred_dir * randf()
 	elif turning:
 		rotation.y += delta * dir * randf()

@@ -121,6 +121,7 @@ size = Vector3(0.16113281, 2.5073242, 1.3220215)
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1279067321]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 1.8403938, 4.4884725)
+visible = false
 texture = ExtResource("5_ysxry")
 
 [node name="Levers" type="Node3D" parent="." unique_id=1953009149]

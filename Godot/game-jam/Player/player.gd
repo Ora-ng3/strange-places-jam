@@ -13,7 +13,7 @@ const RUN_FACTOR = 2
 
 var is_in_portal: int = 0 # used by doorwayss
 var has_magnet = false
-var has_key = true
+var has_key = false
 
 func _ready() -> void:
 	print("player loaded !")

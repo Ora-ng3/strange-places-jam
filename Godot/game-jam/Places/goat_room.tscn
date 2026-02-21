@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cy71la1g6xhs4"]
 
-[ext_resource type="ArrayMesh" uid="uid://ckhuuwhx7aqi7" path="res://Assets/goat_room/hill.res" id="1_ucxbq"]
+[ext_resource type="ArrayMesh" uid="uid://d08qd3wneisb5" path="res://Assets/goat_room/hill.res" id="1_ucxbq"]
 [ext_resource type="Shape3D" uid="uid://bejj21ahsqmq2" path="res://Assets/goat_room/hill_collision.tres" id="2_1bg63"]
-[ext_resource type="PackedScene" uid="uid://vitkfb5qtj73" path="res://Objects/goat.scn" id="3_5rjoj"]
+[ext_resource type="PackedScene" uid="uid://daaio17qvmsi7" path="res://Objects/goat.scn" id="3_5rjoj"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="4_6a6gm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bbihd"]
@@ -18,10 +18,6 @@ sky = SubResource("Sky_5rjoj")
 tonemap_mode = 2
 ssr_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucxbq"]
-resource_name = "Material.002"
-cull_mode = 2
-
 [node name="GoatRoom" type="Node3D" unique_id=139430265]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1489572252]
@@ -32,7 +28,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6746259, -11.089945, -0.074
 
 [node name="Plane" type="MeshInstance3D" parent="hill" unique_id=2110886879]
 transform = Transform3D(20, 0, 0, 0, 7.5, 0, 0, 0, 20, 0, 0, -5.5870237)
-material_override = SubResource("StandardMaterial3D_ucxbq")
 mesh = ExtResource("1_ucxbq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="hill/Plane" unique_id=1774241258]
@@ -48,7 +43,7 @@ shadow_enabled = true
 transform = Transform3D(-0.68998605, 0, 0.72382265, 0, 1, 0, -0.72382265, 0, -0.68998605, 7.830373, 0.21671462, -9.596498)
 
 [node name="goat3" parent="." unique_id=415546866 instance=ExtResource("3_5rjoj")]
-transform = Transform3D(0.22309704, 0, -0.97479624, 0, 1, 0, 0.97479624, 0, 0.22309704, 5.1377892, 3.383946, 3.039423)
+transform = Transform3D(0.22309704, 0, -0.97479624, 0, 1, 0, 0.97479624, 0, 0.22309704, -8.517567, 3.383946, 3.039423)
 
 [node name="goat4" parent="." unique_id=1222262440 instance=ExtResource("3_5rjoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5628572, -0.095167145, -9.605186)
@@ -63,10 +58,34 @@ transform = Transform3D(-0.2409904, 0, 0.9705275, 0, 1, 0, -0.9705275, 0, -0.240
 transform = Transform3D(-0.7045846, 0, -0.70962, 0, 1, 0, 0.70962, 0, -0.7045846, 15.049771, -0.7094102, -9.605186)
 
 [node name="goat8" parent="." unique_id=159778187 instance=ExtResource("3_5rjoj")]
-transform = Transform3D(-0.94439936, 0, 0.32880068, 0, 1, 0, -0.32880068, 0, -0.94439936, 5.1377892, 5.850313, 10.22381)
+transform = Transform3D(-0.94439936, 0, 0.32880068, 0, 1, 0, -0.32880068, 0, -0.94439936, 5.1377892, 4.2951546, 10.22381)
 
 [node name="goat9" parent="." unique_id=1677719534 instance=ExtResource("3_5rjoj")]
 transform = Transform3D(-0.19738361, 0, 0.98032635, 0, 1, 0, -0.98032635, 0, -0.19738361, -0.5538502, 4.711517, 10.22381)
+
+[node name="goat10" parent="." unique_id=1162745932 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(0.44711906, 0, 0.8944744, 0, 1, 0, -0.8944744, 0, 0.44711906, 10.785656, 0.21671462, -4.6096163)
+
+[node name="goat11" parent="." unique_id=1770381507 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(-0.8414825, 0, -0.54028445, 0, 1, 0, 0.54028445, 0, -0.8414825, -6.6432304, 3.383946, -15.707163)
+
+[node name="goat12" parent="." unique_id=782366995 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(0.33893496, 0, -0.9408098, 0, 1, 0, 0.9408098, 0, 0.33893496, 9.008485, -0.09516716, -9.568292)
+
+[node name="goat13" parent="." unique_id=1150840262 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(-0.7379137, 0, 0.67489505, 0, 1, 0, -0.67489505, 0, -0.7379137, 11.77948, -0.09516716, -7.8296356)
+
+[node name="goat14" parent="." unique_id=1199342561 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(0.83140177, 0, 0.5556718, 0, 1, 0, -0.5556718, 0, 0.83140177, 4.73787, 0.15897655, -14.171603)
+
+[node name="goat15" parent="." unique_id=1526077453 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(-0.9064258, 0, 0.42236504, 0, 1, 0, -0.42236504, 0, -0.9064258, 13.240737, -0.7094102, 2.1795197)
+
+[node name="goat16" parent="." unique_id=1957878581 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(-0.010751069, 0, 0.9999422, 0, 1, 0, -0.9999422, 0, -0.010751069, -8.774095, 4.2951546, -0.42503047)
+
+[node name="goat17" parent="." unique_id=444504762 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(0.8554004, 0, 0.5179672, 0, 1, 0, -0.5179672, 0, 0.8554004, -10.70319, 4.711517, -5.7797804)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=157561869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.7838058, -5.561655)
