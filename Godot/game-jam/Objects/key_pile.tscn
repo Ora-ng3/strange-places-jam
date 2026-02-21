@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c8v0bhlxsd6f2"]
 
-[ext_resource type="Script" path="res://Objects/key_pile.gd" id="1_pmvfl"]
+[ext_resource type="Script" uid="uid://ckyccy0xkoh5g" path="res://Objects/key_pile.gd" id="1_pmvfl"]
 [ext_resource type="PackedScene" uid="uid://bf0rqlnjk65pt" path="res://Assets/3D/Objects/key_pile.glb" id="2_rafia"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_k1lso"]
 height = 1.0
-radius = 1.0
+radius = 1.7880859
 
 [node name="KeyPile" type="StaticBody3D" unique_id=584039214 groups=["interactables"]]
 script = ExtResource("1_pmvfl")
@@ -24,3 +24,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_k1lso")
 
 [node name="keys_pile" parent="." unique_id=852639395 instance=ExtResource("2_rafia")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

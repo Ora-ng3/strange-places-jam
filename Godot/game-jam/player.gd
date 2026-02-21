@@ -4,7 +4,7 @@ extends CharacterBody3D
 const SPEED = 5.0
 #const JUMP_VELOCITY = 5
 const LOOK_SENSITIVITY = 0.003
-#const GRAVITY = 17 * Vector3.DOWN
+const GRAVITY = 100 * Vector3.DOWN
 const RUN_FACTOR = 2
 
 @onready var head: Node3D = $Head
@@ -12,7 +12,7 @@ const RUN_FACTOR = 2
 @onready var raycast: RayCast3D = $Head/Camera3D/RayCast3D
 
 var is_in_portal: int = 0 # used by doorwayss
-
+var has_magnet = false
 
 func _ready() -> void:
 	print("player loaded !")
@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 func movement(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += GRAVITY * delta
 		
 	#  Jump
 	#if Input.is_action_just_pressed("Jump") and is_on_floor():

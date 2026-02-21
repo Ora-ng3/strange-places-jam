@@ -1,7 +1,12 @@
 extends StaticBody3D
 
+var already_clicked: bool = false
+
 func trigger(_player: CharacterBody3D):
-	return "need the key bro"
+	already_clicked = true
+	return "There's no way I'm searching through there by hand"
 
 func get_message(_player: CharacterBody3D):
-	return "A pile of keys."
+	if already_clicked:
+		return ""
+	return "A pile of fake keys."

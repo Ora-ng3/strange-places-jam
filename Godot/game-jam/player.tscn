@@ -97,6 +97,17 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="UI/Popup" unique_id=1669785153]
 one_shot = true
 
+[node name="Debug" type="Control" parent="UI" unique_id=1773275710]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/Debug" unique_id=48126367]
+layout_mode = 0
+offset_right = 236.0
+offset_bottom = 60.0
+text = "FPS: "
+
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1232409115]
 remote_path = NodePath("../Head/Camera3D/RayCast3D")
 update_position = false

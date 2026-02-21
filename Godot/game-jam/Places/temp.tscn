@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://djiumayq5uvi7"]
+
+[ext_resource type="ArrayMesh" uid="uid://b3cf7edh6rj08" path="res://Assets/3D/Proto/skull_room/skull_mesh.tres" id="1_qa7yv"]
+
+[node name="RingLarge" type="Node3D" unique_id=592401425]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="skull2" type="MeshInstance3D" parent="." unique_id=289885324]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 6.858177)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull4" type="MeshInstance3D" parent="." unique_id=1599008657]
+transform = Transform3D(11.276312, 0, -4.1042414, 0, 12, 0, 4.1042414, 0, 11.276312, -2.3456042, 0, 6.444584)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull5" type="MeshInstance3D" parent="." unique_id=130557785]
+transform = Transform3D(-11.276312, 0, 4.1042404, 0, 12, 0, -4.1042404, 0, -11.276312, 2.3456042, 0, -6.4444065)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull6" type="MeshInstance3D" parent="." unique_id=1980378984]
+transform = Transform3D(9.1925335, 0, -7.713451, 0, 12.000002, 0, 7.713451, 0, 9.1925335, -4.4082937, 0, 5.25369)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull7" type="MeshInstance3D" parent="." unique_id=1650863988]
+transform = Transform3D(-9.192534, 0, 7.7134495, 0, 12.000002, 0, -7.7134495, 0, -9.192534, 4.4082937, 0, -5.2535124)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull8" type="MeshInstance3D" parent="." unique_id=2122776718]
+transform = Transform3D(6, 0, -10.392304, 0, 12.000004, 0, 10.392304, 0, 6, -5.9392786, 0, 3.4291334)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull9" type="MeshInstance3D" parent="." unique_id=82136408]
+transform = Transform3D(-6.000002, 0, 10.392303, 0, 12.000004, 0, -10.392303, 0, -6.000002, 5.9392786, 0, -3.428956)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull10" type="MeshInstance3D" parent="." unique_id=1890037968]
+transform = Transform3D(2.0837786, 0, -11.817692, 0, 12.000004, 0, 11.817692, 0, 2.0837786, -6.7538986, 0, 1.190984)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull11" type="MeshInstance3D" parent="." unique_id=1026546533]
+transform = Transform3D(-2.0837805, 0, 11.817692, 0, 12.000004, 0, -11.817692, 0, -2.0837805, 6.7538986, 0, -1.1908066)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull12" type="MeshInstance3D" parent="." unique_id=445158853]
+transform = Transform3D(-2.083777, 0, -11.817694, 0, 12.000004, 0, 11.817694, 0, -2.083777, -6.7538986, 0, -1.190805)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull13" type="MeshInstance3D" parent="." unique_id=648381845]
+transform = Transform3D(2.083775, 0, 11.817693, 0, 12.000004, 0, -11.817693, 0, 2.083775, 6.7538986, 0, 1.1909823)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull14" type="MeshInstance3D" parent="." unique_id=1991451288]
+transform = Transform3D(-5.999999, 0, -10.392306, 0, 12.000004, 0, 10.392306, 0, -5.999999, -5.939279, 0, -3.4289546)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull15" type="MeshInstance3D" parent="." unique_id=736920219]
+transform = Transform3D(5.9999967, 0, 10.392305, 0, 12.000004, 0, -10.392305, 0, 5.9999967, 5.939279, 0, 3.429132)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull16" type="MeshInstance3D" parent="." unique_id=609054788]
+transform = Transform3D(-9.1925335, 0, -7.713453, 0, 12.000002, 0, 7.713453, 0, -9.1925335, -4.4082947, 0, -5.253511)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull17" type="MeshInstance3D" parent="." unique_id=1178338949]
+transform = Transform3D(9.19253, 0, 7.7134533, 0, 12.000004, 0, -7.7134533, 0, 9.19253, 4.4082947, 0, 5.2536883)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull18" type="MeshInstance3D" parent="." unique_id=1268402365]
+transform = Transform3D(-11.276311, 0, -4.1042423, 0, 12.000002, 0, 4.1042423, 0, -11.276311, -2.345605, 0, -6.4444056)
+mesh = ExtResource("1_qa7yv")
+
+[node name="skull19" type="MeshInstance3D" parent="." unique_id=2094415098]
+transform = Transform3D(11.276308, 0, 4.104245, 0, 12.000004, 0, -4.104245, 0, 11.276308, 2.345605, 0, 6.444583)
+mesh = ExtResource("1_qa7yv")
