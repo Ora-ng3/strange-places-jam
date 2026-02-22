@@ -160,7 +160,6 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Debug" type="Control" parent="." unique_id=230150965]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -228,6 +227,13 @@ scale = Vector2(0.05, 0.05)
 pivot_offset = Vector2(520, 0)
 icon = ExtResource("5_prjsi")
 flat = true
+
+[node name="Quit" type="Button" parent="Menu" unique_id=698068778]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Quit
+"
 
 [node name="Settings" type="ColorRect" parent="." unique_id=2124570902]
 visible = false
@@ -320,6 +326,7 @@ flat = true
 [connection signal="timeout" from="Popup/Timer" to="." method="_on_popup_timer_timeout"]
 [connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Settings/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Settings/ViewCredits" to="." method="_on_view_credits_pressed"]
 [connection signal="pressed" from="Credits/CloseCredits" to="." method="_on_close_credits_pressed"]

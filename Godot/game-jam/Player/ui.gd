@@ -78,3 +78,7 @@ func _on_close_credits_pressed() -> void:
 
 func _on_view_credits_pressed() -> void:
 	$Credits.visible = true
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

@@ -34,22 +34,22 @@ DoorID = 5
 [node name="skull_room" parent="." unique_id=473585880 instance=ExtResource("6_nvftl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013963699, -0.00012779236, 0.029421806)
 
-[node name="RingLarge" parent="skull_room" index="0" unique_id=1197265992]
+[node name="RingLarge" parent="skull_room" index="0" unique_id=564457477]
 transform = Transform3D(-5.0000095, 0, 8.66027, 0, 10, 0, -8.66027, 0, -5.0000095, 0, -0.003651604, 0)
 
-[node name="RingMid" parent="skull_room" index="1" unique_id=573502315]
+[node name="RingMid" parent="skull_room" index="1" unique_id=956120859]
 transform = Transform3D(0.49999994, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999994, 0, 0, 0)
 
-[node name="RingSmall" parent="skull_room" index="2" unique_id=1985814395]
+[node name="RingSmall" parent="skull_room" index="2" unique_id=1737951853]
 transform = Transform3D(-3.7432501, 0, -3.272453e-07, 0, 10, 0, 3.272453e-07, 0, -3.7432501, 0, 0, 0)
 
-[node name="Roof" parent="skull_room" index="6" unique_id=233478595]
+[node name="Roof" parent="skull_room" index="6" unique_id=1604641767]
 visible = false
 
-[node name="Walls" parent="skull_room" index="11" unique_id=1446977507]
+[node name="Walls" parent="skull_room" index="11" unique_id=932489838]
 visible = false
 
-[node name="CollisionShape3D" parent="skull_room/Walls/StaticBody3D" parent_id_path=PackedInt32Array(473585880, 102220589) index="0" unique_id=1236183510]
+[node name="CollisionShape3D" parent="skull_room/Walls/StaticBody3D" parent_id_path=PackedInt32Array(473585880, 236062446) index="0" unique_id=1475770358]
 disabled = true
 
 [node name="Skulls" type="Node3D" parent="." unique_id=835044019]
@@ -133,8 +133,8 @@ remote_path = NodePath("../../skull_room/RingLarge")
 update_position = false
 update_scale = false
 
-[node name="skull_ring2" parent="RingLarge" unique_id=935615293 instance=ExtResource("3_yg4m1")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+[node name="skull_ring2" parent="RingLarge" unique_id=1595884095 instance=ExtResource("3_yg4m1")]
+transform = Transform3D(-1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, -1, 0, 0.6005447, 0)
 
 [node name="RingMid" type="StaticBody3D" parent="." unique_id=728012858]
 transform = Transform3D(0.29999998, 0, -0.5196153, 0, 0.6, 0, 0.5196153, 0, 0.29999998, 0, 0, 0)
@@ -149,8 +149,8 @@ remote_path = NodePath("../../skull_room/RingMid")
 update_position = false
 update_scale = false
 
-[node name="skull_ring2" parent="RingMid" unique_id=141935687 instance=ExtResource("3_yg4m1")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 0.99999994, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+[node name="skull_ring2" parent="RingMid" unique_id=1019566873 instance=ExtResource("3_yg4m1")]
+transform = Transform3D(-1.0000001, 0, -1.1920929e-07, 0, 0.9999998, 0, 1.1920929e-07, 0, -1.0000001, 0, 1.0009078, 0)
 
 [node name="RingSmall" type="StaticBody3D" parent="." unique_id=1576946547]
 transform = Transform3D(-0.375, 0, -3.278354e-08, 0, 0.375, 0, 3.278354e-08, 0, -0.375, 0, 0, 0)
@@ -165,8 +165,8 @@ remote_path = NodePath("../../skull_room/RingSmall")
 update_position = false
 update_scale = false
 
-[node name="skull_ring3" parent="RingSmall" unique_id=547184262 instance=ExtResource("3_yg4m1")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+[node name="skull_ring3" parent="RingSmall" unique_id=776195496 instance=ExtResource("3_yg4m1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.6014526, 0)
 
 [node name="RudderMid" parent="." unique_id=1972468577 node_paths=PackedStringArray("connected_platform") instance=ExtResource("5_5nmna")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.452, 7, -17)

@@ -4,7 +4,6 @@
 [ext_resource type="Material" uid="uid://bea1fqopbamcb" path="res://Assets/Tiles105_1K-JPG/Tiles105_1K-JPG.tres" id="2_2mwtl"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_x8kar"]
 [ext_resource type="PackedScene" uid="uid://dm2o85xepflwy" path="res://Assets/ScaleRoom/desert/desert.glb" id="3_x8kar"]
-[ext_resource type="Shader" uid="uid://5ica5lmtycek" path="res://Places/water.gdshader" id="4_3a2i2"]
 [ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="6_0hyux"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0hyux"]
@@ -12,53 +11,8 @@ size = Vector2(40, 40)
 subdivide_width = 5
 subdivide_depth = 5
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hyux"]
-render_priority = 0
-shader = ExtResource("4_3a2i2")
-shader_parameter/wave_1 = Vector4(0.3, 4, 0.2, 0.6)
-shader_parameter/wave_2 = Vector4(-0.26, -0.19, 0.01, 0.47)
-shader_parameter/wave_3 = Vector4(-7.67, 5.63, 0.1, 0.38)
-shader_parameter/wave_4 = Vector4(-0.42, -1.63, 0.1, 0.28)
-shader_parameter/wave_5 = Vector4(1.66, 0.07, 0.15, 1.81)
-shader_parameter/wave_6 = Vector4(1.2, 1.14, 0.01, 0.33)
-shader_parameter/wave_7 = Vector4(-1.6, 7.3, 0.11, 0.73)
-shader_parameter/wave_8 = Vector4(-0.42, -1.63, 0.15, 1.52)
-shader_parameter/time_factor = 2.5
-shader_parameter/noise_zoom = 2.0
-shader_parameter/noise_amp = 1.0
-shader_parameter/base_water_color = Color(0.53333336, 0.53333336, 1, 1)
-shader_parameter/fresnel_water_color = Color(0.10680721, 0.8428241, 0.82600504, 1)
-shader_parameter/deep_water_color = Color(0.21345359, 0.37564933, 0.6620357, 1)
-shader_parameter/shallow_water_color = Color(0.4685936, 0.79389477, 0.8837502, 1)
-shader_parameter/beers_law = 0.5
-shader_parameter/depth_offset = -1.2
-shader_parameter/near = 7.0
-shader_parameter/far = 10000.0
-shader_parameter/edge_texture_scale = 3.5
-shader_parameter/edge_texture_offset = 1.0
-shader_parameter/edge_texture_speed = 0.1
-shader_parameter/edge_foam_intensity = 2.0
-shader_parameter/edge_fade_start = -3.0
-shader_parameter/edge_fade_end = 6.6
-shader_parameter/peak_height_threshold = 1.0
-shader_parameter/peak_color = Vector3(1, 1, 1)
-shader_parameter/peak_intensity = 1.0
-shader_parameter/foam_intensity = 1.0
-shader_parameter/foam_scale = 1.0
-shader_parameter/metallic = 0.1
-shader_parameter/roughness = 0.05
-shader_parameter/uv_scale_text_a = 0.1
-shader_parameter/uv_speed_text_a = Vector2(0.42, 0.3)
-shader_parameter/uv_scale_text_b = 0.6
-shader_parameter/uv_speed_text_b = Vector2(0.15, 0.1)
-shader_parameter/normal_strength = 1.0
-shader_parameter/uv_sampler_scale = 0.3
-shader_parameter/blend_factor = 0.28
-shader_parameter/perturbation_strength = 1.0
-shader_parameter/perturbation_time = 0.3
-shader_parameter/caustics_intensity = 0.5
-shader_parameter/num_caustic_layers = 16.0
-shader_parameter/caustic_distortion_strength = 0.001
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mwtl"]
+albedo_color = Color(0.11418412, 0.3849715, 0.5746623, 1)
 
 [node name="ScaleRoom" type="Node3D" unique_id=1182730611]
 
@@ -88,21 +42,21 @@ font_size = 117
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.03, -15)
 
 [node name="DoorwayMid" parent="." unique_id=1687868200 instance=ExtResource("2_x8kar")]
-transform = Transform3D(0.7504111, 0, -0.66097134, 0, 1, 0, 0.66097134, 0, 0.7504111, -6.73302, 0.65630513, 4.86479)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -13.552851, 0.65630513, 4.86479)
 DoorID = 8
 
 [node name="DoorwayLarge" parent="." unique_id=491235943 instance=ExtResource("2_x8kar")]
-transform = Transform3D(-3.3176723, 0, 3.7407284, 0, 5, 0, -3.7407284, 0, -3.3176723, 3.5704145, 0.8865167, 0.64077616)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 3.5704145, 0.8865167, 0.64077616)
 DoorID = 10
 
 [node name="DoorwaySmall" parent="." unique_id=506913831 instance=ExtResource("2_x8kar")]
-transform = Transform3D(0.17943935, 0, 0.08832622, 0, 0.2, 0, -0.08832622, 0, 0.17943935, -0.93351215, 2.389341, -3.3517182)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.93351215, 2.389341, -3.3517182)
 DoorID = 9
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=715346308]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18549776, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3920331, 0)
 mesh = SubResource("PlaneMesh_0hyux")
-surface_material_override/0 = SubResource("ShaderMaterial_0hyux")
+surface_material_override/0 = SubResource("StandardMaterial3D_2mwtl")
 
 [node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("6_0hyux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.671126, 0)
