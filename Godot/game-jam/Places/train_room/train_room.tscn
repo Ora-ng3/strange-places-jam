@@ -1,0 +1,417 @@
+[gd_scene format=4 uid="uid://bw1usevd2knty"]
+
+[ext_resource type="Script" uid="uid://dqovlmx6mu0fr" path="res://Places/train_room/train_room.gd" id="1_uwnyh"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_0edka"]
+[ext_resource type="PackedScene" uid="uid://bcxi0324qfja6" path="res://Assets/Train clean/train_v1.blend" id="3_cx5lv"]
+[ext_resource type="Script" uid="uid://cdopqytvoaoxm" path="res://Places/train_room/external_exit_door.gd" id="4_0dd6t"]
+[ext_resource type="Texture2D" uid="uid://cf6bi33huhcqx" path="res://Assets/Train clean/textures/41e803398c174225b0a455c009b25172_RGB_I_MRTIsland_Co_001_08.jpg" id="4_cmjgq"]
+[ext_resource type="Script" uid="uid://c4wii6yrsiwrq" path="res://Places/train_room/entrance_door_left.gd" id="4_xnd4i"]
+[ext_resource type="Script" uid="uid://cgghlavr7drjn" path="res://Places/train_room/entrance_door_right.gd" id="5_0dd6t"]
+[ext_resource type="Texture2D" uid="uid://g6th7jxcl11y" path="res://Assets/Train clean/textures/8f704fa9dcf3411b9f9de4aae4f66257_N_I_MRTIsland_Nr_001_08.jpg" id="5_u6pf3"]
+[ext_resource type="Script" uid="uid://bo77i8s56wobo" path="res://Places/train_room/red_button.gd" id="7_0dd6t"]
+[ext_resource type="Script" path="res://Places/train_room/message_zone.gd" id="8_smei6"]
+[ext_resource type="Material" uid="uid://bea1fqopbamcb" path="res://Assets/Tiles105_1K-JPG/Tiles105_1K-JPG.tres" id="9_cap4h"]
+[ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="10_rg780"]
+[ext_resource type="Script" uid="uid://ouk5kmcpkt8a" path="res://Places/train_room/side_door_zone.gd" id="13_u6pf3"]
+[ext_resource type="AudioStream" uid="uid://cy6i4mrxb823f" path="res://Assets/Sounds/subway_doors.wav" id="14_xpd0b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpd0b"]
+resource_name = "T_MRTIsland_Tisplay02"
+cull_mode = 2
+metallic = 1.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.3
+emission_operator = 1
+emission_texture = ExtResource("4_cmjgq")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("5_u6pf3")
+metadata/extras = {
+"blenderkit": {}
+}
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0oqbo"]
+_surfaces = [{
+"aabb": AABB(0.56431806, 2.9585867, 18.64245, 0.20392066, 0.05691099, 0.9327526),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAQAEAAMAAwAEAAUABAAGAAUABQAGAAcA"),
+"name": "T_MRTIsland_Tisplay02",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD/////AAA8HqFQ//8AAAAA/v8AAAAAPB6gUAAAAACxWAAA//8AALFYAAAAAAAA//8AAP//AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uki04"]
+resource_name = "train_v1_T_MRTIsland_LightINTL01_T_MRTIsland_Tisplay02_0"
+_surfaces = [{
+"aabb": AABB(0.56431806, 2.9585867, 18.64245, 0.20392066, 0.05691099, 0.9327526),
+"attribute_data": PackedByteArray("nc/uBJ3PigwXBe4EFwWKDJ3PlBUXBZQVnc9gLxcFYC8="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAQAEAAMAAwAEAAUABAAGAAUABQAGAAcA"),
+"material": SubResource("StandardMaterial3D_xpd0b"),
+"name": "T_MRTIsland_Tisplay02",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD/////LMM8HqFQ//9hxwAA/v8AACzDPB6gUAAAYcexWAAA//9B0bFYAAAAAEHR//8AAP//VNX//wAAAABU1fBQd+iqQePg8FB36KpB4+AeMPvXHjD716oqVNWqKlTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0oqbo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_le86j"]
+size = Vector3(0.4, 3, 18.541393)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cx5lv"]
+size = Vector3(0.4, 3, 22.150425)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1y4kc"]
+size = Vector3(0.4, 3, 8.091952)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uwnyh"]
+size = Vector3(0.4, 3, 9.002489)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xnd4i"]
+size = Vector3(0.4, 3, 6.826104)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dd6t"]
+size = Vector3(0.14628907, 3, 4.111288)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lkydp"]
+size = Vector3(0.47021484, 3.0926514, 12.2092285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5bk7w"]
+size = Vector3(0.7163086, 0.20263672, 17.529404)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0tuv"]
+size = Vector3(7.494995, 6.998535, 0.56274414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bw6bg"]
+size = Vector3(3.762085, 1, 1.7252197)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xpd0b"]
+size = Vector3(0.27563477, 2.027649, 1.4541626)
+
+[node name="TrainRoom" type="Node3D" unique_id=1182730611 node_paths=PackedStringArray("anim_player", "left_cabin_door", "right_cabin_door")]
+script = ExtResource("1_uwnyh")
+anim_player = NodePath("train_v1/AnimationPlayer")
+left_cabin_door = NodePath("train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left/Entrance door left object /StaticBody3D")
+right_cabin_door = NodePath("train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right/Entrance door right object /StaticBody3D")
+
+[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("2_0edka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86, -0.92772555)
+DoorID = 6
+
+[node name="Label3D" type="Label3D" parent="." unique_id=867951822]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9228585, 1.3238702, 2.1476223)
+text = "TRAIN ROOM
+"
+font_size = 117
+
+[node name="train_v1" parent="." unique_id=2096374295 instance=ExtResource("3_cx5lv")]
+
+[node name="T_MRTIsland_LightINTL01_T_MRTIsland_Tisplay02_0" parent="train_v1/Structure/Ceiling lights/T_MRTIsland_LightINTL01" parent_id_path=PackedInt32Array(2096374295, 1611318932) index="0" unique_id=256797658]
+mesh = SubResource("ArrayMesh_uki04")
+
+[node name="Handles" parent="train_v1/Structure" parent_id_path=PackedInt32Array(2096374295, 908198241) index="2" unique_id=993198348]
+visible = false
+
+[node name="T_MRTIsland_BodyINT_T_MRTIsland_BodyINT_05_0" parent="train_v1/Structure/Structure train_001" parent_id_path=PackedInt32Array(2096374295, 400957110) index="4" unique_id=83743066]
+visible = false
+
+[node name="External exit door" parent="train_v1/Armature/Skeleton3D" parent_id_path=PackedInt32Array(2096374295, 1567550294) index="22" unique_id=1091293459 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+script = ExtResource("4_0dd6t")
+train_room = NodePath("../../../..")
+
+[node name="Collision exit open " parent="train_v1/Armature/Skeleton3D/External exit door" index="0" unique_id=86632655]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Entrance door left object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left" parent_id_path=PackedInt32Array(2096374295, 1429588384) index="0" unique_id=1885801839 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+script = ExtResource("4_xnd4i")
+train_room = NodePath("../../../../../..")
+
+[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left/Entrance door left object " index="0" unique_id=881214349]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Entrance door right object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right" parent_id_path=PackedInt32Array(2096374295, 1894519089) index="0" unique_id=157802628 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+script = ExtResource("5_0dd6t")
+train_room = NodePath("../../../../../..")
+
+[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right/Entrance door right object " index="0" unique_id=442285224]
+collision_layer = 5
+collision_mask = 5
+
+[node name="Red button " parent="train_v1" index="8" unique_id=1575000839 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+script = ExtResource("7_0dd6t")
+train_room = NodePath("../..")
+
+[node name="StaticBody3D" parent="train_v1/Red button " index="0" unique_id=1199603929]
+collision_layer = 5
+collision_mask = 5
+
+[node name="train wheels" parent="train_v1/Container with rail" parent_id_path=PackedInt32Array(2096374295, 1762150350) index="4" unique_id=1339305470]
+visible = false
+
+[node name="Frame" parent="train_v1" index="11" unique_id=1866908556]
+visible = false
+
+[node name="FrontPivot" parent="train_v1" index="12" unique_id=941891846]
+visible = false
+
+[node name="Frame_001" parent="train_v1" index="13" unique_id=2060272425]
+visible = false
+
+[node name="pCube297_concrete_0 " parent="train_v1/Train station/group1/pCube297" parent_id_path=PackedInt32Array(2096374295, 553767244) index="0" unique_id=1838169150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.861023e-05, -0.011482239, 0.000541687)
+
+[node name="pCube310_concrete_0 " parent="train_v1/Train station/group1/pCube310" parent_id_path=PackedInt32Array(2096374295, 1786473557) index="0" unique_id=184421871]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.20654297, 0.13103485, 0.02166748)
+
+[node name="Collisions" type="Node3D" parent="." unique_id=1759187045]
+
+[node name="Edges" type="StaticBody3D" parent="Collisions" unique_id=1629564686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.416206, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Edges" unique_id=1122577450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8231978, 1.3302441, 6.653601)
+shape = SubResource("BoxShape3D_le86j")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Collisions/Edges" unique_id=645497555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91247606, 1.3302441, 9.077521)
+shape = SubResource("BoxShape3D_cx5lv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Collisions/Edges" unique_id=955624405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8231978, 1.3302441, -8.156389)
+shape = SubResource("BoxShape3D_1y4kc")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Collisions/Edges" unique_id=366247844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6775784, 1.3302441, -7.789313)
+shape = SubResource("BoxShape3D_uwnyh")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Collisions/Edges" unique_id=1212296908]
+transform = Transform3D(0.14594492, 0, 0.98929286, 0, 1, 0, -0.98929286, 0, 0.14594492, 0.42940128, 1.3302441, -3.736737)
+shape = SubResource("BoxShape3D_xnd4i")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Collisions/Edges" unique_id=160740077]
+transform = Transform3D(0.14594492, 0, 0.98929286, 0, 1, 0, -0.98929286, 0, 0.14594492, -0.89495873, 1.3302441, -2.337766)
+shape = SubResource("BoxShape3D_0dd6t")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Collisions/Edges" unique_id=2066409507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0973907, 7.7104015, 9.789516)
+shape = SubResource("BoxShape3D_lkydp")
+
+[node name="Platform to train collision" type="StaticBody3D" parent="Collisions" unique_id=2103153112]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Platform to train collision" unique_id=1309960618]
+transform = Transform3D(0.9702535, -0.24209125, 0, 0.24209125, 0.9702535, 0, 0, 0, 1, 1.3907827, 0.8178723, 7.111557)
+shape = SubResource("BoxShape3D_5bk7w")
+
+[node name="Front box walls collision" type="StaticBody3D" parent="Collisions" unique_id=243918462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7431881, 0, 20.212032)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Front box walls collision" unique_id=527703337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29656982, 2.9992676, 3.3509521)
+shape = SubResource("BoxShape3D_h0tuv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Collisions/Front box walls collision" unique_id=1207577145]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.2299366, 2.9992676, -0.45304298)
+shape = SubResource("BoxShape3D_h0tuv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Collisions/Front box walls collision" unique_id=2072056479]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5838597, 2.9992676, -0.45304298)
+shape = SubResource("BoxShape3D_h0tuv")
+
+[node name="Back box walls collision" type="StaticBody3D" parent="Collisions" unique_id=1158165976]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.387129, 0, -16.449924)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collisions/Back box walls collision" unique_id=32969802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29656982, 2.9992676, 3.3509521)
+shape = SubResource("BoxShape3D_h0tuv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Collisions/Back box walls collision" unique_id=1290767840]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.2299366, 2.9992676, -0.45304298)
+shape = SubResource("BoxShape3D_h0tuv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Collisions/Back box walls collision" unique_id=1092940489]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5838597, 2.9992676, -0.45304298)
+shape = SubResource("BoxShape3D_h0tuv")
+
+[node name="MessageZone" type="Area3D" parent="." unique_id=1793712715]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_smei6")
+message_to_display = "Oh no, am I locked in this train ?"
+
+[node name="ExitZone" type="CollisionShape3D" parent="MessageZone" unique_id=965342158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31524658, 0.19447601, 22.32822)
+shape = SubResource("BoxShape3D_bw6bg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=657267462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0984325, 5.378036, 1.5593872)
+material_override = ExtResource("9_cap4h")
+size = Vector3(26.155, 12.986328, 45.892)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=351817188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016238213, -0.9341736, 1.1420746)
+operation = 2
+size = Vector3(18.297386, 9.766541, 43.60149)
+
+[node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.880065, 9.325348, -9.858827)
+
+[node name="CeilingLight2" parent="." unique_id=681601610 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.880065, 9.325348, -4.8588266)
+
+[node name="CeilingLight3" parent="." unique_id=987207319 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.880065, 9.325348, 0.14117336)
+
+[node name="CeilingLight4" parent="." unique_id=450059574 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.880065, 9.325348, 5.1411734)
+
+[node name="CeilingLight5" parent="." unique_id=364133629 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.880065, 9.325348, 9.141173)
+
+[node name="CeilingLight6" parent="." unique_id=676667594 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.880065, 9.325348, 14.141173)
+
+[node name="CeilingLight7" parent="." unique_id=2116350442 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945729, 9.325348, -9.858827)
+
+[node name="CeilingLight8" parent="." unique_id=892547582 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945729, 9.325348, -4.8588266)
+
+[node name="CeilingLight9" parent="." unique_id=361095832 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945729, 9.325348, 0.14117336)
+
+[node name="CeilingLight10" parent="." unique_id=400946575 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945729, 9.325348, 5.1411734)
+
+[node name="CeilingLight11" parent="." unique_id=1334023887 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945729, 9.325348, 9.141173)
+
+[node name="CeilingLight12" parent="." unique_id=1814260800 instance=ExtResource("10_rg780")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.945729, 9.325348, 14.141173)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2063728668 groups=["lights"]]
+transform = Transform3D(-1, 9.345682e-15, 8.7422755e-08, 7.179583e-08, 0.5705703, 0.8212488, -4.9880818e-08, 0.8212488, -0.5705703, 0, 2.9146876, 18.112663)
+light_color = Color(0.9876419, 0.15914047, 0.17927799, 1)
+light_energy = 4.09
+spot_range = 3.0
+spot_attenuation = 0.2
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1200147707 groups=["lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8810959, 2.138506, 18.991646)
+light_color = Color(0.9876419, 0.15914047, 0.17927799, 1)
+light_energy = 4.09
+spot_range = 0.341
+spot_attenuation = 0.2
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1627639711]
+transform = Transform3D(0.99491805, 0.09808792, -0.022740588, 0.01751061, 0.053854436, 0.9983953, 0.09915517, -0.99371964, 0.051863194, 0, 3.2606409, -1.2023492)
+light_energy = 9.495
+spot_range = 2.745
+
+[node name="Message" type="Node3D" parent="." unique_id=959778934 groups=["interactables"]]
+script = ExtResource("13_u6pf3")
+
+[node name="SideDoorMessage" type="Area3D" parent="Message" unique_id=1076624494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3414422, 1.6784319, 0.73003834)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage" unique_id=198817370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage2" type="Area3D" parent="Message" unique_id=1904208863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3414422, 1.6784319, 4.938681)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage2" unique_id=1828960886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage3" type="Area3D" parent="Message" unique_id=1028209259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3414422, 1.6784319, 9.108055)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage3" unique_id=1203585217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage4" type="Area3D" parent="Message" unique_id=801406332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3414422, 1.6784319, 13.235471)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage4" unique_id=1686345918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage6" type="Area3D" parent="Message" unique_id=701156511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.343943, 1.6784319, 0.73003834)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage6" unique_id=990617173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage7" type="Area3D" parent="Message" unique_id=927442446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.343943, 1.6784319, 4.938681)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage7" unique_id=1357590416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage8" type="Area3D" parent="Message" unique_id=1700512895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.343943, 1.6784319, 9.108055)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage8" unique_id=616036950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage9" type="Area3D" parent="Message" unique_id=1135902423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.343943, 1.6784319, 13.235471)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage9" unique_id=152904682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="SideDoorMessage10" type="Area3D" parent="Message" unique_id=2032824293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.343943, 1.6784319, 17.406506)
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Message/SideDoorMessage10" unique_id=1440319736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18307507, 0.103118956)
+shape = SubResource("BoxShape3D_xpd0b")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=803892471]
+stream = ExtResource("14_xpd0b")
+volume_db = -20.0
+
+[editable path="train_v1"]

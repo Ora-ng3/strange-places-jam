@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c1senppr5vm7p"]
+
+[ext_resource type="Script" uid="uid://bid1f4wmvjcru" path="res://Places/boring_room.gd" id="1_7vfe2"]
+[ext_resource type="Material" uid="uid://bea1fqopbamcb" path="res://Assets/Tiles105_1K-JPG/Tiles105_1K-JPG.tres" id="1_guv5e"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="1_vctga"]
+[ext_resource type="PackedScene" uid="uid://c5h3lmardkf5b" path="res://Objects/exit_door.tscn" id="4_kc0p5"]
+[ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="5_7vfe2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vfe2"]
+emission_enabled = true
+emission = Color(0.44755095, 0.44755095, 0.44755095, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mdodf"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sso5m"]
+size = Vector3(0.93652344, 1, 0.8112793)
+
+[node name="BoringRoom" type="Node3D" unique_id=1182730611]
+script = ExtResource("1_7vfe2")
+
+[node name="Walls" type="CSGBox3D" parent="." unique_id=1085675773]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.5804808e-08, 1.5, -0.18078613)
+material_override = ExtResource("1_guv5e")
+use_collision = true
+size = Vector3(10, 4, 9.638428)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls" unique_id=311125516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2915003e-13, 0.15263689, -0.23309326)
+operation = 2
+size = Vector3(9, 3.2947266, 9.104614)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Walls" unique_id=1044924007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.742278e-08, -0.5005746, -5.1815186)
+operation = 2
+size = Vector3(1, 1.9377747, 3.0014648)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Walls" unique_id=935994212]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.2207211e-06, -0.49157798, -14.144207)
+light_energy = 14.125
+omni_range = 11.32
+omni_attenuation = 0.706
+
+[node name="ExitDoor" parent="." unique_id=1497373822 instance=ExtResource("4_kc0p5")]
+transform = Transform3D(-0.8, 0, -1.2079664e-07, 0, 0.8, 0, 1.2079664e-07, 0, -0.8, 0, 0.99837327, 4.649907)
+
+[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("1_vctga")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("5_7vfe2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.308126, -3)
+
+[node name="CeilingLight2" parent="." unique_id=831228279 instance=ExtResource("5_7vfe2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3.308126, 3)
+
+[node name="CeilingLight3" parent="." unique_id=363610238 instance=ExtResource("5_7vfe2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.308126, -3)
+
+[node name="CeilingLight4" parent="." unique_id=384463734 instance=ExtResource("5_7vfe2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.308126, 3)
+
+[node name="ExitHallway" type="CSGBox3D" parent="." unique_id=2049385592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.008422, 9.40253)
+use_collision = true
+size = Vector3(2, 3, 9.527832)
+material = SubResource("StandardMaterial3D_7vfe2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ExitHallway" unique_id=860539290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.018859863, -0.42333984)
+operation = 2
+size = Vector3(0.9970703, 1.9632568, 9.84668)
+material = SubResource("StandardMaterial3D_7vfe2")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ExitHallway" unique_id=438990547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025238037, 4.0535707)
+size = Vector3(1.5537109, 2.4751587, 1)
+material = SubResource("StandardMaterial3D_mdodf")
+
+[node name="FinalArea" type="Area3D" parent="ExitHallway" unique_id=551793982]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitHallway/FinalArea" unique_id=1266730444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015365124, -0.50807595, -3.9114218)
+shape = SubResource("BoxShape3D_sso5m")
+debug_color = Color(0, 0.6, 0.69803923, 0.8235294)
+
+[connection signal="body_entered" from="ExitHallway/FinalArea" to="." method="_on_final_area_body_entered"]

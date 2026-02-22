@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://ct32xqjn76s3b"]
+
+[ext_resource type="PackedScene" uid="uid://bgrf6msho8n34" path="res://Places/key_room.tscn" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://bj87f7ijwtbek" path="res://world.gd" id="1_wse8f"]
+[ext_resource type="PackedScene" uid="uid://22hfrpgo3iq0" path="res://Places/lever_room.tscn" id="2_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://c1senppr5vm7p" path="res://Places/boring_room.tscn" id="3_036b0"]
+[ext_resource type="PackedScene" uid="uid://c1fo2g8yx01c0" path="res://Player/player.tscn" id="4_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://cuhfle883vjq3" path="res://Places/skull_room.tscn" id="5_ioo17"]
+[ext_resource type="PackedScene" uid="uid://bw1usevd2knty" path="res://Places/train_room/train_room.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://ufreyil34314" path="res://Places/dark_hallway.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://cy71la1g6xhs4" path="res://Places/goat_room.tscn" id="9_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://bch5og2ox56a4" path="res://Places/scale_room.tscn" id="10_wse8f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbfbk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ioo17"]
+sky_material = SubResource("ProceduralSkyMaterial_gbfbk")
+
+[sub_resource type="Environment" id="Environment_wse8f"]
+background_mode = 2
+sky = SubResource("Sky_ioo17")
+
+[node name="World" type="Node3D" unique_id=1946059943]
+script = ExtResource("1_wse8f")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=567010816]
+environment = SubResource("Environment_wse8f")
+
+[node name="Player" parent="." unique_id=1219742712 instance=ExtResource("4_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1605788, 2.811506, 25.268385)
+
+[node name="BoringRoom" parent="." unique_id=1182730611 instance=ExtResource("3_036b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014343739, 0, -0.11362362)
+visible = false
+
+[node name="KeyRoom" parent="." unique_id=626065019 instance=ExtResource("1_tlwt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.809262, 0, -9.130529)
+visible = false
+
+[node name="LeverRoom" parent="." unique_id=121021113 instance=ExtResource("2_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.250338, 0, 4.804893)
+visible = false
+
+[node name="GoatRoom" parent="." unique_id=139430265 instance=ExtResource("9_k3n1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.272896, 1.0832214, -53.738)
+visible = false
+
+[node name="ScaleRoom" parent="." unique_id=1059009930 instance=ExtResource("10_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.3516, -10.955692, -54.957638)
+visible = false
+
+[node name="SkullRoom" parent="." unique_id=1887507867 instance=ExtResource("5_ioo17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.29315, -70.45802, 8.475837)
+visible = false
+
+[node name="TrainRoom" parent="." unique_id=1903640646 instance=ExtResource("8_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.341515, -9.536743e-07, 90.264336)
+visible = false
+
+[node name="DarkHallway" parent="." unique_id=1462163649 instance=ExtResource("9_ioo17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1781001, 3.7400951, 19.811932)
+
+[node name="Timer" type="Timer" parent="." unique_id=222149036]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

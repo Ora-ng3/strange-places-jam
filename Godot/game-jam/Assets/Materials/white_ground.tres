@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdfnb54hwbt0x"]
+
+[ext_resource type="Texture2D" uid="uid://b1fbpv7inu636" path="res://Assets/Textures/proto_grid.png" id="1_sj16n"]
+
+[resource]
+albedo_texture = ExtResource("1_sj16n")
+uv1_triplanar = true
+uv2_triplanar = true
+stencil_flags = 1

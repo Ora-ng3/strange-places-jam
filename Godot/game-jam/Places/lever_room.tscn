@@ -1,0 +1,442 @@
+[gd_scene format=3 uid="uid://22hfrpgo3iq0"]
+
+[ext_resource type="Script" uid="uid://4745kqry6bja" path="res://Places/lever_room.gd" id="1_3chbl"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_i1mwf"]
+[ext_resource type="Material" uid="uid://bea1fqopbamcb" path="res://Assets/Tiles105_1K-JPG/Tiles105_1K-JPG.tres" id="2_vjpwp"]
+[ext_resource type="Material" uid="uid://cv0goasu1xn2h" path="res://Assets/lever_folder/purple.tres" id="4_e34x2"]
+[ext_resource type="PackedScene" uid="uid://dkr2s2a2l8yf6" path="res://Objects/lever.tscn" id="5_0oyv2"]
+[ext_resource type="Material" uid="uid://cymvdcyswljl6" path="res://Assets/lever_folder/red.tres" id="5_3chbl"]
+[ext_resource type="Texture2D" uid="uid://kife4drj5x7o" path="res://Assets/lever_arrows.png" id="5_ysxry"]
+[ext_resource type="Material" uid="uid://deobwjvebduar" path="res://Assets/lever_folder/yellow.tres" id="6_vjpwp"]
+[ext_resource type="Material" uid="uid://cayuubxqk3okq" path="res://Assets/lever_folder/blue.tres" id="7_567yu"]
+[ext_resource type="Material" uid="uid://c5vo1jg843xro" path="res://Assets/lever_folder/green.tres" id="8_htrj3"]
+[ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="11_567yu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3chbl"]
+albedo_color = Color(0.69799244, 0.69799286, 0.6979926, 1)
+metallic = 1.0
+roughness = 0.24
+uv1_scale = Vector3(2.1, 2.1, 2.1)
+
+[sub_resource type="Animation" id="Animation_vjpwp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jail:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_567yu"]
+resource_name = "Retract"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jail:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.989, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_htrj3"]
+_data = {
+&"RESET": SubResource("Animation_vjpwp"),
+&"Retract": SubResource("Animation_567yu")
+}
+
+[node name="LeverRoom" type="Node3D" unique_id=1182730611]
+script = ExtResource("1_3chbl")
+
+[node name="Walls" type="CSGBox3D" parent="." unique_id=1085675773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = ExtResource("2_vjpwp")
+use_collision = true
+size = Vector3(10, 5, 10)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls" unique_id=311125516]
+operation = 2
+size = Vector3(9, 4, 9)
+
+[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("2_i1mwf")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+DoorID = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="door" parent="Doorway" index="1" unique_id=1449824116]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="BoundingBox2" parent="Doorway" index="11" unique_id=531471463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0578171, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1709214884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5291382, 0.7562866, 0.56140137)
+visible = false
+size = Vector3(0.10827637, 2.5125732, 1.2629395)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1236341255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55556643, 0.7536621, 0.6031494)
+visible = false
+size = Vector3(0.16113281, 2.5073242, 1.3220215)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1279067321]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 1.8403938, 4.4884725)
+visible = false
+texture = ExtResource("5_ysxry")
+
+[node name="Levers" type="Node3D" parent="." unique_id=1953009149]
+
+[node name="Lever" parent="Levers" unique_id=32675529 instance=ExtResource("5_0oyv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6633507, 1.3634776, 4.448375)
+correct_value = 1
+metadata/_edit_group_ = true
+
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(32675529, 81169421, 498186400) index="2" unique_id=1989574303]
+material_override = ExtResource("4_e34x2")
+
+[node name="Lever2" parent="Levers" unique_id=1013461826 instance=ExtResource("5_0oyv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111089945, 1.3634776, 4.448375)
+metadata/_edit_group_ = true
+
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever2/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1013461826, 81169421, 498186400) index="1" unique_id=1837586245]
+material_override = ExtResource("5_3chbl")
+
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever2/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1013461826, 81169421, 498186400) index="2" unique_id=1989574303]
+material_override = ExtResource("5_3chbl")
+
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever2/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(1013461826, 81169421, 2028931203) index="2" unique_id=435902250]
+material_override = ExtResource("5_3chbl")
+
+[node name="Lever3" parent="Levers" unique_id=484463527 instance=ExtResource("5_0oyv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6321024, 1.3634776, 4.448375)
+correct_value = 1
+metadata/_edit_group_ = true
+
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever3/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(484463527, 81169421, 498186400) index="1" unique_id=1837586245]
+material_override = ExtResource("6_vjpwp")
+
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever3/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(484463527, 81169421, 498186400) index="2" unique_id=1989574303]
+material_override = ExtResource("6_vjpwp")
+
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever3/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(484463527, 81169421, 2028931203) index="2" unique_id=435902250]
+material_override = ExtResource("6_vjpwp")
+
+[node name="Lever4" parent="Levers" unique_id=684099502 instance=ExtResource("5_0oyv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8438221, 2.310605, 4.448375)
+metadata/_edit_group_ = true
+
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever4/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(684099502, 81169421, 498186400) index="1" unique_id=1837586245]
+material_override = ExtResource("7_567yu")
+
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever4/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(684099502, 81169421, 498186400) index="2" unique_id=1989574303]
+material_override = ExtResource("7_567yu")
+
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever4/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(684099502, 81169421, 2028931203) index="2" unique_id=435902250]
+material_override = ExtResource("7_567yu")
+
+[node name="Lever5" parent="Levers" unique_id=1248424921 instance=ExtResource("5_0oyv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8102554, 2.310605, 4.448375)
+correct_value = 1
+metadata/_edit_group_ = true
+
+[node name="New_Lever_handle_lambert1_0_001" parent="Levers/Lever5/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1248424921, 81169421, 498186400) index="1" unique_id=1837586245]
+material_override = ExtResource("8_htrj3")
+
+[node name="New_Lever_handle_lambert1_0_002" parent="Levers/Lever5/Lever1/Sketchfab_model/Empty" parent_id_path=PackedInt32Array(1248424921, 81169421, 498186400) index="2" unique_id=1989574303]
+material_override = ExtResource("8_htrj3")
+
+[node name="New_Lever_cover_lambert1_0" parent="Levers/Lever5/Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(1248424921, 81169421, 2028931203) index="2" unique_id=435902250]
+material_override = ExtResource("8_htrj3")
+
+[node name="Jail" type="Node3D" parent="." unique_id=1098830011]
+
+[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="Jail" unique_id=1792113251]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.094335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="Jail" unique_id=2069870136]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.194335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="Jail" unique_id=584040789]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.294335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="Jail" unique_id=1650357020]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.394335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D23" type="CSGCylinder3D" parent="Jail" unique_id=1059846969]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.494335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D24" type="CSGCylinder3D" parent="Jail" unique_id=995147889]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.594335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D25" type="CSGCylinder3D" parent="Jail" unique_id=484481088]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.69433504)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D26" type="CSGCylinder3D" parent="Jail" unique_id=1183302386]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.794335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D27" type="CSGCylinder3D" parent="Jail" unique_id=1550821895]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.5777684, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D28" type="CSGCylinder3D" parent="Jail" unique_id=955807420]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.4777684, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D29" type="CSGCylinder3D" parent="Jail" unique_id=925154999]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.3777684, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D30" type="CSGCylinder3D" parent="Jail" unique_id=1083310849]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.2777684, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D31" type="CSGCylinder3D" parent="Jail" unique_id=2024947312]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.17776841, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D32" type="CSGCylinder3D" parent="Jail" unique_id=1200600548]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, -0.07776841, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D33" type="CSGCylinder3D" parent="Jail" unique_id=22953078]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.022231594, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D34" type="CSGCylinder3D" parent="Jail" unique_id=658687134]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.122231595, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D35" type="CSGCylinder3D" parent="Jail" unique_id=1022104304]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.2222316, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D36" type="CSGCylinder3D" parent="Jail" unique_id=445304930]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.3222316, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D37" type="CSGCylinder3D" parent="Jail" unique_id=415328317]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.42223158, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D38" type="CSGCylinder3D" parent="Jail" unique_id=98648202]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.5222316, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D39" type="CSGCylinder3D" parent="Jail" unique_id=550027476]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.6222316, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D40" type="CSGCylinder3D" parent="Jail" unique_id=321747448]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.7222316, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D41" type="CSGCylinder3D" parent="Jail" unique_id=1675412482]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.82223165, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D42" type="CSGCylinder3D" parent="Jail" unique_id=39015426]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.9222317, 0.69594103, -0.89433503)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D43" type="CSGCylinder3D" parent="Jail" unique_id=1482401927]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.9222317, 0.69594103, -0.794335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D44" type="CSGCylinder3D" parent="Jail" unique_id=858574106]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 1.0222317, 0.69594103, -0.794335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D45" type="CSGCylinder3D" parent="Jail" unique_id=2013200810]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 1.0222317, 0.69594103, -0.694335)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D46" type="CSGCylinder3D" parent="Jail" unique_id=1363219154]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 1.0222317, 0.69594103, -0.59433496)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D55" type="CSGCylinder3D" parent="Jail" unique_id=894311078]
+transform = Transform3D(0.99999255, 2.2581965e-10, 0.0038571684, -2.2582022e-10, 1, -2.8801234e-13, -0.0038571684, -5.8361e-13, 0.99999255, 0.6022093, 0.69594103, -0.05798368)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D57" type="CSGCylinder3D" parent="Jail" unique_id=1442544752]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.52223164, 0.69594103, 0.005665019)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D56" type="CSGCylinder3D" parent="Jail" unique_id=1795565040]
+transform = Transform3D(0.99999255, 2.2581965e-10, 0.0038571684, -2.2582022e-10, 1, -2.8801234e-13, -0.0038571684, -5.8361e-13, 0.99999255, 0.7565036, 0.69594103, -0.18861014)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D58" type="CSGCylinder3D" parent="Jail" unique_id=1898420458]
+transform = Transform3D(0.99999255, 2.2581965e-10, 0.0038571684, -2.2582022e-10, 1, -2.8801234e-13, -0.0038571684, -5.8361e-13, 0.99999255, 0.67875546, 0.69594103, -0.1211003)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D59" type="CSGCylinder3D" parent="Jail" unique_id=745221657]
+transform = Transform3D(0.99999255, 2.2581965e-10, 0.0038571684, -2.2582022e-10, 1, -2.8801234e-13, -0.0038571684, -5.8361e-13, 0.99999255, 0.9042859, 0.69594103, -0.33658266)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D60" type="CSGCylinder3D" parent="Jail" unique_id=1235532241]
+transform = Transform3D(0.99999917, 0, -0.0013089966, 0, 1, 0, 0.0013089966, 0, 0.99999917, 0.83369905, 0.69594103, -0.2666733)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D61" type="CSGCylinder3D" parent="Jail" unique_id=112156109]
+transform = Transform3D(0.99999255, 2.2581965e-10, 0.0038571684, -2.2582022e-10, 1, -2.8801234e-13, -0.0038571684, -5.8361e-13, 0.99999255, 1.0210162, 0.69594103, -0.4906866)
+use_collision = true
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="CSGCylinder3D62" type="CSGCylinder3D" parent="Jail" unique_id=1937262124]
+transform = Transform3D(0.99999255, 2.2581965e-10, 0.0038571684, -2.2582022e-10, 1, -2.8801234e-13, -0.0038571684, -5.8361e-13, 0.99999255, 0.9683106, 0.69594103, -0.41222057)
+radius = 0.03
+height = 2.6
+material = SubResource("StandardMaterial3D_3chbl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1762288234]
+libraries/ = SubResource("AnimationLibrary_htrj3")
+
+[node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("11_567yu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 3)
+
+[node name="CeilingLight2" parent="." unique_id=1105054923 instance=ExtResource("11_567yu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3)
+
+[node name="CeilingLight3" parent="." unique_id=459384612 instance=ExtResource("11_567yu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3)
+
+[node name="CeilingLight4" parent="." unique_id=1706341125 instance=ExtResource("11_567yu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3)
+
+[editable path="Doorway"]
+[editable path="Doorway/door"]
+[editable path="Levers/Lever"]
+[editable path="Levers/Lever/Lever1"]
+[editable path="Levers/Lever2"]
+[editable path="Levers/Lever2/Lever1"]
+[editable path="Levers/Lever3"]
+[editable path="Levers/Lever3/Lever1"]
+[editable path="Levers/Lever4"]
+[editable path="Levers/Lever4/Lever1"]
+[editable path="Levers/Lever5"]
+[editable path="Levers/Lever5/Lever1"]

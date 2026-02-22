@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c1fo2g8yx01c0"]
+
+[ext_resource type="Script" uid="uid://fsnjse6ai71m" path="res://Player/player.gd" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://gc1g3h81ka7k" path="res://Player/ui.tscn" id="2_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://kh62kjvag86f" path="res://Assets/UI/Screenshot 2026-02-22 172739.png" id="2_btcbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
+radius = 0.3
+height = 1.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tlwt5"]
+radius = 0.3
+height = 1.6
+
+[node name="Player" type="CharacterBody3D" unique_id=1219742712]
+collision_layer = 32770
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1637230855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_fj7yv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=328822260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("CapsuleMesh_tlwt5")
+
+[node name="Head" type="Node3D" parent="." unique_id=904687837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=14331344]
+near = 0.01
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=949953529]
+target_position = Vector3(0, 0, -3)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="end_screen" type="Sprite2D" parent="." unique_id=548815665]
+visible = false
+position = Vector2(587, 227)
+texture = ExtResource("2_btcbx")
+
+[node name="Label" type="Label" parent="end_screen" unique_id=157120735]
+offset_left = 116.0
+offset_top = 153.0
+offset_right = 461.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "By Amaury and Mathias"
+
+[node name="UI" parent="." unique_id=526256261 instance=ExtResource("2_4ntmi")]
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1232409115]
+remote_path = NodePath("../Head/Camera3D/RayCast3D")
+update_position = false
+update_rotation = false
+
+[node name="Timer" type="Timer" parent="." unique_id=745603923]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c8v0bhlxsd6f2"]
+
+[ext_resource type="Script" uid="uid://ckyccy0xkoh5g" path="res://Objects/key_pile.gd" id="1_pmvfl"]
+[ext_resource type="PackedScene" uid="uid://bf0rqlnjk65pt" path="res://Assets/key/key_pile.glb" id="2_rafia"]
+[ext_resource type="AudioStream" uid="uid://1mo32xg3l138" path="res://Assets/Sounds/keys_jingling.wav" id="3_epwqp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_k1lso"]
+height = 1.0
+radius = 1.7880859
+
+[node name="KeyPile" type="StaticBody3D" unique_id=584039214 groups=["interactables"]]
+script = ExtResource("1_pmvfl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=986669466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_k1lso")
+
+[node name="BoundingBox" type="Area3D" parent="." unique_id=1708006540]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox" unique_id=1973692968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_k1lso")
+
+[node name="keys_pile" parent="." unique_id=653088486 instance=ExtResource("2_rafia")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=456906490]
+stream = ExtResource("3_epwqp")

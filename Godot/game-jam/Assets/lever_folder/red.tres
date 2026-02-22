@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cymvdcyswljl6"]
+
+[ext_resource type="Texture2D" uid="uid://dx45ae7itn23j" path="res://Assets/textures_bazar/Image_1.png" id="1_17ncm"]
+[ext_resource type="Texture2D" uid="uid://b1r60si2ek2c6" path="res://Assets/textures_bazar/Image_2.png" id="2_g1e4w"]
+
+[resource]
+resource_name = "orange"
+cull_mode = 2
+albedo_color = Color(0.6509804, 0.10980392, 0, 1)
+metallic = 1.0
+metallic_texture = ExtResource("1_17ncm")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_17ncm")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_g1e4w")

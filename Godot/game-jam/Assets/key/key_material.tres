@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4uvo5j33bk5x"]
+
+[ext_resource type="Texture2D" uid="uid://b447to880xevw" path="res://Assets/key/key_pile_Материал_BaseColor-Материал_Alpha.png" id="1_gf08h"]
+[ext_resource type="Texture2D" uid="uid://crwt07y6dhxf1" path="res://Assets/key/key_pile_Материал_Emission.jpg" id="2_jlfeo"]
+[ext_resource type="Texture2D" uid="uid://ds0rhwe5iw6vp" path="res://Assets/key/key_pile_Материал_Metallic-Материал_Roughness.png" id="3_uhrj6"]
+[ext_resource type="Texture2D" uid="uid://jd67m0k33hk0" path="res://Assets/key/key_pile_Материал_Normal.jpg" id="4_7jenx"]
+
+[resource]
+resource_name = "________________"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_gf08h")
+metallic = 1.0
+metallic_texture = ExtResource("3_uhrj6")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_uhrj6")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_jlfeo")
+normal_enabled = true
+normal_texture = ExtResource("4_7jenx")

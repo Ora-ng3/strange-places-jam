@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cy71la1g6xhs4"]
+
+[ext_resource type="ArrayMesh" uid="uid://d08qd3wneisb5" path="res://Assets/goat_room/hill.res" id="1_ucxbq"]
+[ext_resource type="Shape3D" uid="uid://bejj21ahsqmq2" path="res://Assets/goat_room/hill_collision.tres" id="2_1bg63"]
+[ext_resource type="PackedScene" uid="uid://daaio17qvmsi7" path="res://Objects/goat.scn" id="3_5rjoj"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="4_6a6gm"]
+[ext_resource type="Material" uid="uid://bea1fqopbamcb" path="res://Assets/Tiles105_1K-JPG/Tiles105_1K-JPG.tres" id="4_6ajjw"]
+[ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="6_ot8hr"]
+
+[node name="GoatRoom" type="Node3D" unique_id=139430265]
+
+[node name="hill" type="Node3D" parent="." unique_id=897929819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2376597, -11.154619, -2.0663004)
+metadata/_edit_group_ = true
+
+[node name="Plane" type="MeshInstance3D" parent="hill" unique_id=2110886879]
+transform = Transform3D(20, 0, 0, 0, 7.5, 0, 0, 0, 20, 0, 1.4083652, 5.8917513)
+mesh = ExtResource("1_ucxbq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hill/Plane" unique_id=1774241258]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hill/Plane/StaticBody3D" unique_id=554085292]
+shape = ExtResource("2_1bg63")
+
+[node name="goat" parent="." unique_id=1743382303 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(-0.68998605, 0, 0.72382265, 0, 1, 0, -0.72382265, 0, -0.68998605, 6.6196127, -1.0827029, -6.3222046)
+
+[node name="goat2" parent="." unique_id=52515887 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(-0.79269403, 0, -0.60961956, 0, 1, 0, 0.60961956, 0, -0.79269403, -2.18686, -1.4660351, -6.3222046)
+
+[node name="goat3" parent="." unique_id=1968112234 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(0.5650247, 0, -0.82507384, 0, 1, 0, 0.82507384, 0, 0.5650247, -2.18686, 2.1922102, 7.931646)
+
+[node name="goat4" parent="." unique_id=855264052 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(0.96647894, 0, 0.2567449, 0, 1, 0, -0.2567449, 0, 0.96647894, -2.153641, -1.5188732, -0.09489775)
+
+[node name="goat5" parent="." unique_id=1145825873 instance=ExtResource("3_5rjoj")]
+transform = Transform3D(0.96647894, 0, 0.2567449, 0, 1, 0, -0.2567449, 0, 0.96647894, 3.6121938, -1.8201784, -0.09489775)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=157561869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = ExtResource("4_6ajjw")
+use_collision = true
+size = Vector3(20, 10, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=179639766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20422363, 0)
+operation = 2
+size = Vector3(19, 9.408447, 19)
+
+[node name="Doorway" parent="." unique_id=119387464 instance=ExtResource("4_6a6gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.550058, 0)
+DoorID = 7
+
+[node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 6.5, 8)
+
+[node name="CeilingLight2" parent="." unique_id=1211277512 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 8)
+
+[node name="CeilingLight3" parent="." unique_id=811571135 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6.5, 8)
+
+[node name="CeilingLight4" parent="." unique_id=1727120587 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 6.5, 0)
+
+[node name="CeilingLight5" parent="." unique_id=695072957 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
+
+[node name="CeilingLight6" parent="." unique_id=689872017 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6.5, 0)
+
+[node name="CeilingLight7" parent="." unique_id=726219717 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 6.5, -8)
+
+[node name="CeilingLight8" parent="." unique_id=1192446756 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, -8)
+
+[node name="CeilingLight9" parent="." unique_id=2053214361 instance=ExtResource("6_ot8hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6.5, -8)

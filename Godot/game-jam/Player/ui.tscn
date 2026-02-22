@@ -1,0 +1,325 @@
+[gd_scene format=3 uid="uid://gc1g3h81ka7k"]
+
+[ext_resource type="Script" uid="uid://do7864px52odr" path="res://Player/ui.gd" id="1_kvoao"]
+[ext_resource type="Texture2D" uid="uid://doql606pi4qc8" path="res://Assets/UI/crosshair2.png" id="2_e7kh4"]
+[ext_resource type="Texture2D" uid="uid://b02nv477poefm" path="res://Assets/UI/crosshair_filled.png" id="3_f0smv"]
+[ext_resource type="FontFile" uid="uid://b07jl7pj7t4eu" path="res://Assets/UI/Lora-Regular.ttf" id="4_0q1ao"]
+[ext_resource type="Texture2D" uid="uid://eykuuunhldxr" path="res://Assets/UI/sliders-icon.png" id="5_prjsi"]
+[ext_resource type="Texture2D" uid="uid://btwrputbqk2pi" path="res://Assets/UI/close-icon.png" id="6_4ank0"]
+
+[sub_resource type="Image" id="Image_kvoao"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_onrkg"]
+image = SubResource("Image_kvoao")
+
+[sub_resource type="Animation" id="Animation_vtle1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Center/Crosshair2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Center/Crosshair2/CrosshairFilled:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_od3ui"]
+resource_name = "hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Center/Crosshair2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.16, 0.16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Center/Crosshair2/CrosshairFilled:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00tjw"]
+_data = {
+&"RESET": SubResource("Animation_vtle1"),
+&"hover": SubResource("Animation_od3ui")
+}
+
+[sub_resource type="Theme" id="Theme_k53q1"]
+default_font = ExtResource("4_0q1ao")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhl08"]
+font = ExtResource("4_0q1ao")
+font_size = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhl08"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vtle1"]
+
+[node name="UI" type="Control" unique_id=526256261]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_kvoao")
+
+[node name="Center" type="Control" parent="." unique_id=305049573]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair2" type="Sprite2D" parent="Center" unique_id=1114100808]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_e7kh4")
+
+[node name="CrosshairFilled" type="Sprite2D" parent="Center/Crosshair2" unique_id=1472635141]
+scale = Vector2(0.9999998, 0.9999998)
+texture = ExtResource("3_f0smv")
+
+[node name="Crosshair" type="Sprite2D" parent="Center" unique_id=707420066]
+visible = false
+texture_filter = 1
+scale = Vector2(1.9999999, 1.9999999)
+texture = SubResource("ImageTexture_onrkg")
+
+[node name="Permanent" type="RichTextLabel" parent="." unique_id=212620546]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 34.0
+offset_right = -34.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Popup" type="RichTextLabel" parent="." unique_id=1645972872]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Popup" unique_id=1518493182]
+wait_time = 2.0
+one_shot = true
+
+[node name="Debug" type="Control" parent="." unique_id=230150965]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Debug" unique_id=1210950388]
+layout_mode = 0
+offset_right = 236.0
+offset_bottom = 60.0
+text = "FPS: "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2013586382]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_00tjw")
+
+[node name="Menu" type="ColorRect" parent="." unique_id=1895322366]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k53q1")
+color = Color(0, 0, 0, 0.44705883)
+
+[node name="Permanent" type="Label" parent="Menu" unique_id=1888147397]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "Door(s)"
+label_settings = SubResource("LabelSettings_fhl08")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="Menu" unique_id=1701383047]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 136.0
+offset_right = 84.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhl08")
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="Menu" unique_id=1556942448]
+material = SubResource("CanvasItemMaterial_vtle1")
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -540.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 540.0
+grow_horizontal = 0
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(520, 0)
+icon = ExtResource("5_prjsi")
+flat = true
+
+[node name="Settings" type="ColorRect" parent="." unique_id=2124570902]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k53q1")
+color = Color(0, 0, 0, 1)
+
+[node name="Close" type="Button" parent="Settings" unique_id=8618379]
+material = SubResource("CanvasItemMaterial_vtle1")
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -540.0
+offset_top = 20.0
+offset_right = -19.999634
+offset_bottom = 540.0
+grow_horizontal = 0
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(520, 0)
+icon = ExtResource("6_4ank0")
+flat = true
+
+[node name="ViewCredits" type="Button" parent="Settings" unique_id=1955025965]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 201.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 30
+text = "View credits"
+
+[node name="Credits" type="ColorRect" parent="." unique_id=511044452]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k53q1")
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits" unique_id=347640015]
+layout_mode = 0
+offset_right = 1141.0
+offset_bottom = 639.0
+text = "Stylized Lever by Fromgf on sketchfab, CC Attribution-NonCommercial (modified texture color)
+
+Ground037 from ambientCG.com
+\"Rudder\" (https://skfb.ly/oIOsy) by Pavlo Kochetkov is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+\"Simple Skull Head\" (https://skfb.ly/oSXAt) by Shinara is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+Exit door
+\"Door Wooden door metal\" (https://skfb.ly/oRKtD) by Mehdi Shahsavan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+\"Old Rusty Car\" (https://skfb.ly/LxRy) by Renafox is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/).
+
+\"Skull\" by L'ANE on BlenderKit, Royalty Free
+\"Antique Skeleton Key - Detailed\" by Crazy0_0Cat on BlenderKit, Royalty Free
+\"Wooden Crate 01\" by James Ray Cock on BlenderKit, CC Zero
+\"Train\" (https://skfb.ly/ptMwq) by abhayexe is licensed under Creative Commons Attribution
+\"COTW goat (Beceite Ibex)\" (https://skfb.ly/pxvqI) by Game-animal ripper is licensed under Creative Commons Attribution
+\"Basic cyberpunk underground train station base\" (https://skfb.ly/pwWwr) by ET is licensed under Creative Commons Attribution
+“Citroen 2cv” by Aleš Fára on BlenderKit, Royalty Free
+
+Water shader :https://godotshaders.com/shader/water-shader-3d-godot-4-3/
+Textures from cc0textures.com
+"
+
+[node name="CloseCredits" type="Button" parent="Credits" unique_id=1210706612]
+material = SubResource("CanvasItemMaterial_vtle1")
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -540.0
+offset_top = 20.0
+offset_right = -19.999634
+offset_bottom = 540.0
+grow_horizontal = 0
+scale = Vector2(0.05, 0.05)
+pivot_offset = Vector2(520, 0)
+icon = ExtResource("6_4ank0")
+flat = true
+
+[connection signal="timeout" from="Popup/Timer" to="." method="_on_popup_timer_timeout"]
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Settings/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Settings/ViewCredits" to="." method="_on_view_credits_pressed"]
+[connection signal="pressed" from="Credits/CloseCredits" to="." method="_on_close_credits_pressed"]

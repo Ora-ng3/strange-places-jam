@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvyifvte7dwr3"]
+
+[ext_resource type="Script" uid="uid://djtgn8yxxl02h" path="res://Objects/ceiling_light.gd" id="1_r5cen"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uw0en"]
+size = Vector3(1, 0.05, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5cen"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.39
+
+[node name="CeilingLight" type="MeshInstance3D" unique_id=1658296193]
+mesh = SubResource("BoxMesh_uw0en")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5cen")
+script = ExtResource("1_r5cen")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=689721177 groups=["lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.895, 0)
+light_size = 0.02
+omni_range = 93.56
+omni_attenuation = 1.55

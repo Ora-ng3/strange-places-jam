@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bgrf6msho8n34"]
+
+[ext_resource type="Material" uid="uid://bea1fqopbamcb" path="res://Assets/Tiles105_1K-JPG/Tiles105_1K-JPG.tres" id="1_2a7qd"]
+[ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_jrqe7"]
+[ext_resource type="PackedScene" uid="uid://c8v0bhlxsd6f2" path="res://Objects/key_pile.tscn" id="3_oaf7f"]
+[ext_resource type="PackedScene" uid="uid://b7u0nhmfeogon" path="res://Assets/Objects/office_desk_.glb" id="4_070i4"]
+[ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="5_twgcr"]
+[ext_resource type="Texture2D" uid="uid://kife4drj5x7o" path="res://Assets/lever_arrows.png" id="6_070i4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_070i4"]
+size = Vector3(5.563904, 2.145752, 2.2792969)
+
+[node name="KeyRoom" type="Node3D" unique_id=1182730611]
+
+[node name="Walls" type="CSGBox3D" parent="." unique_id=1085675773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = ExtResource("1_2a7qd")
+use_collision = true
+size = Vector3(10, 5, 10)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls" unique_id=311125516]
+operation = 2
+size = Vector3(9, 4, 9)
+
+[node name="Doorway" parent="." unique_id=1687868200 instance=ExtResource("2_jrqe7")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+DoorID = 1
+
+[node name="KeyPile" parent="." unique_id=584039214 instance=ExtResource("3_oaf7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6083298, 0, -2.5682168)
+
+[node name="Desk" parent="." unique_id=934660988 instance=ExtResource("4_070i4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.4783876, -0.016505778, 3.0375857)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk" unique_id=1437811163]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D" unique_id=1084862397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.089556694, 1.0911617, 1.8109064)
+shape = SubResource("BoxShape3D_070i4")
+
+[node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("5_twgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 3)
+
+[node name="CeilingLight2" parent="." unique_id=1511196498 instance=ExtResource("5_twgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, -3)
+
+[node name="CeilingLight3" parent="." unique_id=1663463016 instance=ExtResource("5_twgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 3)
+
+[node name="CeilingLight4" parent="." unique_id=621786047 instance=ExtResource("5_twgcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, -3)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=461164746]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, -0.2, 0, 0.2, -8.742278e-09, 2.583, 0.93034494, 3.9153826)
+texture = ExtResource("6_070i4")

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dkr2s2a2l8yf6"]
+
+[ext_resource type="PackedScene" uid="uid://catflkt3fxgbw" path="res://Assets/lever_folder/lever.blend" id="1_1btnt"]
+[ext_resource type="Script" uid="uid://cypqb4wrsuago" path="res://Objects/lever.gd" id="2_7uavd"]
+[ext_resource type="AudioStream" uid="uid://booidnbqg4fae" path="res://Assets/Sounds/lever_push.mp3" id="3_yrgnr"]
+
+[sub_resource type="Animation" id="Animation_e72jl"]
+resource_name = "up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lever1/Sketchfab_model/Empty:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.2217305, 0, 0), Vector3(1.9198622, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrgnr"]
+_data = {
+&"up": SubResource("Animation_e72jl")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d3qoi"]
+size = Vector3(0.46154785, 0.91625977, 0.7641239)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e72jl"]
+size = Vector3(0.6755371, 0.9022217, 0.76712036)
+
+[node name="Lever" type="StaticBody3D" unique_id=32675529 groups=["interactables", "levers"]]
+script = ExtResource("2_7uavd")
+
+[node name="Lever1" parent="." unique_id=81169421 instance=ExtResource("1_1btnt")]
+
+[node name="Empty" parent="Lever1/Sketchfab_model" parent_id_path=PackedInt32Array(81169421, 2028931203) index="0" unique_id=498186400]
+transform = Transform3D(1, 0, 0, 0, 0.34202012, -0.93969256, 0, 0.93969256, 0.34202012, 0, -10.006768, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=555908643]
+libraries/ = SubResource("AnimationLibrary_yrgnr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=472397131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0006713867, 0.00036621094, -0.3449831)
+shape = SubResource("BoxShape3D_d3qoi")
+disabled = true
+
+[node name="BoundingBox" type="Area3D" parent="." unique_id=322939429]
+editor_description = "This is the box that is detected by the player's raycast when interacting"
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox" unique_id=506149425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015258789, -0.33461)
+shape = SubResource("BoxShape3D_e72jl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1464326305]
+stream = ExtResource("3_yrgnr")
+volume_db = -20.0
+
+[editable path="Lever1"]

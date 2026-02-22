@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ca1jlwni1aqxu"]
+
+[ext_resource type="Script" uid="uid://wnvqsgkvi85v" path="res://Objects/magnet.gd" id="1_dwa0j"]
+[ext_resource type="PackedScene" uid="uid://drf30rplqwg0q" path="res://Assets/magnet/magnet.glb" id="1_tqm6t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwa0j"]
+size = Vector3(1.4716797, 1.1306152, 1.3427734)
+
+[sub_resource type="Animation" id="Animation_dwa0j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("magnet:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.34906584, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mlxyo"]
+resource_name = "hover"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("magnet:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.2831855, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgdae"]
+_data = {
+&"RESET": SubResource("Animation_dwa0j"),
+&"hover": SubResource("Animation_mlxyo")
+}
+
+[node name="Magnet" type="Node3D" unique_id=1674206153 groups=["interactables"]]
+script = ExtResource("1_dwa0j")
+
+[node name="magnet" parent="." unique_id=1074704802 instance=ExtResource("1_tqm6t")]
+transform = Transform3D(4.9999995, 0, 0, 0, 4.6984625, -1.7101004, 0, 1.7101004, 4.6984625, 0, 0, 0)
+
+[node name="BoundingBox" type="Area3D" parent="." unique_id=563767496]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox" unique_id=203843972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30337656, 0)
+shape = SubResource("BoxShape3D_dwa0j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=990587317]
+libraries/ = SubResource("AnimationLibrary_fgdae")
+autoplay = &"hover"

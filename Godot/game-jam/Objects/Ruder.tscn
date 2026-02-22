@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://mcn11plraa1r"]
+
+[ext_resource type="Script" uid="uid://dmjnxgocbdjy0" path="res://Objects/ruder.gd" id="1_ctuxl"]
+[ext_resource type="PackedScene" uid="uid://c22lpoyo62qwo" path="res://Assets/Rudder/rudder.blend" id="2_ptp7a"]
+[ext_resource type="AudioStream" uid="uid://hsk0ymxqkc38" path="res://Assets/Sounds/stone_push.mp3" id="3_ptp7a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ptp7a"]
+size = Vector3(0.25756836, 1.1294556, 0.39453125)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r6hqx"]
+height = 0.12646484
+radius = 0.5131836
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctuxl"]
+size = Vector3(0.46484375, 1.5653076, 1)
+
+[node name="Rudder" type="StaticBody3D" unique_id=1972468577 groups=["interactables"]]
+script = ExtResource("1_ctuxl")
+
+[node name="rudder" parent="." unique_id=1254038070 instance=ExtResource("2_ptp7a")]
+
+[node name="Wheel" parent="rudder" index="1" unique_id=754191000]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.20024975, 1.0952396, 0.00015565965)
+
+[node name="BoundingBox" type="Area3D" parent="." unique_id=147172842]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoundingBox" unique_id=412296416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5867615, 0)
+shape = SubResource("BoxShape3D_ptp7a")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BoundingBox" unique_id=549776533]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.21264648, 1.086355, 0)
+shape = SubResource("CylinderShape3D_r6hqx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1161209252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0470109, 0.7929077, 0)
+shape = SubResource("BoxShape3D_ctuxl")
+
+[node name="Timer" type="Timer" parent="." unique_id=344597189]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1857958299]
+stream = ExtResource("3_ptp7a")
+volume_db = -20.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="rudder"]
