@@ -33,31 +33,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1605788, 2.811506, 25.26838
 
 [node name="BoringRoom" parent="." unique_id=1182730611 instance=ExtResource("3_036b0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014343739, 0, -0.11362362)
-visible = false
 
 [node name="KeyRoom" parent="." unique_id=626065019 instance=ExtResource("1_tlwt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.809262, 0, -9.130529)
-visible = false
 
 [node name="LeverRoom" parent="." unique_id=121021113 instance=ExtResource("2_aqk2v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.250338, 0, 4.804893)
-visible = false
 
 [node name="GoatRoom" parent="." unique_id=139430265 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.272896, 1.0832214, -53.738)
-visible = false
 
 [node name="ScaleRoom" parent="." unique_id=1059009930 instance=ExtResource("10_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.3516, -10.955692, -54.957638)
-visible = false
 
 [node name="SkullRoom" parent="." unique_id=1887507867 instance=ExtResource("5_ioo17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.29315, -70.45802, 8.475837)
-visible = false
 
 [node name="TrainRoom" parent="." unique_id=1903640646 instance=ExtResource("8_gbfbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.341515, -9.536743e-07, 90.264336)
-visible = false
 
 [node name="DarkHallway" parent="." unique_id=1462163649 instance=ExtResource("9_ioo17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1781001, 3.7400951, 19.811932)
@@ -66,5 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1781001, 3.7400951, 19.8119
 wait_time = 0.1
 one_shot = true
 autostart = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1527267368]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

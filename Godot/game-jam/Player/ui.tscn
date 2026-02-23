@@ -140,17 +140,18 @@ offset_left = 34.0
 offset_right = -34.0
 offset_bottom = 158.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Popup" type="RichTextLabel" parent="." unique_id=1645972872]
-visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 100.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -249,7 +250,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_k53q1")
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.26666668)
 
 [node name="Close" type="Button" parent="Settings" unique_id=8618379]
 material = SubResource("CanvasItemMaterial_vtle1")
@@ -285,6 +286,28 @@ offset_bottom = 306.0
 theme_override_font_sizes/font_size = 30
 text = "Show debug"
 
+[node name="Label" type="Label" parent="Settings" unique_id=128799685]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 42.0
+offset_bottom = 21.0
+grow_horizontal = 2
+text = "Resolution: "
+
+[node name="HSlider" type="HSlider" parent="Settings" unique_id=1463922822]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.0
+offset_right = 149.0
+offset_bottom = 77.0
+grow_horizontal = 2
+value = 50.0
+
 [node name="Credits" type="ColorRect" parent="." unique_id=511044452]
 visible = false
 layout_mode = 1
@@ -319,6 +342,7 @@ text = "“Stylized Lever” by Fromgf on sketchfab, CC Attribution-NonCommercia
 “Container With Rail” by Game art on BlenderKit, Royalty Free
 Water shader : https://godotshaders.com/shader/water-shader-3d-godot-4-3/
 Portals plugin : https://godotengine.org/asset-library/asset/4022
+Office Desk by Mehdi Shahsavan, CC Attribution
 Few textures from cc0textures.com"
 
 [node name="CloseCredits" type="Button" parent="Credits" unique_id=1210706612]
@@ -344,4 +368,5 @@ flat = true
 [connection signal="pressed" from="Settings/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Settings/ViewCredits" to="." method="_on_view_credits_pressed"]
 [connection signal="pressed" from="Settings/ShowDebug" to="." method="_on_show_debug_pressed"]
+[connection signal="drag_ended" from="Settings/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="pressed" from="Credits/CloseCredits" to="." method="_on_close_credits_pressed"]

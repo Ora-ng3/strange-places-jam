@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://bea1fqopbamcb" path="res://Assets/Tiles105_1K-JPG/Tiles105_1K-JPG.tres" id="2_2mwtl"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_x8kar"]
 [ext_resource type="PackedScene" uid="uid://dm2o85xepflwy" path="res://Assets/ScaleRoom/desert/desert.glb" id="3_x8kar"]
+[ext_resource type="Shader" uid="uid://5ica5lmtycek" path="res://Places/water.gdshader" id="5_ao70h"]
 [ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="6_0hyux"]
 [ext_resource type="PackedScene" uid="uid://ixwaecx8mcu1" path="res://Assets/ScaleRoom/citroen_2cv_glb/citroen_2cv.glb" id="6_rl3sl"]
 [ext_resource type="PackedScene" uid="uid://cumcqwpw747c3" path="res://Assets/ScaleRoom/bike_glb/stranger_things_bike_complex_fork turned.glb" id="7_ao70h"]
@@ -14,8 +15,34 @@ size = Vector2(40, 40)
 subdivide_width = 5
 subdivide_depth = 5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mwtl"]
-albedo_color = Color(0.11418412, 0.3849715, 0.5746623, 1)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ao70h"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sltci"]
+noise = SubResource("FastNoiseLite_ao70h")
+seamless = true
+invert = true
+as_normal_map = true
+bump_strength = 19.3
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5t0mk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sdq30"]
+noise = SubResource("FastNoiseLite_5t0mk")
+seamless = true
+as_normal_map = true
+bump_strength = 42.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sltci"]
+render_priority = 0
+shader = ExtResource("5_ao70h")
+shader_parameter/uAlbedo = Color(0.42797294, 0.7298687, 0.94263434, 1)
+shader_parameter/uTexureNormal = SubResource("NoiseTexture2D_sltci")
+shader_parameter/uTexureNormal2 = SubResource("NoiseTexture2D_sdq30")
+shader_parameter/uNormalMix = 0.2
+shader_parameter/uWaveDirection = Vector2(1, 0)
+shader_parameter/uWaveDirection2 = Vector2(0, 1)
+shader_parameter/uTimeScale = 0.02000000095
+shader_parameter/uWaveScale = 1.6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5t0mk"]
 size = Vector3(1.4716797, 1.9609375, 3.6192474)
@@ -39,16 +66,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.3536806, 0)
 operation = 2
 size = Vector3(29, 13.519165, 29)
 
-[node name="Label3D" type="Label3D" parent="." unique_id=867951822]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2085385, -10.684284)
-text = "SCALE ROOM"
-font_size = 117
-
 [node name="desert" parent="." unique_id=2043066514 instance=ExtResource("3_x8kar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.03, -15)
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, -15, 0.3300393, -15)
 
 [node name="DoorwayMid" parent="." unique_id=1687868200 instance=ExtResource("2_x8kar")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -13.552851, 0.65630513, 4.86479)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -10.02955, 0.76804537, 4.86479)
 DoorID = 8
 
 [node name="DoorwayLarge" parent="." unique_id=491235943 instance=ExtResource("2_x8kar")]
@@ -56,13 +78,13 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 3.5704145, 0.8865167, 0.64077
 DoorID = 10
 
 [node name="DoorwaySmall" parent="." unique_id=506913831 instance=ExtResource("2_x8kar")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.93351215, 2.389341, -3.3517182)
+transform = Transform3D(0.025194777, 0, -0.19840671, 0, 0.2, 0, 0.19840671, 0, 0.025194777, -0.93351215, 1.9550824, -3.4135144)
 DoorID = 9
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=715346308]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3920331, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44450378, 0)
 mesh = SubResource("PlaneMesh_0hyux")
-surface_material_override/0 = SubResource("StandardMaterial3D_2mwtl")
+surface_material_override/0 = SubResource("ShaderMaterial_sltci")
 
 [node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("6_0hyux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.671126, 0)
@@ -99,29 +121,29 @@ omni_range = 847.921
 [node name="citroen_2cv" parent="." unique_id=150220032 instance=ExtResource("6_rl3sl")]
 transform = Transform3D(-0.6733101, 0.027061515, -0.73886466, 0.17913471, 0.9755262, -0.12751192, 0.7173313, -0.21821135, -0.66167945, -4.900591, 0.549327, -8.159872)
 
-[node name="Plane_002" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 946400638) index="74" unique_id=1152666922]
+[node name="Plane_002" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 1328133397) index="74" unique_id=1172190584]
 visible = false
 
-[node name="Plane_003" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 946400638) index="75" unique_id=1453215290]
+[node name="Plane_003" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 1328133397) index="75" unique_id=939350945]
 visible = false
 
-[node name="Plane_004" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 946400638) index="76" unique_id=763705161]
+[node name="Plane_004" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 1328133397) index="76" unique_id=235834667]
 visible = false
 
-[node name="Plane_005" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 946400638) index="77" unique_id=2026223049]
+[node name="Plane_005" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 1328133397) index="77" unique_id=1738857327]
 visible = false
 
-[node name="Plane_006" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 946400638) index="78" unique_id=167088573]
+[node name="Plane_006" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 1328133397) index="78" unique_id=1614349707]
 visible = false
 
-[node name="Plane_007" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 946400638) index="79" unique_id=1548540962]
+[node name="Plane_007" parent="citroen_2cv/Citroen 2CV" parent_id_path=PackedInt32Array(150220032, 1328133397) index="79" unique_id=997010387]
 visible = false
 
 [node name="stranger_things_bike_complex_fork turned" parent="." unique_id=1924870841 instance=ExtResource("7_ao70h")]
 transform = Transform3D(-0.99370635, -0.10883902, -0.026492443, -0.0509854, 0.6500479, -0.7581809, 0.09974102, -0.7520584, -0.6515059, -8.8384285, 0.8772838, 3.9091554)
 
 [node name="Sketchfab_Scene" parent="." unique_id=938516677 instance=ExtResource("8_sltci")]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, -1.2942384, 1.4164609, -5.8680124)
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, -1.2942384, 1.3136407, -5.8680124)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=539319864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -9)

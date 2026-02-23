@@ -3,13 +3,20 @@ extends Control
 var on_start_menu = true
 @onready var player = get_parent()
 
+func _ready() -> void:
+	set_render_scale(1)
+
 func _unhandled_input(event: InputEvent) -> void:
 	# Change mouse capture mode with escape
-	if event.is_action_released("Escape") and not on_start_menu:
-			get_tree().paused = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
-			$Menu.visible = !$Menu.visible
-			toggle_mouse_mode()	
-			player.on_menu = !player.on_menu
+	if event.is_action_released("Escape"):
+		get_tree().paused = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+		if $Settings.visible:
+			$Settings.hide()
+		else:
+			if not on_start_menu:
+				$Menu.visible = !$Menu.visible
+				toggle_mouse_mode()	
+				player.on_menu = !player.on_menu
 	
 func start():
 	on_start_menu = false
@@ -88,3 +95,18 @@ func _on_show_debug_pressed() -> void:
 		$Debug.visible = false
 	else :
 		$Debug.visible = true
+
+
+func _on_h_slider_drag_ended(value_changed: bool) -> void:
+	if value_changed:
+		set_render_scale($Settings/HSlider.value / 50)
+	
+func set_render_scale(scale: float) -> void:
+	# Clamp between 0.5 and 1.0 (or whatever you want)
+	scale = clamp(scale, 0.25, 2.0)
+
+	var vp := get_viewport()
+
+	# This API exists in Godot 4: it scales the 3D rendering resolution.
+	# UI (2D) can remain at window resolution depending on your setup.
+	vp.scaling_3d_scale = scale

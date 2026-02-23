@@ -11,18 +11,21 @@ var is_exit_door_open: bool = false
 var is_lateral_door_open: bool = false
 
 func get_red_button_message() -> String:
+	return ""
 	if is_lateral_door_open:
 		return "Close lateral doors"
 	else:
 		return "Open lateral doors"
 		
 func get_cabin_door_message() -> String:
+	return ""
 	if is_cabin_door_open:
 		return "Close doors"
 	else:
 		return "Open doors"
 		
 func get_exit_door_message() -> String:
+	return ""
 	if is_exit_door_open:
 		return "Close exit"
 	else:
@@ -53,7 +56,7 @@ func trigger_red_button() -> String:
 		lateral_open = true
 		anim_player.play("lateral_doors_opening")
 		is_lateral_door_open = true
-		
+	$Message.update()
 	return ""
 	
 func trigger_exit_door() -> String:

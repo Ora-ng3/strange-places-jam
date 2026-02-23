@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqovlmx6mu0fr" path="res://Places/train_room/train_room.gd" id="1_uwnyh"]
 [ext_resource type="PackedScene" uid="uid://bx4xsc2b7rj37" path="res://Objects/doorway.tscn" id="2_0edka"]
-[ext_resource type="PackedScene" uid="uid://bcxi0324qfja6" path="res://Assets/Train clean/Train_v1.blend" id="3_cx5lv"]
+[ext_resource type="PackedScene" uid="uid://bcxi0324qfja6" path="res://Assets/Train clean/train_v1.blend" id="3_cx5lv"]
 [ext_resource type="Script" uid="uid://cdopqytvoaoxm" path="res://Places/train_room/external_exit_door.gd" id="4_0dd6t"]
 [ext_resource type="Texture2D" uid="uid://cf6bi33huhcqx" path="res://Assets/Train clean/textures/41e803398c174225b0a455c009b25172_RGB_I_MRTIsland_Co_001_08.jpg" id="4_cmjgq"]
 [ext_resource type="Script" uid="uid://c4wii6yrsiwrq" path="res://Places/train_room/entrance_door_left.gd" id="4_xnd4i"]
@@ -106,71 +106,65 @@ right_cabin_door = NodePath("train_v1/Armature/Skeleton3D/Cabin entrance door ri
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86, -0.92772555)
 DoorID = 6
 
-[node name="Label3D" type="Label3D" parent="." unique_id=867951822]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9228585, 1.3238702, 2.1476223)
-text = "TRAIN ROOM
-"
-font_size = 117
-
 [node name="train_v1" parent="." unique_id=2096374295 instance=ExtResource("3_cx5lv")]
 
-[node name="T_MRTIsland_LightINTL01_T_MRTIsland_Tisplay02_0" parent="train_v1/Structure/Ceiling lights/T_MRTIsland_LightINTL01" parent_id_path=PackedInt32Array(2096374295, 1056074773) index="0" unique_id=1474444305]
+[node name="T_MRTIsland_LightINTL01_T_MRTIsland_Tisplay02_0" parent="train_v1/Structure/Ceiling lights/T_MRTIsland_LightINTL01" parent_id_path=PackedInt32Array(2096374295, 913461278) index="0" unique_id=549461484]
 mesh = SubResource("ArrayMesh_uki04")
 
-[node name="Handles" parent="train_v1/Structure" parent_id_path=PackedInt32Array(2096374295, 1329610528) index="2" unique_id=284317400]
+[node name="Handles" parent="train_v1/Structure" parent_id_path=PackedInt32Array(2096374295, 657809756) index="2" unique_id=1883560540]
 visible = false
 
-[node name="T_MRTIsland_BodyINT_T_MRTIsland_BodyINT_05_0" parent="train_v1/Structure/Structure train_001" parent_id_path=PackedInt32Array(2096374295, 415130359) index="4" unique_id=1420777282]
+[node name="T_MRTIsland_BodyINT_T_MRTIsland_BodyINT_05_0" parent="train_v1/Structure/Structure train_001" parent_id_path=PackedInt32Array(2096374295, 518284100) index="4" unique_id=2032061532]
 visible = false
 
-[node name="External exit door" parent="train_v1/Armature/Skeleton3D" parent_id_path=PackedInt32Array(2096374295, 1842353637) index="22" unique_id=1336370122 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+[node name="External exit door" parent="train_v1/Armature/Skeleton3D" parent_id_path=PackedInt32Array(2096374295, 94680691) index="22" unique_id=2143285463 node_paths=PackedStringArray("train_room") groups=["interactables"]]
 script = ExtResource("4_0dd6t")
 train_room = NodePath("../../../..")
 
-[node name="Collision exit open " parent="train_v1/Armature/Skeleton3D/External exit door" index="0" unique_id=1929522580]
+[node name="Collision exit open " parent="train_v1/Armature/Skeleton3D/External exit door" index="0" unique_id=486847264]
 collision_layer = 5
 collision_mask = 5
 
-[node name="Entrance door left object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left" parent_id_path=PackedInt32Array(2096374295, 1700036633) index="0" unique_id=793277524 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+[node name="Entrance door left object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left" parent_id_path=PackedInt32Array(2096374295, 746567298) index="0" unique_id=1328151289 node_paths=PackedStringArray("train_room") groups=["interactables"]]
 script = ExtResource("4_xnd4i")
 train_room = NodePath("../../../../../..")
 
-[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left/Entrance door left object " index="0" unique_id=1884173257]
+[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door left/Entrance door left/Entrance door left object " index="0" unique_id=442080579]
 collision_layer = 5
 collision_mask = 5
 
-[node name="Entrance door right object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right" parent_id_path=PackedInt32Array(2096374295, 599138557) index="0" unique_id=1104906162 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+[node name="Entrance door right object " parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right" parent_id_path=PackedInt32Array(2096374295, 2128856413) index="0" unique_id=930194720 node_paths=PackedStringArray("train_room") groups=["interactables"]]
 script = ExtResource("5_0dd6t")
 train_room = NodePath("../../../../../..")
 
-[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right/Entrance door right object " index="0" unique_id=2062173650]
+[node name="StaticBody3D" parent="train_v1/Armature/Skeleton3D/Cabin entrance door right/Entrance door right/Entrance door right object " index="0" unique_id=1104127809]
 collision_layer = 5
 collision_mask = 5
 
-[node name="Red button " parent="train_v1" index="8" unique_id=1680718338 node_paths=PackedStringArray("train_room") groups=["interactables"]]
+[node name="Red button " parent="train_v1" index="8" unique_id=1315553359 node_paths=PackedStringArray("train_room") groups=["interactables"]]
 script = ExtResource("7_0dd6t")
 train_room = NodePath("../..")
 
-[node name="StaticBody3D" parent="train_v1/Red button " index="0" unique_id=1529519036]
+[node name="StaticBody3D" parent="train_v1/Red button " index="0" unique_id=1909731395]
 collision_layer = 5
 collision_mask = 5
 
-[node name="train wheels" parent="train_v1/Container with rail" parent_id_path=PackedInt32Array(2096374295, 664983948) index="4" unique_id=2119824422]
+[node name="train wheels" parent="train_v1/Container with rail" parent_id_path=PackedInt32Array(2096374295, 831961670) index="4" unique_id=1057520629]
 visible = false
 
-[node name="Frame" parent="train_v1" index="11" unique_id=1993990459]
+[node name="Frame" parent="train_v1" index="11" unique_id=1627665645]
 visible = false
 
-[node name="FrontPivot" parent="train_v1" index="12" unique_id=125698903]
+[node name="FrontPivot" parent="train_v1" index="12" unique_id=1580417877]
 visible = false
 
-[node name="Frame_001" parent="train_v1" index="13" unique_id=1284480425]
+[node name="Frame_001" parent="train_v1" index="13" unique_id=1731664148]
 visible = false
 
-[node name="pCube297_concrete_0 " parent="train_v1/Train station/group1/pCube297" parent_id_path=PackedInt32Array(2096374295, 151062139) index="0" unique_id=1988700304]
+[node name="pCube297_concrete_0 " parent="train_v1/Train station/group1/pCube297" parent_id_path=PackedInt32Array(2096374295, 461457514) index="0" unique_id=1195572773]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.861023e-05, -0.011482239, 0.000541687)
 
-[node name="pCube310_concrete_0 " parent="train_v1/Train station/group1/pCube310" parent_id_path=PackedInt32Array(2096374295, 916534284) index="0" unique_id=166177555]
+[node name="pCube310_concrete_0 " parent="train_v1/Train station/group1/pCube310" parent_id_path=PackedInt32Array(2096374295, 313845374) index="0" unique_id=2146525123]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.20654297, 0.13103485, 0.02166748)
 
 [node name="Collisions" type="Node3D" parent="." unique_id=1759187045]
