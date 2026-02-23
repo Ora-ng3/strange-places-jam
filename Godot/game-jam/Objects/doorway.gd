@@ -34,9 +34,9 @@ func trigger(player: CharacterBody3D) -> String:
 	if closed and not $AnimationPlayer.is_playing():
 		if abs(scale.x - player.scale.x) > 0.01:
 			if player.scale.x > scale.x:
-				return "There's no way you'll fit in there."
+				return "There's no way I'll fit in there."
 			if player.scale.x < scale.x:
-				return "Hmmm... Perhaps a bit too high for you right now."
+				return "Hmmm... Perhaps a bit too high for me right now."
 		if only_on_one_zone(): # the player is only on one zone
 			open($FrontZone.has_overlapping_bodies())
 		else:

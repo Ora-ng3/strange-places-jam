@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c8v0bhlxsd6f2" path="res://Objects/key_pile.tscn" id="3_oaf7f"]
 [ext_resource type="PackedScene" uid="uid://b7u0nhmfeogon" path="res://Assets/Objects/office_desk_.glb" id="4_070i4"]
 [ext_resource type="PackedScene" uid="uid://bvyifvte7dwr3" path="res://Objects/ceiling_light.tscn" id="5_twgcr"]
-[ext_resource type="Texture2D" uid="uid://kife4drj5x7o" path="res://Assets/lever_arrows.png" id="6_070i4"]
+[ext_resource type="Texture2D" uid="uid://dwjanxqvw1563" path="res://Assets/lever_arrows.png" id="6_070i4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_070i4"]
 size = Vector3(5.563904, 2.145752, 2.2792969)

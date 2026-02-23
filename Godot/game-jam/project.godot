@@ -21,7 +21,6 @@ global="*uid://b5j15yh71btq8"
 
 [display]
 
-window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"

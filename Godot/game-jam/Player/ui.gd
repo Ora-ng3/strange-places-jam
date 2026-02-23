@@ -27,7 +27,7 @@ func toggle_mouse_mode() -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(_delta: float) -> void:
-	$Debug/Label.text = "FPS: " + str(Engine.get_frames_per_second())
+	$Debug/FPS.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func popup(message: String):
 	if message:
@@ -82,3 +82,9 @@ func _on_view_credits_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_show_debug_pressed() -> void:
+	if $Debug.visible :
+		$Debug.visible = false
+	else :
+		$Debug.visible = true

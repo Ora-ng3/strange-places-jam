@@ -160,14 +160,17 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Debug" type="Control" parent="." unique_id=230150965]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Debug" unique_id=1210950388]
+[node name="FPS" type="Label" parent="Debug" unique_id=1210950388]
 layout_mode = 0
-offset_right = 236.0
-offset_bottom = 60.0
+offset_left = 40.0
+offset_top = 591.0
+offset_right = 160.0
+offset_bottom = 614.0
 text = "FPS: "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2013586382]
@@ -230,8 +233,10 @@ flat = true
 
 [node name="Quit" type="Button" parent="Menu" unique_id=698068778]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 34.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 49.0
 text = "Quit
 "
 
@@ -264,12 +269,21 @@ flat = true
 
 [node name="ViewCredits" type="Button" parent="Settings" unique_id=1955025965]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 201.0
-offset_bottom = 66.0
+offset_left = 486.0
+offset_top = 200.0
+offset_right = 667.0
+offset_bottom = 246.0
 theme_override_font_sizes/font_size = 30
 text = "View credits"
+
+[node name="ShowDebug" type="Button" parent="Settings" unique_id=211613204]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 260.0
+offset_right = 667.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 30
+text = "Show debug"
 
 [node name="Credits" type="ColorRect" parent="." unique_id=511044452]
 visible = false
@@ -284,28 +298,28 @@ color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits" unique_id=347640015]
 layout_mode = 0
-offset_right = 1141.0
-offset_bottom = 639.0
-text = "Stylized Lever by Fromgf on sketchfab, CC Attribution-NonCommercial (modified texture color)
-
-Ground037 from ambientCG.com
-\"Rudder\" (https://skfb.ly/oIOsy) by Pavlo Kochetkov is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-\"Simple Skull Head\" (https://skfb.ly/oSXAt) by Shinara is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-Exit door
-\"Door Wooden door metal\" (https://skfb.ly/oRKtD) by Mehdi Shahsavan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-\"Old Rusty Car\" (https://skfb.ly/LxRy) by Renafox is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/).
-
+offset_left = 282.0
+offset_top = 39.0
+offset_right = 870.0
+offset_bottom = 614.0
+text = "“Stylized Lever” by Fromgf on sketchfab, CC Attribution-NonCommercial (modified texture color)
+“Ground037” from ambientCG.com
+\"Rudder\" (https://skfb.ly/oIOsy) by Pavlo Kochetkov, CC Attribution
+\"Simple Skull Head\" (https://skfb.ly/oSXAt) by Shinara, CC Attribution
+\"Door Wooden door metal\" (https://skfb.ly/oRKtD) by Mehdi Shahsavan, CC Attribution
 \"Skull\" by L'ANE on BlenderKit, Royalty Free
 \"Antique Skeleton Key - Detailed\" by Crazy0_0Cat on BlenderKit, Royalty Free
 \"Wooden Crate 01\" by James Ray Cock on BlenderKit, CC Zero
-\"Train\" (https://skfb.ly/ptMwq) by abhayexe is licensed under Creative Commons Attribution
-\"COTW goat (Beceite Ibex)\" (https://skfb.ly/pxvqI) by Game-animal ripper is licensed under Creative Commons Attribution
-\"Basic cyberpunk underground train station base\" (https://skfb.ly/pwWwr) by ET is licensed under Creative Commons Attribution
+\"Train\" (https://skfb.ly/ptMwq) by abhayexe, CC Attribution
+\"COTW goat (Beceite Ibex)\" (https://skfb.ly/pxvqI) by Game-animal ripper, CC Attribution
+\"Basic cyberpunk underground train station base\" (https://skfb.ly/pwWwr) by ET, CC Attribution
 “Citroen 2cv” by Aleš Fára on BlenderKit, Royalty Free
-
-Water shader :https://godotshaders.com/shader/water-shader-3d-godot-4-3/
-Textures from cc0textures.com
-"
+\"Apple\" (https://skfb.ly/6WsML) by TahirNilin, CC Attribution
+“U-Shaped Magnet” by Crazy0_0Cat on BlenderKit, Royalty Free
+“Container With Rail” by Game art on BlenderKit, Royalty Free
+Water shader : https://godotshaders.com/shader/water-shader-3d-godot-4-3/
+Portals plugin : https://godotengine.org/asset-library/asset/4022
+Few textures from cc0textures.com"
 
 [node name="CloseCredits" type="Button" parent="Credits" unique_id=1210706612]
 material = SubResource("CanvasItemMaterial_vtle1")
@@ -329,4 +343,5 @@ flat = true
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Settings/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Settings/ViewCredits" to="." method="_on_view_credits_pressed"]
+[connection signal="pressed" from="Settings/ShowDebug" to="." method="_on_show_debug_pressed"]
 [connection signal="pressed" from="Credits/CloseCredits" to="." method="_on_close_credits_pressed"]
