@@ -30,6 +30,7 @@ func only_on_one_zone(): # just an XOR between both areas
 		
 # when the player clicks on the door
 func trigger(player: CharacterBody3D) -> String:
+	print("trigger: ", Time.get_ticks_msec())
 	#open(transform.basis.z.dot(player_pos - global_position) > 0)
 	if closed and not $AnimationPlayer.is_playing():
 		if abs(scale.x - player.scale.x) > 0.01:
@@ -50,6 +51,8 @@ func trigger(player: CharacterBody3D) -> String:
 	return ""
 
 func open(from_front: bool) -> void:
+	print("open start: ", Time.get_ticks_msec())
+
 	if ExitFront == null:
 		ExitFront = global.id_to_node[global.map[DoorID][0]]
 	if ExitBack == null:
@@ -67,11 +70,15 @@ func open(from_front: bool) -> void:
 		if ExitFront != null:
 			linked_door = ExitFront
 			linked_door.get_node("AnimationPlayer").play("OpenBack")
+	print("just before linking: ", Time.get_ticks_msec())
+
 	if linked_door != null:
 		current_room = true
 		start(PortalExit, linked_door.get_node("PortalEnter"))
 		linked_door.open_linked(self)
 		linked_door.get_parent().show()
+	print("just after linking: ", Time.get_ticks_msec())
+
 
 func close():
 	current_room = true

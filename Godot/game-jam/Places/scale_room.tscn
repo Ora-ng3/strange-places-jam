@@ -70,7 +70,7 @@ size = Vector3(29, 13.519165, 29)
 transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, -15, 0.3300393, -15)
 
 [node name="DoorwayMid" parent="." unique_id=1687868200 instance=ExtResource("2_x8kar")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -10.02955, 0.76804537, 4.86479)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -13.499559, 0.76804537, 4.86479)
 DoorID = 8
 
 [node name="DoorwayLarge" parent="." unique_id=491235943 instance=ExtResource("2_x8kar")]

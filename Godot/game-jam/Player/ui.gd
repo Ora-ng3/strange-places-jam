@@ -9,11 +9,13 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# Change mouse capture mode with escape
 	if event.is_action_released("Escape"):
-		get_tree().paused = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+		
 		if $Settings.visible:
 			$Settings.hide()
+			$Menu.show()
 		else:
 			if not on_start_menu:
+				get_tree().paused = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 				$Menu.visible = !$Menu.visible
 				toggle_mouse_mode()	
 				player.on_menu = !player.on_menu
@@ -73,10 +75,12 @@ func _on_play_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	$Settings.visible = true
+	$Menu.visible = false
 
 
 func _on_close_pressed() -> void:
 	$Settings.visible = false
+	$Menu.visible = true
 
 
 func _on_close_credits_pressed() -> void:
@@ -109,4 +113,9 @@ func set_render_scale(scale: float) -> void:
 
 	# This API exists in Godot 4: it scales the 3D rendering resolution.
 	# UI (2D) can remain at window resolution depending on your setup.
-	vp.scaling_3d_scale = scale
+	vp.scaling_3d_scale = scale	
+
+@onready var WorldEnv: WorldEnvironment = get_node("../../WorldEnvironment")
+func _on_check_button_toggled(toggled_on: bool) -> void:
+		get_tree().set_group("lights", "shadow_enabled", toggled_on)
+		WorldEnv.environment.ambient_light_sky_contribution = float(!toggled_on)

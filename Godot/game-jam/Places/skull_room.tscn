@@ -194,53 +194,43 @@ size = Vector3(30, 58, 82)
 
 [node name="CeilingLight" parent="." unique_id=1658296193 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 29, 42)
-
-[node name="CeilingLight2" parent="." unique_id=801988896 instance=ExtResource("7_2cq22")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 29, 31)
+strength = 2.0
 
 [node name="CeilingLight3" parent="." unique_id=1128531951 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 29, 20)
-
-[node name="CeilingLight4" parent="." unique_id=740459845 instance=ExtResource("7_2cq22")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 29, 9)
+strength = 2.0
 
 [node name="CeilingLight5" parent="." unique_id=1782537549 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 29, -2)
-
-[node name="CeilingLight6" parent="." unique_id=1434967716 instance=ExtResource("7_2cq22")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 29, -13)
+strength = 2.0
 
 [node name="CeilingLight7" parent="." unique_id=1429118528 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -11, 29, -24)
+strength = 2.0
 
 [node name="CeilingLight8" parent="." unique_id=1061271283 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12, 29, 42)
-
-[node name="CeilingLight9" parent="." unique_id=1881812185 instance=ExtResource("7_2cq22")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12, 29, 31)
+strength = 2.0
 
 [node name="CeilingLight10" parent="." unique_id=2021554 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12, 29, 20)
-
-[node name="CeilingLight11" parent="." unique_id=1163000917 instance=ExtResource("7_2cq22")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12, 29, 9)
+strength = 2.0
 
 [node name="CeilingLight12" parent="." unique_id=1945478161 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12, 29, -2)
-
-[node name="CeilingLight13" parent="." unique_id=1557040737 instance=ExtResource("7_2cq22")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12, 29, -13)
+strength = 2.0
 
 [node name="CeilingLight14" parent="." unique_id=290704922 instance=ExtResource("7_2cq22")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 12, 29, -24)
+strength = 2.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=12410549]
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=12410549 groups=["lights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.994891, 30.034264)
 light_energy = 4.482
 light_indirect_energy = 0.96
 omni_range = 23.764
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=833989990]
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=833989990 groups=["lights"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.58808, -19.708313)
 light_energy = 4.482
 light_indirect_energy = 0.96

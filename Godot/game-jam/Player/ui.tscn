@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b07jl7pj7t4eu" path="res://Assets/UI/Lora-Regular.ttf" id="4_0q1ao"]
 [ext_resource type="Texture2D" uid="uid://eykuuunhldxr" path="res://Assets/UI/sliders-icon.png" id="5_prjsi"]
 [ext_resource type="Texture2D" uid="uid://btwrputbqk2pi" path="res://Assets/UI/close-icon.png" id="6_4ank0"]
+[ext_resource type="Texture2D" uid="uid://bibqck28f1oaq" path="res://Logo/Door(s)_logo.svg" id="6_e7kh4"]
 
 [sub_resource type="Image" id="Image_kvoao"]
 data = {
@@ -82,10 +83,6 @@ _data = {
 
 [sub_resource type="Theme" id="Theme_k53q1"]
 default_font = ExtResource("4_0q1ao")
-
-[sub_resource type="LabelSettings" id="LabelSettings_fhl08"]
-font = ExtResource("4_0q1ao")
-font_size = 70
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhl08"]
 bg_color = Color(0, 0, 0, 1)
@@ -188,33 +185,23 @@ grow_vertical = 2
 theme = SubResource("Theme_k53q1")
 color = Color(0, 0, 0, 0.44705883)
 
-[node name="Permanent" type="Label" parent="Menu" unique_id=1888147397]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 200.0
-grow_horizontal = 2
-text = "Door(s)"
-label_settings = SubResource("LabelSettings_fhl08")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Play" type="Button" parent="Menu" unique_id=1701383047]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -84.0
-offset_top = 136.0
+offset_top = -158.0
 offset_right = 84.0
-offset_bottom = 211.0
+offset_bottom = -83.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_fhl08")
 text = "PLAY"
+icon_alignment = 1
 
 [node name="Settings" type="Button" parent="Menu" unique_id=1556942448]
 material = SubResource("CanvasItemMaterial_vtle1")
@@ -222,10 +209,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -540.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = 540.0
+offset_left = -550.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 550.0
 grow_horizontal = 0
 scale = Vector2(0.05, 0.05)
 pivot_offset = Vector2(520, 0)
@@ -234,12 +221,24 @@ flat = true
 
 [node name="Quit" type="Button" parent="Menu" unique_id=698068778]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 20.0
-offset_right = 75.0
-offset_bottom = 49.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 71.0
+offset_bottom = 59.0
 text = "Quit
 "
+
+[node name="Center" type="Control" parent="Menu" unique_id=301096752]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Door(s)Logo" type="Sprite2D" parent="Menu/Center" unique_id=1823308110]
+position = Vector2(0, 200)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_e7kh4")
 
 [node name="Settings" type="ColorRect" parent="." unique_id=2124570902]
 visible = false
@@ -258,10 +257,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -540.0
-offset_top = 20.0
-offset_right = -19.999634
-offset_bottom = 540.0
+offset_left = -550.0
+offset_top = 30.0
+offset_right = -29.999634
+offset_bottom = 550.0
 grow_horizontal = 0
 scale = Vector2(0.05, 0.05)
 pivot_offset = Vector2(520, 0)
@@ -306,7 +305,20 @@ offset_left = -149.0
 offset_right = 149.0
 offset_bottom = 77.0
 grow_horizontal = 2
+max_value = 200.0
 value = 50.0
+
+[node name="CheckButton" type="CheckButton" parent="Settings" unique_id=579650356]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_top = 61.0
+offset_right = 57.0
+offset_bottom = 90.0
+grow_horizontal = 2
+text = "Shadows"
 
 [node name="Credits" type="ColorRect" parent="." unique_id=511044452]
 visible = false
@@ -369,4 +381,5 @@ flat = true
 [connection signal="pressed" from="Settings/ViewCredits" to="." method="_on_view_credits_pressed"]
 [connection signal="pressed" from="Settings/ShowDebug" to="." method="_on_show_debug_pressed"]
 [connection signal="drag_ended" from="Settings/HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="toggled" from="Settings/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="Credits/CloseCredits" to="." method="_on_close_credits_pressed"]

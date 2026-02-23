@@ -21,7 +21,11 @@ func _ready() -> void:
 	print("player loaded !")
 	$MeshInstance3D.hide()
 
-func _unhandled_input(event: InputEvent) -> void:	
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and not on_menu:
+		event as InputEventMouseButton
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if not on_end:
 			rotate_head(event)
